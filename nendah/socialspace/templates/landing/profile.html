@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile - {{user_profile.user.username}}</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
+     <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
+     <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-cont">
+            <div class="profile-pic">
+                <img src="{% static 'images/person.jpg'%}" alt="">
+            </div>
+            <div class="profile-info">
+                <div class="person-name">
+                    <h1>{{user_profile.user.username}}</h1>
+                </div>
+                <div class="profile-bio">
+                    <h4>{{user_profile.bio}}</h4>
+                </div>
+                <div class="profile-btn">
+                    <button class="follow">Follow &#8734;</button>
+                    <button  class="pop-action" button-option="Show Message" >Message</button>
+                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Edit profile</button>
+                </div>
+
+
+                <!--Profile edit popup  section -->
+
+               
+
+                <!-- End of section -->
+
+
+                <div class="profile-stats">
+                    <div class="stat">
+                        <h3>28</h3>
+                        <h3><span>Posts</span></h3>
+                    </div>
+
+                    <div class="stat">
+                        <h3>1500</h3>
+                        <h3><span>Followers</span></h3>
+                    </div>
+
+                    <div class="stat">
+                        <h3>500</h3>
+                        <h3><span>Following</span></h3>
+                    </div>
+                    
+
+                   <span> <div class="stat-l">
+                        <h3>15</h3>
+                        <h3><span>Articles/Cast</span></h3>
+                    </div>
+                   </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-features">
+            <div class="feature-title">
+                <h3>Posts</h3>
+                <div class="feature-button">
+                    <button class="mybtn">Post <span>&#43;</span></button>
+                </div>
+            </div>
+            <div class="profile-posts">
+                {% for post in posts %}
+                <div class="post-item">
+                    <img src="{{post.image.url}}" alt="">
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- popup -->
+
+            <div id="popup2" class="modal">
+    
+                <!-- Modal content -->
+                <div class="upload-popup2">
+                  <span class="close">&times;</span>
+                  <div class="upload-options">
+                    <h1>Upload Post</h1>
+                    
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <img src="{% static 'images/upload.png'%}" alt="">
+                        </div>
+                        <form action="upload" method="post" enctype="multipart/form-data">
+                        {% csrf_token%}
+                        <div class="upload-caption">
+                            <input type="file" name="upload">
+                            <!--<a href="#">Browse to choose</a>-->
+                            <textarea name="caption" placeholder="caption" id="" cols="35" rows="5"></textarea>
+                            <br>
+                            <button type="submit">Upload</button>
+                        </div>
+                        </form>
+                        
+                    </div>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            <!--end popup-->
+
+        
+
+            <div class="feature-title">
+                
+                <h3>My Duka</h3>
+                <div class="feature-button">
+                    <button>Sell <span>&#43;</span></button>
+                </div>
+
+            </div>
+
+            <div class="my-cont">
+                <div class="cont-item">
+                    <img src="{% static 'images/e.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>Glasses</h3>
+                        <h4>$2</h4>
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/w.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>Glasses</h3>
+                        <h4>$2</h4>
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/r.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>Glasses</h3>
+                        <h4>$2</h4>
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/q.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>Glasses</h3>
+                        <h4>$2</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-title">
+                
+                <h3>My Articles & Podcasts</h3>
+                <div class="feature-button">
+                    <button>Post <span>&#43;</span></button>
+                </div>
+
+            </div>
+
+            <div class="my-cont">
+                <div class="cont-item">
+                    <img src="{% static 'images/v.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>title</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/z.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>title</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/x.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>title</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="cont-item">
+                    <img src="{% static 'images/c.jpg'%}" alt="">
+                    <div class="duka-info">
+                        <h3>title</h3>
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script> 
+</body>
+</html>

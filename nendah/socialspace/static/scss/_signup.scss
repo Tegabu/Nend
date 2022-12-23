@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cabin:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+.login-h1 {
+    width: 100%;
+    background: rgb(135, 206, 235);
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+        font-family: "Cabin Sketch", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 10px;
+
+        span {
+            color: #ff4500;
+        }
+    }
+}
+
+.login-all {
+    width: 100%;
+    height: 95vh;
+    background: rgb(135, 206, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login-box {
+    width: 420px;
+    height: 520px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 200px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+
+    h1 {
+        font-family: "Cabin Sketch", sans-serif;
+        margin-bottom: 10px;
+    }
+}
+
+.avatar {
+    padding: 20px;
+    border-radius: 50%;
+    background: rgb(129, 1, 1);
+    margin-top: 10px;
+}
+
+.login-form {
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+
+    p {
+        margin-top: 10px;
+    }
+
+    input {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #555;
+        background: transparent;
+        border: none;
+        padding: 5px;
+        border-bottom: 1px solid #ffffff;
+        width: 100%;
+    }
+
+    button {
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-bottom: 30px;
+        width: 100px;
+        padding: 5px;
+        border: none;
+        border-radius: 4px;
+        background: rgb(129, 1, 1);
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        line-height: 1rem;
+        transition: .3s ease;
+
+        :hover {
+            color: rgb(129, 1, 1);
+        }
+    }
+}
+
+.sign-all {
+    background: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background: url('/static/images/tree1.jpg');
+
+}
+
+.sign-left {
+    width: 20%;
+    background: transparent;
+}
+
+.all-signup {
+    width: 80%;
+    background: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.b-drop {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   /* background: url('/static/images/tree1.jpg') center center no-repeat; */
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    button{
+        width: 200px;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        background: rgb(129, 1, 1);
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}
+
+.create-account {
+    width: 50vw;
+    background: transparent;
+    height: 100vh;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+    border-radius: 10px;
+
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+}
+
+.account-form {
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+
+    p {
+        margin: auto;
+        font-size: 1rem;
+    }
+
+    input {
+        font-family: "Roboto", sans-serif;
+        font-size: .7rem;
+        font-weight: 300;
+        color: #444;
+        background: transparent;
+        border: 3px solid #000;
+        border-radius: 10px;
+        padding: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    button {
+        width: 300px;
+        margin: auto;
+        margin-top: 5px;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        background: rgb(129, 1, 1);
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}

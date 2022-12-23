@@ -1,0 +1,1228 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cabin:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  scroll-behavior: smooth;
+}
+
+.cont-left {
+  width: 25vw;
+  box-shadow: 0px 0px 2px rgb(202, 199, 199);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.cont-left .profile-pic {
+  margin: auto;
+  margin-top: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.cont-left .profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cont-left .profile-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.cont-left .profile-name h1 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #444;
+}
+.cont-left .profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 0px 10px 0px 10px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  padding: 0px 10px 10px 10px;
+}
+.cont-left .profile-details .followers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cont-left .profile-details .followers h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.cont-left .profile-details .followers h2 {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.cont-left .profile-details .posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cont-left .profile-details .posts h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.cont-left .profile-details .posts h2 {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.cont-left .profile-details .following {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cont-left .profile-details .following h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.cont-left .profile-details .following h2 {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.cont-left .side-nav {
+  margin-top: 20px;
+}
+.cont-left .side-nav ul {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 0px 5px 15px;
+}
+.cont-left .side-nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.cont-left .side-nav ul li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.cont-left .side-nav ul li h1 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #000;
+}
+.cont-left .side-nav ul li :hover {
+  text-decoration: underline;
+}
+
+.cont-right {
+  width: 75vw;
+  background: #ece9e6;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+
+.nav-bar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  padding: 10px 0px 10px 0px;
+}
+.nav-bar .search-bar {
+  margin-left: 20px;
+}
+.nav-bar .search-bar input {
+  width: 30vw;
+  padding: 5px;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+  background: transparent;
+}
+.nav-bar .search-bar input :active {
+  border: none;
+}
+.nav-bar .upload-btn button {
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  background: #fe8c00;
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.nav-bar .notification-alert {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.nav-bar .notification-alert img {
+  width: 100%;
+  height: 100%;
+}
+.nav-bar .inbox-icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.nav-bar .inbox-icon img {
+  width: 100%;
+  height: 100%;
+}
+.nav-bar .settings-mini {
+  margin-right: 20px;
+}
+
+.story-view {
+  width: 55%;
+  padding: 15px 20px 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 2px;
+}
+.story-view .story-bubble {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.story-view .story-bubble img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.story-view .story-bubble h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.main-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 75vw;
+  /* Modal Content */
+  /* The Close Button */
+}
+.main-sec .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.main-sec .upload-popup {
+  font-family: "Roboto", sans-serif;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 2px rgb(248, 246, 246);
+  margin: auto;
+  padding: 20px;
+  width: 40%;
+}
+.main-sec .upload-popup .upload-options {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main-sec .upload-popup .upload-options .upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #aaaaaa;
+  border: dashed;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.main-sec .upload-popup .upload-options .upload-content .upload-icon {
+  width: 100px;
+  height: 100px;
+}
+.main-sec .upload-popup .upload-options .upload-content .upload-icon img {
+  width: 100%;
+  height: 100%;
+}
+.main-sec .upload-popup .upload-options .upload-content .upload-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.main-sec .upload-popup .upload-options .upload-content .upload-caption input {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.main-sec .upload-popup .upload-options .upload-content .upload-caption button {
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background: #fe8c00;
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  border-radius: 5px;
+  margin-top: 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.main-sec .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.main-sec .close:hover,
+.main-sec .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main-sec .feed-all {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.main-sec .feed {
+  width: 55%;
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-sec .feed .feed-post {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgb(202, 199, 199);
+  background: #fff;
+}
+.main-sec .feed .feed-post .post-profile {
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  cursor: pointer;
+}
+.main-sec .feed .feed-post .post-profile .post-profile-img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.main-sec .feed .feed-post .post-profile .post-profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.main-sec .feed .feed-post .post-profile .post-profile-name {
+  font-family: "Roboto", sans-serif;
+  margin-left: 10px;
+}
+.main-sec .feed .feed-post .post-profile .post-profile-name h1 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #444;
+}
+.main-sec .feed .feed-post .post-main-content {
+  width: 100%;
+  height: 50vh;
+}
+.main-sec .feed .feed-post .post-main-content img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.main-sec .feed .feed-post .post-interactions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5px 10px 5px 10px;
+}
+.main-sec .feed .feed-post .post-interactions a {
+  text-decoration: none;
+}
+.main-sec .feed .feed-post .post-interactions a .like-btn {
+  width: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 40px;
+  cursor: pointer;
+}
+.main-sec .feed .feed-post .post-interactions a .like-btn img {
+  width: 20px;
+  height: 20px;
+}
+.main-sec .feed .feed-post .post-interactions a .like-btn h1 {
+  margin-left: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.main-sec .feed .feed-post .post-interactions .comment-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 40px;
+  cursor: pointer;
+}
+.main-sec .feed .feed-post .post-interactions .comment-btn img {
+  width: 100%;
+  height: 100%;
+}
+.main-sec .side-cont {
+  width: 40%;
+  margin-top: -50px;
+  margin-right: 10px;
+  padding: 15px 0px 0px 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-sec .side-options {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgb(202, 199, 199);
+  margin-bottom: 20px;
+}
+.main-sec .side-options .side-title {
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main-sec .side-options .side-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+}
+.main-sec .side-options .side-title .refresh-img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.main-sec .side-options .side-title .refresh-img img {
+  width: 100%;
+  height: 100%;
+}
+.main-sec .side-options .new-followers {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.main-sec .side-options .new-followers .n-follower {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.main-sec .side-options .new-followers .n-follower .follower-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-sec .side-options .new-followers .n-follower .follower-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.main-sec .side-options .new-followers .n-follower .follower-name {
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-sec .side-options .new-followers .n-follower .follower-name h1 {
+  color: #444;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.main-sec .side-options .new-followers .follow-btn {
+  margin-right: 10px;
+}
+.main-sec .side-options .new-followers .follow-btn button {
+  padding: 3px 10px 3px 10px;
+  border-radius: 10px;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.06rem;
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  color: #fff;
+}
+.main-sec .side-options .new-followers .field-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+}
+.main-sec .side-options .new-followers .field-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.login-h1 {
+  width: 100%;
+  background: rgb(135, 206, 235);
+  text-align: center;
+  padding: 20px;
+}
+.login-h1 h1 {
+  font-family: "Cabin Sketch", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.login-h1 h1 span {
+  color: #ff4500;
+}
+
+.login-all {
+  width: 100%;
+  height: 95vh;
+  background: rgb(135, 206, 235);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  width: 420px;
+  height: 520px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 200px;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.login-box h1 {
+  font-family: "Cabin Sketch", sans-serif;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  padding: 20px;
+  border-radius: 50%;
+  background: rgb(129, 1, 1);
+  margin-top: 10px;
+}
+
+.login-form {
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.login-form p {
+  margin-top: 10px;
+}
+.login-form input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  background: transparent;
+  border: none;
+  padding: 5px;
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+}
+.login-form button {
+  margin-top: 30px;
+  margin-left: 35%;
+  margin-bottom: 30px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  background: rgb(129, 1, 1);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.login-form a {
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1rem;
+  transition: 0.3s ease;
+}
+.login-form a :hover {
+  color: rgb(129, 1, 1);
+}
+
+.sign-all {
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background: url("/static/images/tree1.jpg");
+}
+
+.sign-left {
+  width: 20%;
+  background: transparent;
+}
+
+.all-signup {
+  width: 80%;
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.b-drop {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: url('/static/images/tree1.jpg') center center no-repeat; */
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+}
+.b-drop button {
+  width: 200px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background: rgb(129, 1, 1);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.create-account {
+  width: 50vw;
+  background: transparent;
+  height: 100vh;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #000;
+  border-radius: 10px;
+}
+.create-account h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.account-form {
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+}
+.account-form p {
+  margin: auto;
+  font-size: 1rem;
+}
+.account-form input {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #444;
+  background: transparent;
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+}
+.account-form button {
+  width: 300px;
+  margin: auto;
+  margin-top: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(129, 1, 1);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.pg-title {
+  margin: 10px;
+  margin-left: 50px;
+}
+.pg-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: rgb(54, 56, 91);
+}
+
+.profile-settings {
+  width: 95%;
+  margin: auto;
+}
+.profile-settings form {
+  width: 100%;
+}
+.profile-settings form .profile-det {
+  margin: 5px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.profile-settings form .profile-det img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-settings form .profile-det .det-info {
+  margin-left: 20px;
+}
+.profile-settings form .profile-det .det-info h1 {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgb(54, 56, 91);
+}
+.profile-settings form .profile-det .det-info h1 span {
+  color: #555;
+}
+.profile-settings form .profile-det .det-info input {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(245, 98, 44);
+  color: #fff;
+  border: none;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.profile-settings form .basic-info {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
+  background-color: #fff;
+  width: 100%;
+}
+.profile-settings form .basic-info .title {
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(54, 56, 91);
+  padding: 10px 0px 0px 0px;
+}
+.profile-settings form .basic-info .info-opt {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.profile-settings form .basic-info .info-opt .left-info {
+  width: 45%;
+}
+.profile-settings form .basic-info .info-opt .left-info p {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 5px;
+}
+.profile-settings form .basic-info .info-opt .left-info input {
+  border: none;
+  border-bottom: 1px solid rgb(204, 201, 201);
+  width: 100%;
+  margin-bottom: 10px;
+}
+.profile-settings form .basic-info .info-opt .right-info {
+  width: 45%;
+}
+.profile-settings form .basic-info .info-opt .right-info p {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 5px;
+}
+.profile-settings form .basic-info .info-opt .right-info input {
+  border: none;
+  border-bottom: 1px solid rgb(204, 201, 201);
+  width: 100%;
+  margin-bottom: 10px;
+}
+.profile-settings form .basic-info button {
+  background-color: rgb(245, 98, 44);
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.main-listings {
+  width: 100%;
+}
+
+.add-listing {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 5px 5px;
+}
+.add-listing h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+  margin-left: 20px;
+}
+
+.categories-pick {
+  width: 92%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: -10px;
+}
+.categories-pick button {
+  background: #fff;
+  color: #555;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.listing .feature-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.listing .feature-title h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+}
+.listing .feature-title button {
+  cursor: pointer;
+  padding: 0px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.listing .feature-title button span {
+  font-weight: 600;
+}
+.listing h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 20px 20px;
+  margin-top: 40px;
+}
+
+.listing-cards {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px;
+}
+.listing-cards .listing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 300px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.listing-cards .listing-card img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.listing-cards .listing-card .listing-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 5px 0px;
+}
+.listing-cards .listing-card .listing-info h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+.listing-cards .listing-card .listing-info h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #555;
+  margin-right: 10px;
+}
+
+.profile-container {
+  width: 100%;
+}
+.profile-container .profile-cont {
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile-container .profile-cont .profile-pic {
+  width: 220px;
+  height: 220px;
+}
+.profile-container .profile-cont .profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-container .profile-cont .profile-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.profile-container .profile-cont .profile-info .profile-edit {
+  position: absolute;
+  overflow: hidd;
+  width: 500px;
+  border: 1px solid #555;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #444;
+  background: #fff;
+}
+.profile-container .profile-cont .profile-info .profile-edit-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  display: none;
+}
+.profile-container .profile-cont .profile-info .person-name h1 {
+  font-family: "Roboto", sans-serif;
+}
+.profile-container .profile-cont .profile-info .profile-bio {
+  margin-top: 10px;
+}
+.profile-container .profile-cont .profile-info .profile-bio h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+.profile-container .profile-cont .profile-info .profile-btn {
+  margin-top: 10px;
+}
+.profile-container .profile-cont .profile-info .profile-btn .follow {
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  color: #fff;
+  margin-right: 20px;
+}
+.profile-container .profile-cont .profile-info .profile-btn button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  border: none;
+  border-radius: 5px;
+  color: #555;
+}
+.profile-container .profile-cont .profile-info .profile-stats {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat-l {
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto", sans-serif;
+  gap: 5px;
+  padding: 5px 20px 0px 0px;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat-l h3 {
+  font-weight: 300;
+  color: #555;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat-l span {
+  font-weight: 500;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat {
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto", sans-serif;
+  gap: 5px;
+  padding: 5px 20px 0px 0px;
+  border-right: 1px solid #555;
+  margin-right: 20px;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat h3 {
+  font-weight: 300;
+  color: #555;
+}
+.profile-container .profile-cont .profile-info .profile-stats .stat span {
+  font-weight: 500;
+}
+.profile-container .profile-features {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #555;
+  margin-top: 50px;
+}
+.profile-container .profile-features .feature-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
+  margin-top: 40px;
+}
+.profile-container .profile-features .feature-title h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+}
+.profile-container .profile-features .feature-title button {
+  cursor: pointer;
+  padding: 0px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  background: linear-gradient(to right, #fe8c00, #f83600);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+.profile-container .profile-features .feature-title button span {
+  font-weight: 600;
+}
+.profile-container .profile-features .profile-posts {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px;
+}
+.profile-container .profile-features .profile-posts .post-item {
+  width: 220px;
+  height: 250px;
+  cursor: pointer;
+}
+.profile-container .profile-features .profile-posts .post-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.profile-container .profile-features .my-cont {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px;
+}
+.profile-container .profile-features .my-cont .cont-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 300px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-container .profile-features .my-cont .cont-item img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.profile-container .profile-features .my-cont .cont-item .duka-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 5px 0px;
+}
+.profile-container .profile-features .my-cont .cont-item .duka-info h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+.profile-container .profile-features .my-cont .cont-item .duka-info h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #555;
+  margin-right: 10px;
+}/*# sourceMappingURL=main.css.map */

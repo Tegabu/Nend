@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+   <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="pg-title">
+        <h1>Profile Setting</h1>
+    </div>
+
+    <div class="profile-settings">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="profile-det">
+              <img src="" alt="">
+              <div class="det-info">
+                <h1> Hello <span>{{user.username}}</span></h1>
+                <input type="file" name="profileimg" value="">
+              </div>
+            </div>
+            
+
+            <div class="basic-info">
+                <div class="title">
+                    <h1>Basic Info</h1>
+                </div>
+                 
+                <div class="info-opt">
+                    <div class="left-info">
+                        <p>User Name :</p>
+                        <input type="text" name="user" placeholder="{{user.username}}" class="name">
+
+                        <p>Phone :</p>
+                        <input type="text" name="phone" placeholder="" class="name">
+                    </div>
+
+                    <div class="right-info">
+                        <p>Bio :</p>
+                        <input type="text" name="bio" placeholder="">
+
+                        <p>E-mail :</p>
+                        <input type="text" name="email" placeholder="{{user.email}}" class="name">
+                        
+                    </div>
+                    <br>
+                </div>
+
+                    <button  type="submit">Save &#10002;</button>
+                
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

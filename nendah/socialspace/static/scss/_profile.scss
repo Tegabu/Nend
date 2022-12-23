@@ -1,0 +1,231 @@
+.profile-container{
+    width: 100%;
+    .profile-cont{
+        width: 90%;
+        margin: auto;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .profile-pic{
+            width: 220px;
+            height: 220px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .profile-info{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+
+            .profile-edit{
+                position: absolute;
+                overflow: hidd;
+                width: 500px;
+                border: 1px solid #555;
+                display: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 5px #444;
+                background: #fff;
+            }
+
+            .profile-edit-bg{
+                width: 100%;
+                height:100%;
+                background: rgb(0,0,0,0.6);
+                backdrop-filter: blur(4px);
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                left: 0px;
+                display: none;
+            }
+
+            .person-name{
+                h1{
+                    font-family: "Roboto", sans-serif;
+                }
+            }
+
+            .profile-bio{
+                margin-top: 10px;
+                h4{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #555;
+                }
+            }
+            .profile-btn{
+                margin-top: 10px;
+                .follow{
+                    background: linear-gradient(to right, #fe8c00, #f83600);
+                    color: #fff;
+                    margin-right: 20px;
+                }
+                button{
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    font-family: "Roboto", sans-serif;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+                    border: none;
+                    border-radius: 5px;
+                    color: #555;
+                }
+            }
+            .profile-stats{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                
+                .stat-l{
+                    display: flex;
+                    flex-direction: row;
+                    font-family: "Roboto", sans-serif;
+                    gap: 5px;
+                    padding: 5px 20px 0px 0px;
+                    h3{
+                        font-weight: 300;
+                        color: #555;
+                    }
+                    span{
+                        font-weight: 500;
+                    }
+                }
+                .stat{
+                    display: flex;
+                    flex-direction: row;
+                    font-family: "Roboto", sans-serif;
+                    gap: 5px;
+                    padding: 5px 20px 0px 0px;
+                    border-right: 1px solid #555;
+                    margin-right: 20px;
+                    h3{
+                        font-weight: 300;
+                        color: #555;
+                    }
+                    span{
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    .profile-features{
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #555;
+        margin-top: 50px;
+        .feature-title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            font-family: "Roboto", sans-serif;
+            margin-right: 20px;
+            margin-top: 40px;
+            h3{
+              font-size: 2rem;
+              font-weight: 500;
+              color: #000;
+            }
+            button{
+                cursor: pointer;
+                padding: 0px 10px;
+                font-family: "Roboto", sans-serif;
+                font-size: 1.5rem;
+                font-weight: 400;
+                box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+                background: linear-gradient(to right, #fe8c00, #f83600);
+                border: none;
+                border-radius: 5px;
+                color: #fff;
+                span{
+                    font-weight: 600;
+                }
+            }
+            
+        }
+        .profile-posts{
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            width: 95%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 5px;
+            .post-item{
+                width: 220px;
+                height: 250px;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .my-cont{
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 5px;
+            .cont-item{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 220px;
+                height: 300px;
+                border-radius: 5px;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+                .duka-info{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: space-between;
+                    padding: 5px 0px;
+                    h3{
+                        font-family: "Roboto", sans-serif;
+                        font-weight: 400;
+                        font-size: .9rem;
+                        color: #555;
+                        margin-bottom: 5px;
+                        margin-left: 10px;
+                        text-transform: capitalize;
+                    }
+                    h4{
+                        font-family: "Roboto", sans-serif;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        color: #555; 
+                        margin-right: 10px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+//edit popup
+
