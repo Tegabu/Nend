@@ -1,0 +1,233 @@
+{% extends "index.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+{% load static %}
+<div class="feed" >
+    {% for post in posts reversed %}
+    <div class="feed-post">
+        
+        <div class="post-profile">
+            <div class="post-profile-img">
+                <img src="{% static 'images/post2.jpg'%}" alt="">
+            </div>
+            <div class="post-profile-name">
+                <h1>{{post.user}}</h1>
+            </div>
+        </div>
+        
+        <div class="post-main-content">
+            <img src="{{post.image.url}}" alt="">
+        </div>
+        <div class="post-interactions">
+            <a href="/like-post?post_id={{post.id}}">
+                <div class="like-btn">
+                    <img src="{% static 'images/like.png'%}" alt="">
+
+                    {% if post.num_likes == 0 %}
+                    <p>No like yet</p>
+                    {% elif post.num_likes == 1 %}
+                    <p>{{post.num_likes}} like</p>
+                    {% else %}
+                    <p>{{post.num_likes}} likes</p>
+                    {% endif %}
+                </div>
+            </a>
+            <div class="comment-btn">
+                <img src="{% static 'images/comment.png'%}" alt="">
+            </div>
+        </div>
+        <div class="caption">
+            <p>
+                <a>{{post.user}}</a> {{post.caption}}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+  
+</div>
+
+<div class="side-cont">
+    <div class="side-options">
+      <div class="side-title">
+        <h1>Also on nendah</h1>
+
+        <div class="refresh-img">
+          <img src="{% static 'images/refresh.png'%}" alt="">
+        </div>
+      </div>
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p4.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Hermione Grey</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p1.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Sam Yatjua</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p3.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Dead Pool</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p5.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Boogie Angie</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p2.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Vusi Nim</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p6.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Cool Nerd</h1></div>
+          </div>
+          <div class="follow-btn">
+              <button>Follow</button>
+          </div>
+      </div>
+
+    </div>
+
+
+  <!--Articles and Podcast suggestions-->
+
+  <div class="side-options">
+      <div class="side-title">
+        <h1>Articles and Podcasts</h1>
+
+        <div class="refresh-img">
+          <img src="{% static 'images/refresh.png'%}" alt="">
+        </div>
+      </div>
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p4.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Technology</h1></div>
+          </div>
+          <div class="field-icon">
+              <img src="{% static 'images/podcast.png'%}" alt="">
+          </div>
+      </div>
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p1.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Relationships</h1></div>
+          </div>
+          
+          <div class="field-icon">
+              <img src="{% static 'images/articles.png'%}" alt="">
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p3.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Politics</h1></div>
+          </div>
+          
+          <div class="field-icon">
+              <img src="{% static 'images/articles.png'%}" alt="">
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p5.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Business</h1></div>
+          </div>
+          
+          <div class="field-icon">
+              <img src="{% static 'images/podcast.png'%}" alt="">
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p2.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Conspiracy</h1></div>
+          </div>
+          
+          <div class="field-icon">
+              <img src="{% static 'images/articles.png'%}" alt="">
+          </div>
+      </div>
+
+      <div class="new-followers">
+          <div class="n-follower">
+              <div class="follower-img">
+                  <img src="{% static 'images/p6.jpg'%}" alt="">
+              </div>
+              <div class="follower-name"><h1>Astronomy</h1></div>
+          </div>
+          
+          <div class="field-icon">
+              <img src="{% static 'images/podcast.png'%}" alt="">
+          </div>
+      </div>
+   </div>
+  </div>
+  </div>
+</div>
+  <!--End of Main Feed-->
+</div>
+
+<!-- End of main content -->
+
+</div>
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script> 
+{% endblock %}
+
+
+
+<h1>hi</h1>

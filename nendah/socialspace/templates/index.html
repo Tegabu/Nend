@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title%} {%endblock%}</title>
     {% load static %}
    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
@@ -12,6 +13,8 @@
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
+    
+
     <div class="container">
 
         <!-- Quick access menu -->
@@ -53,7 +56,7 @@
 
          <div class="side-nav">
                 <ul>
-                    <li class="active-sec" data-option="feed"> <img src="{% static 'images/feed.png'%}" alt=""> <h1 class="active-sec">Feed</h1></li>
+                   <a href = "{% url 'feed' %}"> <li class="active-sec" > <img src="{% static 'images/feed.png'%}" alt=""> <h1></h1>Feed</h1></li></a>
                     <li class="active-sec" data-option="bookings"> <img src="{% static 'images/bookin.png'%}" alt=""> <h1>Holiday</h1></li>
                     <li class="active-sec" data-option="chat"> <img src="{% static 'images/chat.png'%}" alt=""> <h1>Chat</h1></li>
                     <li class="active-sec" data-option="articles"> <img src="{% static 'images/articles.png'%}" alt=""> <h1>Articles</h1></li>
@@ -131,55 +134,12 @@
               
             </div>
 
-            <div class="story-view">
-                <div class="story-bubble">
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                    <h5>tony</h5>
-                </div>
+           
 
-                <div class="story-bubble">
-                    <img src="{% static 'images/2.jpg'%}" alt="">
-                    <h5>sam</h5>
-                </div>
-
-                <div class="story-bubble">
-                    <img src="{% static 'images/3.jpg'%}" alt="">
-                    <h5>amani</h5>
-                </div>
-
-                <div class="story-bubble">
-                    <img src="{% static 'images/4.jpg'%}" alt="">
-                    <h5>jess</h5>
-                </div>
-
-                <div class="story-bubble">
-                    <img src="{% static 'images/5.jpg'%}" alt="">
-                    <h5>tim</h5>
-                </div>
-                <div class="story-bubble">
-                    <img src="{% static 'images/6.jpg'%}" alt="">
-                    <h5>jeff</h5>
-                </div>
-                <div class="story-bubble">
-                    <img src="{% static 'images/7.jpg'%}" alt="">
-                    <h5>zeff</h5>
-                </div>
-                <div class="story-bubble">
-                    <img src="{% static 'images/8.jpg'%}" alt="">
-                    <h5>mark</h5>
-                </div>
-                <div class="story-bubble">
-                    <img src="{% static 'images/9.jpg'%}" alt="">
-                    <h5>shawn</h5>
-                </div>
-                <div class="story-bubble">
-                    <img src="{% static 'images/10.jpg'%}" alt="">
-                    <h5>mica</h5>
-                </div>
-
-            </div>
+            {% block content %}
+            {% endblock %}
         
-            <div class="feed-all">
+           <div class="feed-all">
 
             <div class="feed" >
                 {% for post in posts reversed %}
@@ -196,28 +156,28 @@
                     
                     <div class="post-main-content">
                         <img src="{{post.image.url}}" alt="">
-                    </div>
+                    </div> 
                     <div class="post-interactions">
                         <a href="/like-post?post_id={{post.id}}">
                             <div class="like-btn">
                                 <img src="{% static 'images/like.png'%}" alt="">
 
                                 {% if post.num_likes == 0 %}
-                                <p>No like yet</p>
+                                <p><span>&#43; like</span></p>
                                 {% elif post.num_likes == 1 %}
-                                <p>{{post.num_likes}} like</p>
+                                <p>{{post.num_likes}} <span>like</span></p>
                                 {% else %}
-                                <p>{{post.num_likes}} likes</p>
+                                <p>{{post.num_likes}} <span>likes</span></p>
                                 {% endif %}
                             </div>
                         </a>
-                        <div class="comment-btn">
+                      <!--  <div class="comment-btn">
                             <img src="{% static 'images/comment.png'%}" alt="">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="caption">
                         <p>
-                            <a>{{post.user}}</a> {{post.caption}}
+                            <a>{{post.user}}: </a><span> {{post.caption}} </span>
                         </p>
                     </div>
                 </div>
@@ -284,35 +244,16 @@
                     </div>
                 </div>
 
-                <div class="new-followers">
-                    <div class="n-follower">
-                        <div class="follower-img">
-                            <img src="{% static 'images/p2.jpg'%}" alt="">
-                        </div>
-                        <div class="follower-name"><h1>Vusi Nim</h1></div>
-                    </div>
-                    <div class="follow-btn">
-                        <button>Follow</button>
-                    </div>
-                </div>
+               
 
-                <div class="new-followers">
-                    <div class="n-follower">
-                        <div class="follower-img">
-                            <img src="{% static 'images/p6.jpg'%}" alt="">
-                        </div>
-                        <div class="follower-name"><h1>Cool Nerd</h1></div>
-                    </div>
-                    <div class="follow-btn">
-                        <button>Follow</button>
-                    </div>
-                </div>
+               
 
-              </div>
+              </div> 
 
 
             <!--Articles and Podcast suggestions-->
 
+            
             <div class="side-options">
                 <div class="side-title">
                   <h1>Articles and Podcasts</h1>
@@ -332,18 +273,7 @@
                         <img src="{% static 'images/podcast.png'%}" alt="">
                     </div>
                 </div>
-                <div class="new-followers">
-                    <div class="n-follower">
-                        <div class="follower-img">
-                            <img src="{% static 'images/p1.jpg'%}" alt="">
-                        </div>
-                        <div class="follower-name"><h1>Relationships</h1></div>
-                    </div>
-                    
-                    <div class="field-icon">
-                        <img src="{% static 'images/articles.png'%}" alt="">
-                    </div>
-                </div>
+               
 
                 <div class="new-followers">
                     <div class="n-follower">
@@ -384,26 +314,18 @@
                     </div>
                 </div>
 
-                <div class="new-followers">
-                    <div class="n-follower">
-                        <div class="follower-img">
-                            <img src="{% static 'images/p6.jpg'%}" alt="">
-                        </div>
-                        <div class="follower-name"><h1>Astronomy</h1></div>
-                    </div>
-                    
-                    <div class="field-icon">
-                        <img src="{% static 'images/podcast.png'%}" alt="">
-                    </div>
-                </div>
+                
              </div>
             </div>
             </div>
          </div>
+
+        
             <!--End of Main Feed-->
         </div>
 
         <!-- End of main content -->
+    
         
     </div>
      

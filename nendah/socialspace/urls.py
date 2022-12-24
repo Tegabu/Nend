@@ -15,6 +15,7 @@ urlpatterns = [
     path('articles', views.articles, name="articles"),
     path('chat', views.chat, name="chat"),
     path('bookings', views.booking, name="bokings"),
+    path('feed', views.feed, name="feed"),
 
 
 ]

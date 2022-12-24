@@ -15,7 +15,12 @@ from socialspace.models import Profile, Post, likepost
 def index(request):
 
     posts = Post.objects.all()
-    return render(request, "landing/index.html", {'posts': posts})
+    return render(request, "index.html", {'posts': posts})
+
+
+@login_required(login_url='login')
+def feed(request):
+    return render(request, 'landing/feed.html')
 
 
 @login_required(login_url='login')
