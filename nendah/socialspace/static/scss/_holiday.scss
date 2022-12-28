@@ -16,68 +16,59 @@
 
     h1{
         font-family: "Roboto", sans-serif;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: 500;
-        color: #000;
-        margin-left: 20px;
+        color: rgb(245, 98, 44);
     }
 
     
 }
 
 .categories-pick{
-    width: 92%;
+    width: 95%;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     margin: auto;
-    margin-bottom: -10px;
     button{
         background: #fff;
-        color: #555;
+        color: rgb(54, 56, 91);
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 5px 15px;
         border: none;
         border-radius: 5px;
         box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
-        margin: 0px 5px;
+        margin-right: 5px;
         cursor: pointer;
     }
 }
 
 .listing{
+    width: 95%;
+    margin: auto;
+    box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
     .feature-title{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 50px;
         font-family: "Roboto", sans-serif;
         margin-right: 20px;
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         h3{
-          font-size: 2rem;
+          font-size: 1rem;
           font-weight: 500;
-          color: #000;
+          margin-left: 20px;
+          margin-top: 20px;
+          color: rgb(54, 56, 91);
         }
-        button{
-            cursor: pointer;
-            padding: 0px 10px;
-            font-family: "Roboto", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
-            background: linear-gradient(to right, #fe8c00, #f83600);
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            span{
-                font-weight: 600;
-            }
-        }
+       
         
     }
     
@@ -95,15 +86,17 @@
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 5px;
+    border-radius: 10px;
     
     .listing-card{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: auto;
+        margin-bottom: 10px;
         align-items: center;
-        width: 220px;
-        height: 300px;
+        width: 200px;
+        height: 280px;
         border-radius: 5px;
         cursor: pointer;
         img{
@@ -118,22 +111,22 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: space-between;
-            padding: 5px 0px;
+            margin: auto;
             h4{
                 font-family: "Roboto", sans-serif;
                 font-weight: 400;
                 font-size: .9rem;
                 color: #555;
-                margin-bottom: 5px;
-                margin-left: 10px;
+                margin: auto;
+                margin-left: 5px;
                 text-transform: capitalize;
             }
             h5{
                 font-family: "Roboto", sans-serif;
                 font-weight: 500;
-                font-size: 1rem;
+                font-size: .9rem;
                 color: #555; 
-                margin-right: 10px;
+                margin-right: 5px;
             }
         }
 

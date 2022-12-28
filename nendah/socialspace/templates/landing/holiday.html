@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-
-{% block title %} bookings {% endblock %}
-
+{% block title %} Holiday Booking {% endblock %}
 {% block content %}
+{% load static %}
     <div class="main-listings">
 
         <div class="add-listing">
-            <h1>Bookings</h1>
+            <h1>Holiday</h1>
             
         </div>
 
@@ -25,9 +24,7 @@
             <div class="feature-title">
                 
                 <h3>Bnbs</h3>
-                <div class="feature-button">
-                    <button>List <span>&#43;</span></button>
-                </div>
+                
     
             </div>
 
@@ -70,228 +67,8 @@
                     <h4>nairobi</h4>
                     <h5>westlands</h5>
                 </div>
-            </div>
-
-
-                 
-            </div>
-
-            <div class="feature-title">
-                
-                <h3>Hotels & Resorts</h3>
-                <div class="feature-button">
-                    <button>List <span>&#43;</span></button>
-                </div>
-    
-            </div>
-
-            <div class="listing-cards">
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                 <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                
-                <div class="listing-info">
-                    <h4>westlands/nairobi</h4>
-                    <h5>$100 / night</h5>
-                </div>
-            </div>
-
-
-                 
-            </div>
-
-            <div class="feature-title">
-                
-                <h3>Restaurants</h3>
-                <div class="feature-button">
-                    <button>List <span>&#43;</span></button>
-                </div>
-    
-            </div>
-
-            <div class="listing-cards">
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                 <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                
-                <div class="listing-info">
-                    <h4>westlands/nairobi</h4>
-                    <h5>$100 / night</h5>
-                </div>
-            </div>
-
-
-                 
-            </div>
-
-            <div class="feature-title">
-                
-                <h3>Activities</h3>
-                <div class="feature-button">
-                    <button>List <span>&#43;</span></button>
-                </div>
-    
-            </div>
-
-            <div class="listing-cards">
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                 <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                
-                <div class="listing-info">
-                    <h4>westlands/nairobi</h4>
-                    <h5>$100 / night</h5>
-                </div>
-            </div>
-
-
-                 
-            </div>
-
-            <div class="feature-title">
-                
-                <h3>Rafikis</h3>
-                <div class="feature-button">
-                    <button> Join<span>&#8734;</span></button>
-                </div>
-    
-            </div>
-
-            <div class="listing-cards">
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                 <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>westlands/nairobi</h4>
-                        <h5>$100 / night</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                
-                <div class="listing-info">
-                    <h4>westlands/nairobi</h4>
-                    <h5>$100 / night</h5>
-                </div>
-            </div>
-
-
-                 
-            </div>
-            </div>
+            </div> 
+            
         </div>
     </div>
 

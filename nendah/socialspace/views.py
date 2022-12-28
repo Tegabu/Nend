@@ -15,7 +15,7 @@ from socialspace.models import Profile, Post, likepost
 def index(request):
 
     posts = Post.objects.all()
-    return render(request, "index.html", {'posts': posts})
+    return render(request, "landing/index.html", {'posts': posts})
 
 
 @login_required(login_url='login')
@@ -84,7 +84,7 @@ def profile(request):
 
 
 @login_required(login_url='login')
-def booking(request):
+def bookings(request):
     return render(request, 'landing/holiday.html')
 
 

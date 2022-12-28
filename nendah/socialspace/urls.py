@@ -14,7 +14,7 @@ urlpatterns = [
     path('podcast', views.podcast, name="podcast"),
     path('articles', views.articles, name="articles"),
     path('chat', views.chat, name="chat"),
-    path('bookings', views.booking, name="bokings"),
+    path('bookings', views.bookings, name="bookings"),
     path('feed', views.feed, name="feed"),
 
 

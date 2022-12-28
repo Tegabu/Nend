@@ -14,11 +14,130 @@
 </head>
 <body>
 
+    <div class="container">
+
+        <!-- Quick access menu -->
+
+        <div class="cont-left">
+            <div class="logo">
+                <h1>Nendah</h1>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="profile-pic">
+                <img src="{% static 'images/person.jpg'%}" alt="">
+            </div>
+
+            <div class="profile-name">
+                <h1>{{user.username}}</h1>
+            </div>
+
+            <div class="profile-details">
+                <div class="followers">
+                    <h1>Followers</h1>
+                    <h2>1500</h2>
+                </div>
+
+                <div class="posts">
+                    <h1>Posts</h1>
+                    <h2>120</h2>
+                </div>
+
+                <div class="following">
+                    <h1>Following</h1>
+                    <h2>500</h2>
+                </div>
+            </div>
+
+            {% endif %}
+            
+        
+            {% if user.is_authenticated %}
+
+         <div class="side-nav">
+                <ul>
+                   <a href = "{% url 'index' %}"> <li class="active-sec" > <img src="{% static 'images/feed.png'%}" alt=""> <h1></h1>Explore</h1></li></a>
+                    <a  href = "{% url 'bookings'%}"><li class="active-sec" data-option="bookings"> <img src="{% static 'images/bookin.png'%}" alt=""> <h1>Holiday</h1></li></a>
+                    <li class="active-sec" data-option="chat"> <img src="{% static 'images/chat.png'%}" alt=""> <h1>Chat</h1></li>
+                    <li class="active-sec" data-option="articles"> <img src="{% static 'images/articles.png'%}" alt=""> <h1>Articles</h1></li>
+                    <li class="active-sec" data-option="podcast"> <img src="{% static 'images/podcast.png'%}" alt=""> <h1>Podcast</h1></li>
+                    <li class="active-sec" data-option="duka"> <img src="{% static 'images/store2.png'%}" alt=""> <h1>Duka</h1></li>
+                   <li class="active-sec" data-option="profile"> <img src="{% static 'images/setting2.png'%}" alt=""> <h1>Settings</h1></li>
+                   <li  class="active-sec" data-option="settings"> <img src="{% static 'images/accountm.png'%}" alt=""> <h1>Profile</h1></li>
+                   <a href="logout"><li class="active-sec"> <img src="{% static 'images/logout.png'%}" alt=""> <h1>Logout</h1></li></a>
+                </ul>
+            </div> 
+
+            {% endif %}
+
+        </div>
+
+        <!-- End Quick access menu -->
+
+        <!-- Main content -->
+        
+        <div class="cont-right">
     
+            <div class="nav-bar">
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="upload-btn">
+                    <button class="myBtn">Upload &#10514;</button>
+                </div>
+
+                
+
+                <div class="notification-alert">
+                    <img src="{% static 'images/notificationbell.png'%}" alt="">
+                </div>
+                <div class="inbox-icon">
+                    <img src="{% static 'images/chat.png'%}" alt="">
+                </div>
+                <div class="settings-mini">&#9776;</div>
+            </div>
+
+            <!--Start of Main Feed-->
+          
+
+         <div class="main-sec" id="home-feed">
 
 
+            <div id="popup" class="modal">
+    
+                <!-- Modal content -->
+                <div class="upload-popup">
+                  <span class="close">&times;</span>
+                  <div class="upload-options">
+                    <h1>Upload Post</h1>
+                    
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <img src="{% static 'images/upload.png'%}" alt="">
+                        </div>
+                        <form action="upload" method="post" enctype="multipart/form-data">
+                        {% csrf_token%}
+                        <div class="upload-caption">
+                            <input type="file" name="upload">
+                            <!--<a href="#">Browse to choose</a>-->
+                            <textarea name="caption" placeholder="caption" id="" cols="35" rows="5"></textarea>
+                            <br>
+                            <button type="submit">Upload</button>
+                        </div>
+                        </form>
+                        
+                    </div>
+                    
+                  </div>
+                </div>
+              
+            </div>
 
-    {% block content %}
-    {% endblock %}
+     {% block content %}
+   
+   
+     {% endblock %}
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script> 
 </body>
 </html>
