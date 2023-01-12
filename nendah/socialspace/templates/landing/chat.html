@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Chat {% endblock %}
+{% block content %}
+{% load static %}
+    
+<div class="chat_inbox">
+    <div class="chat_fr">
+        <div class="chats">
+            <div class="chat_img">
+                <img src="{% static 'images/1.jpg'%}" alt="">
+            </div>
+            <div class="chat_cont">
+                <div class="chat_name">
+                    <h2>Marcus</h2>
+                </div>
+                <div class="chat_preview">
+                    <p>Sssup Yohan!, Can I borrow some money</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chats">
+            <div class="chat_img">
+                <img src="{% static 'images/post2.jpg'%}" alt="">
+            </div>
+            <div class="chat_cont">
+                <div class="chat_name">
+                    <h2>Tammy</h2>
+                </div>
+                <div class="chat_preview">
+                    <p>No, I think I'll be back soon though!</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="chat"></div>
+</div>
+
+
+{% endblock %}

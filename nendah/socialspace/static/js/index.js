@@ -5,6 +5,8 @@ $(document).ready(function(){
        loadPage(`/${$(this).attr('data-option')}`,'#home-feed');
   });
 
+  $(`my`)
+
 });
 function loadPage(endpoint_url,div){
   $.ajax({url: endpoint_url,success: (data)=>{
@@ -89,6 +91,58 @@ function repositionPopUp(){
 function updatePopUp(data){
   $(".profile-edit").html(data);
 }
+
+
+// popup code set
+
+$(document).ready(function(){
+  
+  $(`.uploadbtn`).click(function(){
+    showPopUpWindow('Sell',"test hfhgfhcontent",()=>{},'300px');
+  });
+
+  $('.showpop').click(()=>{
+    //alert('hello')
+     showPopUpWindow('Upload File',$(".upload-content").html(),()=>{},'50%');
+  });
+
+  $('.showprod').click(()=>{
+    //alert('hello')
+     showPopUpWindow('Upload File',$(".product-desc").html(),()=>{},'50%');
+  });
+
+  $('.booking-pop').click(()=>{
+    //alert('hello')
+    showPopUpWindow('Upload File',$(".stay-booking").html(),()=>{},'50%');
+  });
+  
+
+});
+
+function showPopUpWindow(title, content, callback=()=>{}, width = "60%") {
+  $(".top-bar").html(`<span>${title}<span><div class="closex">X</div>`);
+  $(".closex").on("click", () => {
+    $(".modal_content").fadeOut("fast", () => {
+      $(".modal-alert").fadeOut("fast");
+    });
+  });
+
+  document.querySelector(".modal_content").style.width = width;
+  setTimeout(() => {
+    $(".modal_inner_content").html(content);
+    callback();
+    document.querySelector(".modal_content").style.marginLeft = `${
+      ($(window).width() - $(".modal_content").width()) / 2
+    }px`;
+    document.querySelector(".modal_content").style.marginTop = `${
+      ($(window).height() - $(".modal_content").height()) / 2
+    }px`;
+  }, 100);
+
+  document.querySelector(".modal-alert").style.display = "block";
+  document.querySelector(".modal_content").style.display = "block";
+}
+
 
 
 

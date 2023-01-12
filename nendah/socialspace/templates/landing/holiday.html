@@ -2,6 +2,15 @@
 {% block title %} Holiday Booking {% endblock %}
 {% block content %}
 {% load static %}
+
+
+<div class="modal-alert">
+    <div class="modal_content">
+      <div class="top-bar"></div>
+      <div class="modal_inner_content"></div>
+    </div>
+</div>
+
     <div class="main-listings">
 
         <div class="add-listing">
@@ -29,45 +38,58 @@
             </div>
 
             <div class="listing-cards">
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>nairobi</h4>
-                        <h5>westlands</h5>
+                <a href="#" class="booking-pop">
+                    <div class="listing-card" >
+                        
+                            <img src="{% static 'images/1.jpg'%}" alt="">
+                        
+                        <div class="listing-info">
+                            <h4>nairobi</h4>
+                            <h5>westlands</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>nairobi</h4>
-                        <h5>westlands</h5>
-                    </div>
-                </div>
+              
 
-                 <div class="listing-card">
-                    
-                        <img src="{% static 'images/1.jpg'%}" alt="">
-                    
-                    <div class="listing-info">
-                        <h4>nairobi</h4>
-                        <h5>westlands</h5>
-                    </div>
-                </div>
-
-                <div class="listing-card">
-                    
-                    <img src="{% static 'images/1.jpg'%}" alt="">
-                
-                <div class="listing-info">
-                    <h4>nairobi</h4>
-                    <h5>westlands</h5>
-                </div>
             </div> 
+
+            <div class="stay-booking">
+                <div class="booking-detail">
+                    <div class="booking-img">
+                        <img src="{% static 'images/1.jpg'%}" alt="">
+                    </div>
+
+                    <div class="booking-title">
+                        <h1>Diani Backpackers</h1>
+                        <h4>International Room</h4>
+                    </div>
+
+                    <div class="booking-stats">
+                        <div class="booking-rating">
+                            <h1>Rating</h1>
+                            <h2>&#10022;</h2>
+                        </div>
+                        <div class="booking-price">
+                            <h1>Price</h1>
+                            <h2>$199.00</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="about-booking">
+                        <h3>Description</h3>
+
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum a culpa asperiores fugiat sit fuga voluptatibus vel. Minus, magnam et!</h5>
+                    </div>
+
+                    <div class="book-button">
+                        <button>Book Room</button>
+                    </div>
+
+                    
+                </div>
+              </div>
             
         </div>
     </div>

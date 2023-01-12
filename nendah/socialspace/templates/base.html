@@ -20,17 +20,25 @@
 
         <div class="cont-left">
             <div class="logo">
-                <h1>Nendah</h1>
+                <img src="{% static 'images/n2.png'%}" alt="">
             </div>
             {% if user.is_authenticated %}
-            <div class="profile-pic">
-                <img src="{% static 'images/person.jpg'%}" alt="">
-            </div>
 
-            <div class="profile-name">
-                <h1>{{user.username}}</h1>
-            </div>
+            <div class="profile_dit">
+                <div class="profile-pic">
+                    <img src="{% static 'images/person.jpg'%}" alt="">
+                </div>
 
+                <div class="profile_info">
+                    <div class="profile-name">
+                        <h1>{{user.username}}</h1>
+                    </div>
+                    <div class="profile_bio">
+                        <p> I'm a solo world traveler</p>
+                    </div>
+                </div>
+
+            </div>
             <div class="profile-details">
                 <div class="followers">
                     <h1>Followers</h1>
@@ -56,13 +64,10 @@
          <div class="side-nav">
                 <ul>
                    <a href = "{% url 'index' %}"> <li class="active-sec" > <img src="{% static 'images/feed.png'%}" alt=""> <h1></h1>Explore</h1></li></a>
+                   <a href="{% url 'chat'%}"> <li class="active-sec" data-option="chat"> <img src="{% static 'images/chat.png'%}" alt=""> <h1>Chat</h1></li> </a>
                     <a  href = "{% url 'bookings'%}"><li class="active-sec" data-option="bookings"> <img src="{% static 'images/bookin.png'%}" alt=""> <h1>Holiday</h1></li></a>
-                    <li class="active-sec" data-option="chat"> <img src="{% static 'images/chat.png'%}" alt=""> <h1>Chat</h1></li>
-                    <li class="active-sec" data-option="articles"> <img src="{% static 'images/articles.png'%}" alt=""> <h1>Articles</h1></li>
-                    <li class="active-sec" data-option="podcast"> <img src="{% static 'images/podcast.png'%}" alt=""> <h1>Podcast</h1></li>
-                    <li class="active-sec" data-option="duka"> <img src="{% static 'images/store2.png'%}" alt=""> <h1>Duka</h1></li>
-                   <li class="active-sec" data-option="profile"> <img src="{% static 'images/setting2.png'%}" alt=""> <h1>Settings</h1></li>
-                   <li  class="active-sec" data-option="settings"> <img src="{% static 'images/accountm.png'%}" alt=""> <h1>Profile</h1></li>
+                    <a href="{%url 'duka'%}"><li class="active-sec" data-option="duka"> <img src="{% static 'images/store2.png'%}" alt=""> <h1>Duka</h1></li> </a>
+                   <a href="{% url 'profile' %}"> <li class="active-sec" data-option="profile"> <img src="{% static 'images/setting2.png'%}" alt=""> <h1>Settings</h1></li> </a>
                    <a href="logout"><li class="active-sec"> <img src="{% static 'images/logout.png'%}" alt=""> <h1>Logout</h1></li></a>
                 </ul>
             </div> 
@@ -83,7 +88,7 @@
                     <input type="text" placeholder="Search...">
                 </div>
                 <div class="upload-btn">
-                    <button class="myBtn">Upload &#10514;</button>
+                    <button class="myBtn" id="uploadbtn">Upload &#10514;</button>
                 </div>
 
                 
@@ -92,7 +97,7 @@
                     <img src="{% static 'images/notificationbell.png'%}" alt="">
                 </div>
                 <div class="inbox-icon">
-                    <img src="{% static 'images/chat.png'%}" alt="">
+                  <a href="{% url 'chat'%}"> <img src="{% static 'images/chat.png'%}" alt=""></a>
                 </div>
                 <div class="settings-mini">&#9776;</div>
             </div>

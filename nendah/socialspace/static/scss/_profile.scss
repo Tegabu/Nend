@@ -1,12 +1,15 @@
 .profile-container{
     width: 100%;
+
     .profile-cont{
         width: 90%;
         margin: auto;
         margin-top: 100px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
         .profile-pic{
             width: 220px;
             height: 220px;
@@ -18,9 +21,9 @@
             }
         }
         .profile-info{
-            width: 70%;
             display: flex;
             flex-direction: column;
+            margin-left: 10px;
 
             .profile-edit{
                 position: absolute;
@@ -48,6 +51,11 @@
             .person-name{
                 h1{
                     font-family: "Roboto", sans-serif;
+                    text-transform: capitalize;
+                    color: #444;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+
                 }
             }
 
@@ -134,6 +142,7 @@
             h3{
               font-size: 2rem;
               font-weight: 500;
+              text-transform: capitalize;
               color: #000;
             }
             button{
@@ -151,7 +160,9 @@
                     font-weight: 600;
                 }
             }
+
             
+                        
         }
         .profile-posts{
             margin: auto;

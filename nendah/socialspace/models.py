@@ -43,3 +43,18 @@ class likepost(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class product(models.Model):
+    name = models.CharField(max_length=100)
+    prodesc = models.TextField(max_length=_MAX_LENGTH, blank=False)
+    pic = models.ImageField(upload_to='post_images')
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+
+
+class host(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    location = models.CharField(max_length=100, blank=False)
+    info = models.TextField(max_length=_MAX_LENGTH, blank=False)
+    charge = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
+    img = models.ImageField(upload_to='post_images')

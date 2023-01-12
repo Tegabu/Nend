@@ -28,34 +28,72 @@ html {
   position: sticky;
   top: 0;
 }
-.cont-left .profile-pic {
-  margin: auto;
-  margin-top: 40px;
-  width: 70px;
-  height: 70px;
+.cont-left .logo {
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 100%;
+  height: 40px;
+}
+.cont-left .logo img {
+  width: 80%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.cont-left .profile_dit {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cont-left .profile_dit .profile-pic {
+  margin-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   -o-object-fit: fill;
      object-fit: fill;
 }
-.cont-left .profile-pic img {
+.cont-left .profile_dit .profile-pic img {
   width: 100%;
   height: 100%;
   border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.cont-left .profile-name {
+.cont-left .profile_dit .profile_info {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+  gap: 5px;
+}
+.cont-left .profile_dit .profile_info .profile-name {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   font-family: "Roboto", sans-serif;
 }
-.cont-left .profile-name h1 {
+.cont-left .profile_dit .profile_info .profile-name h1 {
   font-size: 1.2rem;
   font-weight: 400;
   text-transform: capitalize;
   color: rgb(54, 56, 91);
+}
+.cont-left .profile_dit .profile_info .profile_bio p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #444;
+  max-width: 6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .cont-left .profile-details {
   display: flex;
@@ -65,7 +103,7 @@ html {
   padding: 0px 10px 0px 10px;
   width: 85%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 5px;
   font-family: "Roboto", sans-serif;
   box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
   border-radius: 20px;
@@ -331,9 +369,20 @@ html {
   margin: auto;
   margin-top: 5px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+}
+.main-sec .feed .pg_title {
+  margin-left: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.main-sec .feed .pg_title h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgb(245, 98, 44);
 }
 .main-sec .feed .feed-post {
   width: 100%;
@@ -364,8 +413,8 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-sec .feed .feed-post .post-profile .post-profile-name {
   font-family: "Roboto", sans-serif;
@@ -373,7 +422,7 @@ html {
 }
 .main-sec .feed .feed-post .post-profile .post-profile-name h1 {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
   color: #444;
 }
@@ -413,12 +462,12 @@ html {
 .main-sec .feed .feed-post .post-interactions a .like-btn h1 {
   margin-left: 40px;
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 400;
 }
 .main-sec .feed .feed-post .post-interactions a .like-btn p {
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .main-sec .feed .feed-post .post-interactions a .like-btn p span {
   color: rgb(245, 98, 44);
@@ -447,6 +496,11 @@ html {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   text-transform: capitalize;
+  max-width: 12rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .main-sec .feed .feed-post .caption p span {
   color: #444;
@@ -480,8 +534,8 @@ html {
 }
 .main-sec .side-options .side-title h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: rgb(245, 98, 44);
   padding: 5px 10px 5px 10px;
 }
@@ -522,8 +576,8 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-sec .side-options .new-followers .n-follower .follower-name {
   margin-left: 10px;
@@ -535,7 +589,7 @@ html {
 .main-sec .side-options .new-followers .n-follower .follower-name h1 {
   color: #444;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .main-sec .side-options .new-followers .follow-btn {
   margin-right: 10px;
@@ -935,6 +989,9 @@ html {
   margin-bottom: 20px;
   border-radius: 10px;
 }
+.listing .stay-booking {
+  display: none !important;
+}
 .listing .feature-title {
   display: flex;
   flex-direction: row;
@@ -966,6 +1023,7 @@ html {
   display: grid;
   grid-template-columns: auto auto auto auto;
   border-radius: 10px;
+  /* Product Description Section */
 }
 .listing-cards .listing-card {
   display: flex;
@@ -1010,7 +1068,320 @@ html {
   color: #555;
   margin-right: 5px;
 }
+.listing-cards .product-desc {
+  display: none !important;
+}
 
+.modal-alert .booking-detail .booking-img {
+  width: 100%;
+  height: 250px;
+}
+.modal-alert .booking-detail .booking-img img {
+  width: 96%;
+  margin: auto;
+  height: 250px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+}
+.modal-alert .booking-detail .booking-title h1 {
+  color: #444;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.modal-alert .booking-detail .booking-title h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: rgb(129, 129, 129);
+}
+.modal-alert .booking-detail .booking-stats {
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+.modal-alert .booking-detail .booking-stats .booking-rating {
+  border-right: 1px solid rgb(228, 226, 226);
+  width: 50%;
+}
+.modal-alert .booking-detail .booking-stats .booking-rating h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .booking-detail .booking-stats .booking-rating h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .booking-detail .booking-stats .booking-price {
+  width: 50%;
+}
+.modal-alert .booking-detail .booking-stats .booking-price h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .booking-detail .booking-stats .booking-price h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+}
+.modal-alert .booking-detail .about-booking {
+  width: 90%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid rgb(228, 226, 226);
+}
+.modal-alert .booking-detail .about-booking h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #444;
+}
+.modal-alert .booking-detail .about-booking h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  max-width: 30rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .booking-detail .book-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.modal-alert .booking-detail .book-button button {
+  width: 200px;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(244, 125, 82);
+  cursor: pointer;
+}
+.modal-alert .pro-info {
+  display: flex;
+  flex-direction: column;
+}
+.modal-alert .pro-info .pro-img {
+  width: 100%;
+  height: 250px;
+}
+.modal-alert .pro-info .pro-img img {
+  width: 96%;
+  margin: auto;
+  height: 250px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+}
+.modal-alert .pro-info .pro-title h1 {
+  color: #444;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.modal-alert .pro-info .pro-stats {
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+.modal-alert .pro-info .pro-stats .pro-rating {
+  border-right: 1px solid rgb(228, 226, 226);
+  width: 50%;
+}
+.modal-alert .pro-info .pro-stats .pro-rating h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .pro-info .pro-stats .pro-rating h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .pro-info .pro-stats .pro-price {
+  width: 50%;
+}
+.modal-alert .pro-info .pro-stats .pro-price h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .pro-info .pro-stats .pro-price h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+}
+.modal-alert .pro-info .product-about {
+  width: 90%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid rgb(228, 226, 226);
+}
+.modal-alert .pro-info .product-about h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #444;
+}
+.modal-alert .pro-info .product-about h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  max-width: 30rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgb(155, 153, 153);
+}
+.modal-alert .pro-info .interact-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+.modal-alert .pro-info .interact-btns button {
+  width: 200px;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(244, 125, 82);
+  cursor: pointer;
+}
+
+.modal_content {
+  position: absolute;
+  width: 60%;
+  min-height: 70px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 5px;
+  float: center;
+  margin-left: 20%;
+  margin-top: 20%;
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+  -webkit-animation: popupanimation;
+          animation: popupanimation;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-duration: 700ms;
+          animation-duration: 700ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  background-clip: border-box;
+}
+
+.modal_inner_content {
+  color: #000;
+  float: left;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.modal-alert {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  left: 0em;
+  top: 0;
+  z-index: 500;
+  display: none;
+}
+
+.top-bar {
+  padding: 10px 20px;
+  background: rgba(3, 3, 3, 0.8);
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+  background-clip: border-box;
+  color: #fff;
+}
+
+.closex {
+  display: flex;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  background: #f00;
+  justify-content: center;
+  float: right;
+  padding: 3px;
+}
+
+@-webkit-keyframes popupanimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popupanimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .profile-container {
   width: 100%;
 }
@@ -1020,7 +1391,9 @@ html {
   margin-top: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .profile-container .profile-cont .profile-pic {
   width: 220px;
@@ -1034,9 +1407,9 @@ html {
      object-fit: cover;
 }
 .profile-container .profile-cont .profile-info {
-  width: 70%;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 }
 .profile-container .profile-cont .profile-info .profile-edit {
   position: absolute;
@@ -1062,6 +1435,10 @@ html {
 }
 .profile-container .profile-cont .profile-info .person-name h1 {
   font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  color: #444;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .profile-container .profile-cont .profile-info .profile-bio {
   margin-top: 10px;
@@ -1145,6 +1522,7 @@ html {
 .profile-container .profile-features .feature-title h3 {
   font-size: 2rem;
   font-weight: 500;
+  text-transform: capitalize;
   color: #000;
 }
 .profile-container .profile-features .feature-title button {
@@ -1230,4 +1608,51 @@ html {
   font-size: 1rem;
   color: #555;
   margin-right: 10px;
+}
+
+.chat_inbox {
+  width: 100%;
+}
+.chat_inbox .chat_fr {
+  width: 30%;
+  border-right: 1px solid rgb(212, 201, 201);
+}
+.chat_inbox .chat_fr .chats {
+  border-bottom: 1px solid rgb(212, 201, 201);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.chat_inbox .chat_fr .chats .chat_img {
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+.chat_inbox .chat_fr .chats .chat_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.chat_inbox .chat_fr .chats .chat_cont .chat_name h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(143, 141, 141);
+}
+.chat_inbox .chat_fr .chats .chat_cont .chat_preview p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  color: #555;
+  font-weight: 400;
+  max-width: 10rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile - {{user_profile.user.username}}</title>
-    {% load static %}
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
-     <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
-     <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
-     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Chat {% endblock %}
+{% block content %}
+{% load static %}
+
     <div class="profile-container">
         <div class="profile-cont">
+
+            {% if user.is_authenticated %}
+
             <div class="profile-pic">
                 <img src="{% static 'images/person.jpg'%}" alt="">
             </div>
             <div class="profile-info">
                 <div class="person-name">
-                    <h1>{{user_profile.user.username}}</h1>
+                    <h1>{{user.username}}</h1>
                 </div>
                 <div class="profile-bio">
                     <h4>{{user_profile.bio}}</h4>
@@ -54,12 +48,8 @@
                         <h3><span>Following</span></h3>
                     </div>
                     
-
-                   <span> <div class="stat-l">
-                        <h3>15</h3>
-                        <h3><span>Articles/Cast</span></h3>
-                    </div>
-                   </span>
+                    {% endif %}
+                  
                 </div>
             </div>
         </div>
@@ -72,44 +62,17 @@
                 </div>
             </div>
             <div class="profile-posts">
-                {% for post in posts %}
-                <div class="post-item">
-                    <img src="{{post.image.url}}" alt="">
-                </div>
+                {% for post in posts reversed %}
+                    <div class="post-item">
+                        <img src="{{post.image.url}}" alt="">
+                    </div>
                 {% endfor %}
             </div>
 
             <!-- popup -->
 
-            <div id="popup2" class="modal">
-    
-                <!-- Modal content -->
-                <div class="upload-popup2">
-                  <span class="close">&times;</span>
-                  <div class="upload-options">
-                    <h1>Upload Post</h1>
-                    
-                    <div class="upload-content">
-                        <div class="upload-icon">
-                            <img src="{% static 'images/upload.png'%}" alt="">
-                        </div>
-                        <form action="upload" method="post" enctype="multipart/form-data">
-                        {% csrf_token%}
-                        <div class="upload-caption">
-                            <input type="file" name="upload">
-                            <!--<a href="#">Browse to choose</a>-->
-                            <textarea name="caption" placeholder="caption" id="" cols="35" rows="5"></textarea>
-                            <br>
-                            <button type="submit">Upload</button>
-                        </div>
-                        </form>
-                        
-                    </div>
-                    
-                  </div>
-                </div>
-              
-            </div>
+           
+
 
             <!--end popup-->
 
@@ -121,6 +84,8 @@
                 <div class="feature-button">
                     <button>Sell <span>&#43;</span></button>
                 </div>
+
+                
 
             </div>
 
@@ -205,6 +170,4 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{% static 'js/index.js' %}"></script> 
-</body>
-</html>
+    {% endblock %}
