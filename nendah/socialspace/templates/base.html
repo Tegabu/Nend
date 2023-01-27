@@ -9,12 +9,20 @@
     {% load static %}
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
      <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
+     <link rel="stylesheet" type="text/css" href="{%static 'js/bootstrap.min.css'%}">
      <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <div class="container">
+
+        <div class="modal-alert">
+            <div class="modal_content">
+              <div class="top-bar"></div>
+              <div class="modal_inner_content"></div>
+            </div>
+        </div>
 
         <!-- Quick access menu -->
 
@@ -26,7 +34,7 @@
 
             <div class="profile_dit">
                 <div class="profile-pic">
-                    <img src="{% static 'images/person.jpg'%}" alt="">
+                    <img src="{{user_profile.profileimg.url}}" alt="">
                 </div>
 
                 <div class="profile_info">
@@ -41,18 +49,19 @@
             </div>
             <div class="profile-details">
                 <div class="followers">
-                    <h1>Followers</h1>
+                    
                     <h2>1500</h2>
+                    <h1>Followers</h1>
                 </div>
 
                 <div class="posts">
+                    <h2>{{user_post_length}}</h2>
                     <h1>Posts</h1>
-                    <h2>120</h2>
                 </div>
 
-                <div class="following">
-                    <h1>Following</h1>
+                <div class="following"> 
                     <h2>500</h2>
+                    <h1>Following</h1>
                 </div>
             </div>
 
@@ -79,7 +88,7 @@
         <!-- End Quick access menu -->
 
         <!-- Main content -->
-        
+
         <div class="cont-right">
     
             <div class="nav-bar">
@@ -94,13 +103,48 @@
                 
 
                 <div class="notification-alert">
-                    <img src="{% static 'images/notificationbell.png'%}" alt="">
+                    <a href="#" class="cart-btn"><img src="{% static 'images/notificationbell.png'%}" alt=""> </a>
+                    <!--cart-->
+                    <div class="cart-cont">
+                        <div class="cart-info">
+                            <div class="cart-h1">
+                                <h1>My Cart</h1>
+                            </div>
+
+                            <div class="cart-checkout">
+                                <div class="item-num">
+                                    <h1>Items : <span>4</span></h1>
+                                </div>
+                                <div class="checkout-total">
+                                    <h1>Total : <span>$120</span></h1>
+                                </div>
+                                <button>Checkout</button>
+
+                            </div>
+
+                            <div class="cart-items">
+                                <img src="{% static 'images/p6.jpg'%}" alt="">
+                                <div class="item-det">
+                                    <h2>Diani backpackers</h2>
+                                    <h3>international room</h3>
+                                </div>
+                               <div class="item-price">
+                                <h1>$ 120</h1>
+                               </div>
+                               <h2>&#9747;</h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="inbox-icon">
-                  <a href="{% url 'chat'%}"> <img src="{% static 'images/chat.png'%}" alt=""></a>
+                  <a href="{% url 'chat'%}" > <img src="{% static 'images/chat.png'%}" alt=""></a>
                 </div>
                 <div class="settings-mini">&#9776;</div>
             </div>
+
+            
+
+            
 
             <!--Start of Main Feed-->
           

@@ -4,7 +4,7 @@
     .profile-cont{
         width: 90%;
         margin: auto;
-        margin-top: 100px;
+        margin-top: 50px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -24,7 +24,9 @@
             display: flex;
             flex-direction: column;
             margin-left: 10px;
-
+            .edit-page{
+                display: none;
+            }
             .profile-edit{
                 position: absolute;
                 overflow: hidd;
@@ -70,10 +72,28 @@
             }
             .profile-btn{
                 margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                align-items: center;
+                form{
                 .follow{
                     background: linear-gradient(to right, #fe8c00, #f83600);
                     color: #fff;
                     margin-right: 20px;
+                }
+                a{
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    font-family: "Roboto", sans-serif;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+                    border: none;
+                    border-radius: 5px;
+                    color: #555;
+                    background: rgb(214, 212, 212);
                 }
                 button{
                     cursor: pointer;
@@ -86,6 +106,18 @@
                     border-radius: 5px;
                     color: #555;
                 }
+              }
+              button{
+                cursor: pointer;
+                padding: 5px 10px;
+                font-family: "Roboto", sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+                border: none;
+                border-radius: 5px;
+                color: #555;
+            }
             }
             .profile-stats{
                 display: flex;
@@ -123,13 +155,14 @@
                     }
                 }
             }
+        
         }
     }
     .profile-features{
         display: flex;
         flex-direction: column;
         border-top: 1px solid #555;
-        margin-top: 50px;
+        margin-top: 20px;
         .feature-title{
             display: flex;
             flex-direction: row;
@@ -138,18 +171,18 @@
             padding: 10px 50px;
             font-family: "Roboto", sans-serif;
             margin-right: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
             h3{
-              font-size: 2rem;
-              font-weight: 500;
+              font-size: 1.5rem;
+              font-weight: 400;
               text-transform: capitalize;
-              color: #000;
+              color: #444;
             }
             button{
                 cursor: pointer;
                 padding: 0px 10px;
                 font-family: "Roboto", sans-serif;
-                font-size: 1.5rem;
+                font-size: 1.1rem;
                 font-weight: 400;
                 box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
                 background: linear-gradient(to right, #fe8c00, #f83600);
@@ -159,6 +192,10 @@
                 span{
                     font-weight: 600;
                 }
+            }
+
+            .upload{
+                display: none;
             }
 
             
@@ -191,6 +228,10 @@
             display: grid;
             grid-template-columns: auto auto auto auto;
             gap: 5px;
+            margin-bottom: 20px;
+            .stay-booking{
+                display: none;
+            }
             .cont-item{
                 display: flex;
                 flex-direction: column;
@@ -209,17 +250,16 @@
                 .duka-info{
                     width: 100%;
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: space-between;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                     padding: 5px 0px;
                     h3{
                         font-family: "Roboto", sans-serif;
                         font-weight: 400;
-                        font-size: .9rem;
+                        font-size: 1rem;
                         color: #555;
                         margin-bottom: 5px;
-                        margin-left: 10px;
                         text-transform: capitalize;
                     }
                     h4{
@@ -227,7 +267,10 @@
                         font-weight: 500;
                         font-size: 1rem;
                         color: #555; 
-                        margin-right: 10px;
+                        span{
+                            color: #000;
+                            font-weight: 300;
+                        }
                     }
                 }
 
@@ -240,3 +283,29 @@
 
 //edit popup
 
+.modal-alert{
+
+    .form-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    h1{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #444;
+    }
+}
+
+    .form-cont{
+    form{
+        width: 96%;
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            label{
+            font-family: "Roboto", sans-serif;
+            }
+        }
+    }
+ }
+}

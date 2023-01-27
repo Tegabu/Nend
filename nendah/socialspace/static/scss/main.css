@@ -241,10 +241,14 @@ html {
   height: 20px;
   width: 20px;
   cursor: pointer;
+  /* cart section */
 }
 .nav-bar .notification-alert img {
   width: 100%;
   height: 100%;
+}
+.nav-bar .notification-alert .cart-cont {
+  display: none;
 }
 .nav-bar .inbox-icon {
   height: 20px;
@@ -420,7 +424,10 @@ html {
   font-family: "Roboto", sans-serif;
   margin-left: 10px;
 }
-.main-sec .feed .feed-post .post-profile .post-profile-name h1 {
+.main-sec .feed .feed-post .post-profile .post-profile-name a {
+  text-decoration: none;
+}
+.main-sec .feed .feed-post .post-profile .post-profile-name a h1 {
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: capitalize;
@@ -594,7 +601,10 @@ html {
 .main-sec .side-options .new-followers .follow-btn {
   margin-right: 10px;
 }
-.main-sec .side-options .new-followers .follow-btn button {
+.main-sec .side-options .new-followers .follow-btn a {
+  text-decoration: none;
+}
+.main-sec .side-options .new-followers .follow-btn a button {
   padding: 3px 10px 3px 10px;
   border-radius: 10px;
   border: none;
@@ -614,6 +624,110 @@ html {
 .main-sec .side-options .new-followers .field-icon img {
   width: 100%;
   height: 100%;
+}
+
+.modal-alert .cart-info .cart-h1 h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #444;
+}
+.modal-alert .cart-info .cart-checkout {
+  width: 96%;
+  margin-top: 10px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 10px 10px 5px rgb(202, 199, 199);
+  border-radius: 5px;
+}
+.modal-alert .cart-info .cart-checkout .item-num {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.modal-alert .cart-info .cart-checkout .item-num h1 {
+  font-family: "Roboto", sans-serif;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.modal-alert .cart-info .cart-checkout .item-num h1 span {
+  color: #000;
+}
+.modal-alert .cart-info .cart-checkout .checkout-total h1 {
+  font-family: "Roboto", sans-serif;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.modal-alert .cart-info .cart-checkout .checkout-total h1 span {
+  color: #000;
+}
+.modal-alert .cart-info .cart-checkout button {
+  margin-right: 10px;
+  width: 100px;
+  height: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(244, 125, 82);
+  cursor: pointer;
+}
+.modal-alert .cart-info .cart-items {
+  width: 96%;
+  margin-top: 20px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 10px 10px 5px rgb(202, 199, 199);
+  border-radius: 5px;
+}
+.modal-alert .cart-info .cart-items img {
+  width: 50px;
+  height: 60px;
+  margin-left: 10px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+}
+.modal-alert .cart-info .cart-items .item-det {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-alert .cart-info .cart-items .item-det h2 {
+  font-size: 1rem;
+  color: #000;
+}
+.modal-alert .cart-info .cart-items .item-det h3 {
+  font-size: 0.8rem;
+  color: #444;
+}
+.modal-alert .cart-info .cart-items .item-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-alert .cart-info .cart-items .item-price h1 {
+  font-size: 1rem;
+  color: #444;
+}
+.modal-alert .cart-info .cart-items h2 {
+  color: #444;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .login-h1 {
@@ -826,8 +940,10 @@ html {
 }
 .profile-settings form {
   width: 100%;
+  margin: auto;
 }
 .profile-settings form .profile-det {
+  width: 96%;
   margin: 5px;
   margin-top: 50px;
   margin-bottom: 10px;
@@ -848,13 +964,13 @@ html {
      object-fit: cover;
 }
 .profile-settings form .profile-det .det-info {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .profile-settings form .profile-det .det-info h1 {
   font-family: "Roboto", sans-serif;
   margin-bottom: 10px;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
   color: rgb(54, 56, 91);
 }
 .profile-settings form .profile-det .det-info h1 span {
@@ -872,22 +988,21 @@ html {
   cursor: pointer;
 }
 .profile-settings form .basic-info {
+  width: 96%;
   margin-top: 40px;
   margin-bottom: 50px;
   border: none;
   border-radius: 5px;
   box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
   background-color: #fff;
-  width: 100%;
 }
-.profile-settings form .basic-info .title {
+.profile-settings form .basic-info .title h1 {
   font-family: "Roboto", sans-serif;
-  margin-left: 20px;
-  margin-bottom: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgb(54, 56, 91);
-  padding: 10px 0px 0px 0px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #444;
 }
 .profile-settings form .basic-info .info-opt {
   width: 100%;
@@ -925,14 +1040,24 @@ html {
   width: 100%;
   margin-bottom: 10px;
 }
-.profile-settings form .basic-info button {
+.profile-settings form .basic-info .ctrl-button {
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.profile-settings form .basic-info .ctrl-button button {
   background-color: rgb(245, 98, 44);
-  margin-left: 20px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  font-weight: 600;
-  padding: 2px 5px;
+  font-weight: 400;
+  width: 150px;
+  height: 30px;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -1047,26 +1172,27 @@ html {
 .listing-cards .listing-card .listing-info {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
 }
 .listing-cards .listing-card .listing-info h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   margin: auto;
-  margin-left: 5px;
   text-transform: capitalize;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .listing-cards .listing-card .listing-info h5 {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: capitalize;
   color: #555;
-  margin-right: 5px;
 }
 .listing-cards .product-desc {
   display: none !important;
@@ -1080,8 +1206,8 @@ html {
   width: 96%;
   margin: auto;
   height: 250px;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
 }
 .modal-alert .booking-detail .booking-title h1 {
@@ -1388,7 +1514,7 @@ html {
 .profile-container .profile-cont {
   width: 90%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1410,6 +1536,9 @@ html {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+}
+.profile-container .profile-cont .profile-info .edit-page {
+  display: none;
 }
 .profile-container .profile-cont .profile-info .profile-edit {
   position: absolute;
@@ -1451,11 +1580,39 @@ html {
 }
 .profile-container .profile-cont .profile-info .profile-btn {
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
 }
-.profile-container .profile-cont .profile-info .profile-btn .follow {
+.profile-container .profile-cont .profile-info .profile-btn form .follow {
   background: linear-gradient(to right, #fe8c00, #f83600);
   color: #fff;
   margin-right: 20px;
+}
+.profile-container .profile-cont .profile-info .profile-btn form a {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  border: none;
+  border-radius: 5px;
+  color: #555;
+  background: rgb(214, 212, 212);
+}
+.profile-container .profile-cont .profile-info .profile-btn form button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  border: none;
+  border-radius: 5px;
+  color: #555;
 }
 .profile-container .profile-cont .profile-info .profile-btn button {
   cursor: pointer;
@@ -1507,7 +1664,7 @@ html {
   display: flex;
   flex-direction: column;
   border-top: 1px solid #555;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .profile-container .profile-features .feature-title {
   display: flex;
@@ -1517,19 +1674,19 @@ html {
   padding: 10px 50px;
   font-family: "Roboto", sans-serif;
   margin-right: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .profile-container .profile-features .feature-title h3 {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
   text-transform: capitalize;
-  color: #000;
+  color: #444;
 }
 .profile-container .profile-features .feature-title button {
   cursor: pointer;
   padding: 0px 10px;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 400;
   box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
   background: linear-gradient(to right, #fe8c00, #f83600);
@@ -1539,6 +1696,9 @@ html {
 }
 .profile-container .profile-features .feature-title button span {
   font-weight: 600;
+}
+.profile-container .profile-features .feature-title .upload {
+  display: none;
 }
 .profile-container .profile-features .profile-posts {
   margin: auto;
@@ -1567,6 +1727,10 @@ html {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 5px;
+  margin-bottom: 20px;
+}
+.profile-container .profile-features .my-cont .stay-booking {
+  display: none;
 }
 .profile-container .profile-features .my-cont .cont-item {
   display: flex;
@@ -1588,18 +1752,17 @@ html {
 .profile-container .profile-features .my-cont .cont-item .duka-info {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 5px 0px;
 }
 .profile-container .profile-features .my-cont .cont-item .duka-info h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 5px;
-  margin-left: 10px;
   text-transform: capitalize;
 }
 .profile-container .profile-features .my-cont .cont-item .duka-info h4 {
@@ -1607,7 +1770,31 @@ html {
   font-weight: 500;
   font-size: 1rem;
   color: #555;
-  margin-right: 10px;
+}
+.profile-container .profile-features .my-cont .cont-item .duka-info h4 span {
+  color: #000;
+  font-weight: 300;
+}
+
+.modal-alert .form-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-alert .form-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #444;
+}
+.modal-alert .form-cont form {
+  width: 96%;
+}
+.modal-alert .form-cont form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.modal-alert .form-cont form .form-group label {
+  font-family: "Roboto", sans-serif;
 }
 
 .chat_inbox {

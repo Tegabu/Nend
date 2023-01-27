@@ -116,6 +116,20 @@ $(document).ready(function(){
     showPopUpWindow('Upload File',$(".stay-booking").html(),()=>{},'50%');
   });
   
+  $('.cart-btn').click(()=>{
+    //alert('hello')
+    showPopUpWindow('Upload File',$(".cart-cont").html(),()=>{},'50%');
+  });
+
+  $('.sell-prod').click(()=>{
+    //alert('hello')
+    showPopUpWindow('Upload File',$(".upload").html(),()=>{},'50%');
+  });
+
+  $('.edit-prof').click(()=>{
+    //alert('hello')
+    showPopUpWindow('Upload File',$(".edit-page").html(),()=>{},'50%');
+  });
 
 });
 

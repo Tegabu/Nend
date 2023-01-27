@@ -1,7 +1,14 @@
 {% extends "base.html" %}
-{% block title %} Chat {% endblock %}
+{% block title %} User:{{user_profile.user.username}} {% endblock %}
 {% block content %}
 {% load static %}
+
+<div class="modal-alert">
+    <div class="modal_content">
+      <div class="top-bar"></div>
+      <div class="modal_inner_content"></div>
+    </div>
+</div>
 
     <div class="profile-container">
         <div class="profile-cont">
@@ -9,20 +16,85 @@
             {% if user.is_authenticated %}
 
             <div class="profile-pic">
-                <img src="{% static 'images/person.jpg'%}" alt="">
+                <img src="{{user_profile.profileimg.url}}" alt="">
             </div>
             <div class="profile-info">
                 <div class="person-name">
-                    <h1>{{user.username}}</h1>
+                    <h1>{{user_profile.user.username}}</h1>
                 </div>
                 <div class="profile-bio">
                     <h4>{{user_profile.bio}}</h4>
                 </div>
+                
                 <div class="profile-btn">
-                    <button class="follow">Follow &#8734;</button>
+                    <form action="/follow" method="POST">
+                        {% csrf_token %}
+                    <input type="hidden" value="{{user.username}}" name="follower">
+                    <input type="hidden" value="{{user_object.username}}" name="user">
+
+                    {% if user_object.username == user.username %}
+                    <a href="#"class="edit-prof">Edit profile</a>
+                    {% else %}
+                    <button class="follow" type="submit">{{button_text}} &#8734;</button>
+                    {% endif %}
+                    </form>
                     <button  class="pop-action" button-option="Show Message" >Message</button>
-                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Edit profile</button>
+                    
+                    
+                    <div class="edit-page">
+                        
+                        <div class="profile-settings">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                
+                            <div class="profile-det">
+                              <img src="{{user_profile.profileimg.url}}" alt=""/>
+                              <div class="det-info">
+                                <h1> Hello <span>{{user.username}}</span></h1>
+                                <input type="file" name="profileimg" value="{{user_profile.profileimg}}">
+                              </div>
+                            </div>
+                            
+                
+                            <div class="basic-info">
+                                <div class="title">
+                                    <h1>Basic Info</h1>
+                                </div>
+                                 
+                                <div class="info-opt">
+                                    <div class="left-info">
+                                        <p>User Name :</p>
+                                        <input type="text" name="user" placeholder="{{user.username}}" class="name">
+                
+                                        <p>Phone :</p>
+                                        <input type="text" name="phone" value="{{user_profile.phone}}" class="name">
+                                    </div>
+                
+                                    <div class="right-info">
+                                        <p>Bio :</p>
+                                        <textarea id="bio" name="userbio" class="bio" cols="33">{{user_profile.bio}}</textarea>
+                
+                                        <p>E-mail :</p>
+                                        <input type="text" name="email" value="{{user_profile.email}}" class="name">
+                                        
+                                    </div>
+                                    <br>
+                                </div>
+                                    <div class="ctrl-button">
+                                    <button  type="submit">Save Changes</button>
+                                    </div>
+                                
+                
+                            </div>
+                        </form>
+                        </div>
+                                             
+
+                    </div>
                 </div>
+
+
+                
 
 
                 <!--Profile edit popup  section -->
@@ -34,45 +106,54 @@
 
                 <div class="profile-stats">
                     <div class="stat">
-                        <h3>28</h3>
+                        {% if user_post_length == 0 %}
+                        <h3>0</h3>
+                        <h3><span>posts</span></h3>
+                        {% elif user_post_length == 1 %}
+                        <h3>{{user_post_length}}</h3>
+                        <h3><span>Post</span></h3>
+                        {% else %}
+                        <h3>{{user_post_length}}</h3>
                         <h3><span>Posts</span></h3>
+                        {% endif %}
                     </div>
 
                     <div class="stat">
-                        <h3>1500</h3>
+                        {% if user_followers == 1%}
+                        <h3>{{user_followers}}</h3>
+                        <h3><span>Follower</span></h3>
+                        {% else %}
+                        <h3>{{user_followers}}</h3>
                         <h3><span>Followers</span></h3>
+                        {% endif %}
                     </div>
 
                     <div class="stat">
-                        <h3>500</h3>
+                        <h3>{{user_following}}</h3>
                         <h3><span>Following</span></h3>
                     </div>
                     
                     {% endif %}
                   
                 </div>
+            
             </div>
         </div>
 
         <div class="profile-features">
             <div class="feature-title">
                 <h3>Posts</h3>
-                <div class="feature-button">
-                    <button class="mybtn">Post <span>&#43;</span></button>
-                </div>
+                
             </div>
             <div class="profile-posts">
-                {% for post in posts reversed %}
+                {% for post in user_post %} 
                     <div class="post-item">
-                        <img src="{{post.image.url}}" alt="">
+                            <img src="{{post.image.url}}" alt="">
                     </div>
                 {% endfor %}
             </div>
 
             <!-- popup -->
-
-           
-
 
             <!--end popup-->
 
@@ -80,90 +161,106 @@
 
             <div class="feature-title">
                 
-                <h3>My Duka</h3>
+                <h3>Listings</h3>
+                
                 <div class="feature-button">
-                    <button>Sell <span>&#43;</span></button>
+                   <a href="#" class="sell-prod"><button >Add Listing <span>&#43;</span></button> </a>
                 </div>
 
+                <div class="upload">
+                    <div class="form-title">
+                        <h1>Upload your product</h1>
+                    </div>
+                    <div class="form-cont">
+                        <form action="/submit-product" method="post">
+                            <div class="form-group">
+                            <label for="name">Product Name:</label>
+                            <input type="text" id="name" name="productName" class="form-control">
+                            </div>
+                            <div class="form-group">
+                            <label for="description">Product Description:</label>
+                            <textarea id="description" name="productDescription" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                            <label for="description">Product Category:</label>
+                            <select id="cars" name="cars">
+                                <option value="volvo">All</option>
+                                {% for category in categories %}
+                                <option value="category">{{category.name}}</option>
+                                {% endfor %}
+                              </select>
+                            </div>
+                            <div class="form-group">
+                            <label for="price">Product Price:</label>
+                            <input type="number" id="price" name="productPrice" class="form-control">
+                            </div>
+                            <div class="form-group">
+                            <label for="image">Product Image:</label>
+                            <input type="file" id="image" name="productImage" class="form-control-file">
+                            </div>
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </form>
+                      </div>
+                                         
+
+                </div>
                 
 
             </div>
 
             <div class="my-cont">
+                {% for host in hosts %}
+                <a href="#" class="booking-pop">
                 <div class="cont-item">
-                    <img src="{% static 'images/e.jpg'%}" alt="">
+                    <img src="{{host.img.url}}" alt="">
                     <div class="duka-info">
-                        <h3>Glasses</h3>
-                        <h4>$2</h4>
+                        <h3>{{host.name}}</h3>
+                        <h4>${{host.charge}} <span>/night</span></h4>
                     </div>
                 </div>
+                </a>
+                {%endfor%}
 
-                <div class="cont-item">
-                    <img src="{% static 'images/w.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>Glasses</h3>
-                        <h4>$2</h4>
+                <div class="stay-booking">
+                    {%for host in hosts %}
+                    <div class="booking-detail">
+                        <div class="booking-img">
+                            <img src="{{host.img.url}}" alt="">
+                        </div>
+    
+                        <div class="booking-title">
+                            <h1>{{user.username}}</h1>
+                            <h4>{{host.name}}</h4>
+                        </div>
+    
+                        <div class="booking-stats">
+                            <div class="booking-rating">
+                                <h1>Rating</h1>
+                                <h2>&#10022;</h2>
+                            </div>
+                            <div class="booking-price">
+                                <h1>Price</h1>
+                                <h2>${{host.charge}}</h2>
+                            </div>
+                        </div>
+    
+    
+                        <div class="about-booking">
+                            <h3>Description</h3>
+    
+                            <h5>{{host.description}}</h5>
+                        </div>
+    
+                        <div class="book-button">
+                            <button>Book Room</button>
+                        </div>
+    
+                        
                     </div>
-                </div>
+                    {% endfor %}
+                  </div>
 
-                <div class="cont-item">
-                    <img src="{% static 'images/r.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>Glasses</h3>
-                        <h4>$2</h4>
-                    </div>
-                </div>
-
-                <div class="cont-item">
-                    <img src="{% static 'images/q.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>Glasses</h3>
-                        <h4>$2</h4>
-                    </div>
-                </div>
             </div>
-
-            <div class="feature-title">
-                
-                <h3>My Articles & Podcasts</h3>
-                <div class="feature-button">
-                    <button>Post <span>&#43;</span></button>
-                </div>
-
-            </div>
-
-            <div class="my-cont">
-                <div class="cont-item">
-                    <img src="{% static 'images/v.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>title</h3>
-                        
-                    </div>
-                </div>
-
-                <div class="cont-item">
-                    <img src="{% static 'images/z.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>title</h3>
-                        
-                    </div>
-                </div>
-
-                <div class="cont-item">
-                    <img src="{% static 'images/x.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>title</h3>
-                        
-                    </div>
-                </div>
-
-                <div class="cont-item">
-                    <img src="{% static 'images/c.jpg'%}" alt="">
-                    <div class="duka-info">
-                        <h3>title</h3>
-                        
-                    </div>
-                </div>
             </div>
 
            

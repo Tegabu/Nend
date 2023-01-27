@@ -38,30 +38,33 @@
             </div>
 
             <div class="listing-cards">
+
+                {%for host in hosts %}
                 <a href="#" class="booking-pop">
                     <div class="listing-card" >
                         
-                            <img src="{% static 'images/1.jpg'%}" alt="">
+                            <img src="{{host.img.url}}" alt="">
                         
                         <div class="listing-info">
-                            <h4>nairobi</h4>
-                            <h5>westlands</h5>
+                            <h4>{{user.username}}</h4>
+                            <h5>{{host.location}}</h5>
                         </div>
                     </div>
                 </a>
-
+                {% endfor %}
               
 
             </div> 
 
             <div class="stay-booking">
+                {%for host in hosts %}
                 <div class="booking-detail">
                     <div class="booking-img">
-                        <img src="{% static 'images/1.jpg'%}" alt="">
+                        <img src="{{host.img.url}}" alt="">
                     </div>
 
                     <div class="booking-title">
-                        <h1>Diani Backpackers</h1>
+                        <h1>{{host.name}}</h1>
                         <h4>International Room</h4>
                     </div>
 
@@ -80,7 +83,7 @@
                     <div class="about-booking">
                         <h3>Description</h3>
 
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum a culpa asperiores fugiat sit fuga voluptatibus vel. Minus, magnam et!</h5>
+                        <h5>{{host.description}}</h5>
                     </div>
 
                     <div class="book-button">
@@ -89,6 +92,7 @@
 
                     
                 </div>
+                {% endfor %}
               </div>
             
         </div>
