@@ -129,7 +129,7 @@
             justify-content: center;
             margin-top: 10px;
         button{
-            background-color: rgb(245, 98, 44);
+            background-color: rgb(117, 110, 108);
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -147,5 +147,11 @@
     }
     }
  }
+}
+.upload{
+     display: none;
+    h1{
+        color: yellow;
+    }
 }
 

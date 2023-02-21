@@ -1,13 +1,17 @@
 from django.urls import path
 from . import views
 
+app_name = 'social'
+
 urlpatterns = [
     path('base/<str:pk>', views.base, name='base'),
     path('', views.index, name='index'),
     path('register', views.register, name='register'),
     path('upload', views.upload, name='upload'),
+    path('new_listing', views.new, name='new_listing'),
+    path('addlisting', views.addlisting, name='addlisting'),
     path('like-post', views.like_post, name='like-post'),
-    path('profile', views.profile, name="profile"),
+    path('profile', views.settings, name="profile"),
     path('follow', views.follow, name="follow"),
     path('user/<str:pk>', views.user, name="user"),
     path('login', views.login, name='login'),
@@ -19,6 +23,7 @@ urlpatterns = [
     path('chat', views.chat, name="chat"),
     path('bookings', views.bookings, name="bookings"),
     path('feed', views.feed, name="feed"),
+    path('<int:pk>/', views.detail, name="detail"),
 
 
 ]

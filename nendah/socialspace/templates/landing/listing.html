@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %} Listing: {{listing.host_name}} {% endblock %}
+{% block content %}
+{% load static %}
+
+  
+<div class="stay-listing">
+
+    <div class="listing-title">
+        <h1>{{listing.host_name}}</h1>
+    </div>
+                
+    <div class="listing-card">
+    
+        <div class="listing-img">
+            <img src="{{listing.img.url}}" alt="">
+        </div>
+
+
+             
+        <div class="listing-details">
+        <div class="listing-header">
+            <h4>{{listing.name}}</h4>
+        </div>
+
+
+        <div class="about-listing">
+            <h3>Description</h3>
+
+            <h5>{{listing.description}}</h5>
+        </div>
+
+        <div class="listing-price">
+            <h1>Price/<span>night</span> :</h1>
+            <h2><span>$</span>{{listing.charge}}</h2>
+        </div>
+
+        <div class="book-button">
+            <button>Contact Host</button>
+        </div>
+        </div>
+
+        
+    </div>
+
+
+   
+
+   
+
+</div>
+
+<div class="related-options">
+    <h1>Related Listings</h1>
+</div>
+
+<div class="listing-cards">
+
+    {% for listing in related_listings %}
+    <a href="{% url 'social:detail' listing.id %}" >
+        <div class="listing-card" >
+            
+                <img src="{{listing.img.url}}" alt="">
+            
+            <div class="listing-info">
+                <h4>{{listing.name}}</h4>
+                <h5>{{listing.location}}</h5>
+            </div>
+        </div>
+    
+    </a>
+    {% endfor %}
+  
+
+</div>
+
+
+
+{% endblock %}

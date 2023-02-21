@@ -27,22 +27,29 @@
 .categories-pick{
     width: 95%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
+    gap: 10px;
     margin: auto;
-    button{
+    .cat-list{
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
         background: #fff;
-        color: rgb(54, 56, 91);
+        box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+        border-radius: 5px;
+        border: none;
+    h4,h5{
+        color: #555;
         font-family: "Roboto", sans-serif;
         font-weight: 500;
         font-size: 1rem;
-        padding: 5px 15px;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
         margin-right: 5px;
         cursor: pointer;
     }
+}
 }
 
 .listing{

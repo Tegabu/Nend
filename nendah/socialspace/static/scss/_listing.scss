@@ -1,0 +1,135 @@
+.stay-listing{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .listing-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        h1{
+            text-transform: capitalize;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            color: rgb(57,204,204);
+        }
+    }
+    .listing-card{
+        background-color: aliceblue;
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        .listing-img{
+            width: 550px;
+            height: 400px;
+            margin: auto;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+
+        .listing-details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 350px;
+            .listing-header{
+                width: 100%;
+                text-align: center;
+                align-items: center;
+                font-family: "Roboto", sans-serif;
+                margin-bottom: 10px;
+                h4{
+                    text-transform: capitalize;
+                    color: rgb(57,204,204);
+                    font-size: 1.3rem;
+                    border-bottom: 1px solid #cfcece;
+                }
+            }
+            .about-listing{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-family: "Roboto", sans-serif;
+                margin-bottom: 10px;
+                h3{
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+                h5{
+                    height: 250px;
+                    width: 100%;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: #555;
+                }
+            }
+            .listing-price{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 20px;
+                font-family: "Roboto", sans-serif;
+                h1{
+                    font-size: 1.2rem;
+                    color: #555;
+                    span{
+                        color: rgb(199, 198, 197);
+                        font-weight: 400;
+                        font-size: 1rem;
+                    }
+                }
+                h2{
+                    font-size: 1.2rem;
+                    color: #555;
+                    margin-right: 10px;
+                    span{
+                        color: rgb(199, 198, 197);
+                        font-weight: 400;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+        .book-button{
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                border: none;
+                background-color: rgb(249,142,84);
+                padding: 4px 10px;
+                color: #fff;
+                border-radius: 5px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.related-options{
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    h1{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #555;
+    }
+}

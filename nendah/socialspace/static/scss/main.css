@@ -23,8 +23,6 @@ html {
 
 .cont-left {
   width: 25vw;
-  box-shadow: 0px 0px 2px rgb(202, 199, 199);
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -98,16 +96,22 @@ html {
 .cont-left .profile-details {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
   padding: 0px 10px 0px 10px;
   width: 85%;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 40px;
   font-family: "Roboto", sans-serif;
   box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
   border-radius: 20px;
   padding: 0px 0px 0px 0px;
+}
+.cont-left .profile-details h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: rgb(54, 56, 91);
 }
 .cont-left .profile-details .followers {
   display: flex;
@@ -166,26 +170,38 @@ html {
   font-family: "Roboto", sans-serif;
   padding: 10px 0px 5px 15px;
 }
-.cont-left .side-nav ul li {
+.cont-left .side-nav ul a {
+  text-decoration: none;
+}
+.cont-left .side-nav ul a li {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   margin-bottom: 15px;
   cursor: pointer;
 }
-.cont-left .side-nav ul li img {
+.cont-left .side-nav ul a li img {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
-.cont-left .side-nav ul li h1 {
-  font-size: 0.9rem;
-  font-weight: 400;
+.cont-left .side-nav ul a li h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #000;
+  width: 200px;
+  text-align: center;
+  border: 2px solid transparent;
+  background-color: rgb(57, 204, 204);
+  color: #fff;
+  box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
+  border-radius: 10px;
 }
-.cont-left .side-nav ul li :hover {
-  text-decoration: underline;
+.cont-left .side-nav ul a li :hover {
+  background-color: rgb(249, 142, 84);
+  color: #fff;
 }
 
 .cont-right {
@@ -196,7 +212,6 @@ html {
 
 .nav-bar {
   width: 90%;
-  position: -webkit-sticky;
   position: sticky;
   top: 10px;
   margin: auto;
@@ -231,7 +246,7 @@ html {
   font-size: 0.9rem;
   font-weight: 400;
   background: #fe8c00;
-  background-color: rgb(245, 98, 44);
+  background-color: rgb(249, 142, 84);
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -261,6 +276,15 @@ html {
 }
 .nav-bar .settings-mini {
   margin-right: 20px;
+  width: 35px;
+  height: 35px;
+}
+.nav-bar .settings-mini img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 50%;
 }
 
 .main-sec {
@@ -384,9 +408,9 @@ html {
 }
 .main-sec .feed .pg_title h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
-  color: rgb(245, 98, 44);
+  color: rgb(249, 142, 84);
 }
 .main-sec .feed .feed-post {
   width: 100%;
@@ -428,10 +452,10 @@ html {
   text-decoration: none;
 }
 .main-sec .feed .feed-post .post-profile .post-profile-name a h1 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.8rem;
   text-transform: capitalize;
-  color: #444;
+  color: #7d7d7d;
 }
 .main-sec .feed .feed-post .post-main-content {
   width: 100%;
@@ -502,6 +526,8 @@ html {
 .main-sec .feed .feed-post .caption p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
+  font-weight: 600;
+  color: #7d7d7d;
   text-transform: capitalize;
   max-width: 12rem;
   display: -webkit-box;
@@ -510,12 +536,12 @@ html {
   overflow: hidden;
 }
 .main-sec .feed .feed-post .caption p span {
-  color: #444;
+  color: #000;
+  font-weight: 400;
 }
 .main-sec .side-cont {
   width: 40%;
   padding: 15px 0px 0px 0px;
-  position: -webkit-sticky;
   position: sticky;
   top: 60px;
   margin-right: 10px;
@@ -541,19 +567,10 @@ html {
 }
 .main-sec .side-options .side-title h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: rgb(245, 98, 44);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(249, 142, 84);
   padding: 5px 10px 5px 10px;
-}
-.main-sec .side-options .side-title .refresh-img {
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-}
-.main-sec .side-options .side-title .refresh-img img {
-  width: 100%;
-  height: 100%;
 }
 .main-sec .side-options .new-followers {
   margin-top: 10px;
@@ -561,11 +578,11 @@ html {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
 }
 .main-sec .side-options .new-followers .n-follower {
-  width: 60%;
+  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -594,9 +611,10 @@ html {
   justify-content: center;
 }
 .main-sec .side-options .new-followers .n-follower .follower-name h1 {
-  color: #444;
-  font-weight: 400;
+  color: #7d7d7d;
+  font-weight: 600;
   font-size: 0.8rem;
+  letter-spacing: 0.04rem;
 }
 .main-sec .side-options .new-followers .follow-btn {
   margin-right: 10px;
@@ -606,15 +624,18 @@ html {
 }
 .main-sec .side-options .new-followers .follow-btn a button {
   padding: 3px 10px 3px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   color: #444;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.8rem;
-  letter-spacing: 0.06rem;
-  background-color: rgb(245, 98, 44);
+  letter-spacing: 0.04rem;
+  background-color: rgb(57, 204, 204);
   color: #fff;
+}
+.main-sec .side-options .new-followers .follow-btn a :hover {
+  background-color: rgb(249, 142, 84);
 }
 .main-sec .side-options .new-followers .field-icon {
   width: 20px;
@@ -1048,7 +1069,7 @@ html {
   margin-top: 10px;
 }
 .profile-settings form .basic-info .ctrl-button button {
-  background-color: rgb(245, 98, 44);
+  background-color: rgb(117, 110, 108);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -1062,6 +1083,13 @@ html {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
+}
+
+.upload {
+  display: none;
+}
+.upload h1 {
+  color: yellow;
 }
 
 .main-listings {
@@ -1088,20 +1116,27 @@ html {
 .categories-pick {
   width: 95%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
+  gap: 10px;
   margin: auto;
 }
-.categories-pick button {
+.categories-pick .cat-list {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   background: #fff;
-  color: rgb(54, 56, 91);
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  border-radius: 5px;
+  border: none;
+}
+.categories-pick .cat-list h4, .categories-pick .cat-list h5 {
+  color: #555;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  padding: 5px 15px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
   margin-right: 5px;
   cursor: pointer;
 }
@@ -1433,14 +1468,10 @@ html {
   margin-top: 20%;
   transform: scale(0);
   transition: transform 500ms ease-out;
-  -webkit-animation: popupanimation;
-          animation: popupanimation;
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
-  -webkit-animation-duration: 700ms;
-          animation-duration: 700ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation: popupanimation;
+  animation-delay: 200ms;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
   background-clip: border-box;
 }
 
@@ -1485,18 +1516,6 @@ html {
   padding: 3px;
 }
 
-@-webkit-keyframes popupanimation {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 @keyframes popupanimation {
   0% {
     transform: scale(0);
@@ -1508,6 +1527,142 @@ html {
     transform: scale(1);
   }
 }
+.stay-listing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stay-listing .listing-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.stay-listing .listing-title h1 {
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: rgb(57, 204, 204);
+}
+.stay-listing .listing-card {
+  background-color: aliceblue;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.stay-listing .listing-card .listing-img {
+  width: 550px;
+  height: 400px;
+  margin: auto;
+}
+.stay-listing .listing-card .listing-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.stay-listing .listing-card .listing-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 350px;
+}
+.stay-listing .listing-card .listing-details .listing-header {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 10px;
+}
+.stay-listing .listing-card .listing-details .listing-header h4 {
+  text-transform: capitalize;
+  color: rgb(57, 204, 204);
+  font-size: 1.3rem;
+  border-bottom: 1px solid #cfcece;
+}
+.stay-listing .listing-card .listing-details .about-listing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 10px;
+}
+.stay-listing .listing-card .listing-details .about-listing h3 {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.stay-listing .listing-card .listing-details .about-listing h5 {
+  height: 250px;
+  width: 100%;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #555;
+}
+.stay-listing .listing-card .listing-details .listing-price {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.stay-listing .listing-card .listing-details .listing-price h1 {
+  font-size: 1.2rem;
+  color: #555;
+}
+.stay-listing .listing-card .listing-details .listing-price h1 span {
+  color: rgb(199, 198, 197);
+  font-weight: 400;
+  font-size: 1rem;
+}
+.stay-listing .listing-card .listing-details .listing-price h2 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-right: 10px;
+}
+.stay-listing .listing-card .listing-details .listing-price h2 span {
+  color: rgb(199, 198, 197);
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.stay-listing .listing-card .book-button {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stay-listing .listing-card .book-button button {
+  border: none;
+  background-color: rgb(249, 142, 84);
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.related-options {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.related-options h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #555;
+}
+
 .profile-container {
   width: 100%;
 }

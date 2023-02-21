@@ -31,14 +31,15 @@
                         {% csrf_token %}
                     <input type="hidden" value="{{user.username}}" name="follower">
                     <input type="hidden" value="{{user_object.username}}" name="user">
-
+                    
                     {% if user_object.username == user.username %}
                     <a href="#"class="edit-prof">Edit profile</a>
                     {% else %}
                     <button class="follow" type="submit">{{button_text}} &#8734;</button>
-                    {% endif %}
-                    </form>
-                    <button  class="pop-action" button-option="Show Message" >Message</button>
+                    {% endif %} 
+                    </form> 
+                    
+                    <!--<button  class="pop-action" button-option="Show Message" >Message</button>--> 
                     
                     
                     <div class="edit-page">
@@ -51,7 +52,7 @@
                               <img src="{{user_profile.profileimg.url}}" alt=""/>
                               <div class="det-info">
                                 <h1> Hello <span>{{user.username}}</span></h1>
-                                <input type="file" name="profileimg" value="{{user_profile.profileimg}}">
+                                <input type="file" name="image" value="{{user_profile.profileimg}}">
                               </div>
                             </div>
                             
@@ -72,7 +73,7 @@
                 
                                     <div class="right-info">
                                         <p>Bio :</p>
-                                        <textarea id="bio" name="userbio" class="bio" cols="33">{{user_profile.bio}}</textarea>
+                                        <textarea id="bio" name="bio" class="bio" cols="33">{{user_profile.bio}}</textarea>
                 
                                         <p>E-mail :</p>
                                         <input type="text" name="email" value="{{user_profile.email}}" class="name">

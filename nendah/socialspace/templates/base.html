@@ -28,27 +28,27 @@
 
         <div class="cont-left">
             <div class="logo">
-                <img src="{% static 'images/n2.png'%}" alt="">
+                <img src="{% static 'images/log.png'%}" alt="">
             </div>
             {% if user.is_authenticated %}
 
             <div class="profile_dit">
-                <div class="profile-pic">
-                    <img src="{{user_profile.profileimg.url}}" alt="">
+                <!--<div class="profile-pic">
+                <img src="{{user_profile.profileimg.url}}" alt="">
                 </div>
 
                 <div class="profile_info">
                     <div class="profile-name">
-                        <h1>{{user.username}}</h1>
+                        <h1>hello {{user.username}}!</h1>
                     </div>
                     <div class="profile_bio">
-                        <p> I'm a solo world traveler</p>
+                        <p> {{user.bio}}</p>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <div class="profile-details">
-                <div class="followers">
+              <!--  <div class="followers">
                     
                     <h2>1500</h2>
                     <h1>Followers</h1>
@@ -62,7 +62,9 @@
                 <div class="following"> 
                     <h2>500</h2>
                     <h1>Following</h1>
-                </div>
+                </div> -->
+                <h1>hello {{user.username}} ;)</h1>
+
             </div>
 
             {% endif %}
@@ -72,12 +74,13 @@
 
          <div class="side-nav">
                 <ul>
-                   <a href = "{% url 'index' %}"> <li class="active-sec" > <img src="{% static 'images/feed.png'%}" alt=""> <h1></h1>Explore</h1></li></a>
-                   <a href="{% url 'chat'%}"> <li class="active-sec" data-option="chat"> <img src="{% static 'images/chat.png'%}" alt=""> <h1>Chat</h1></li> </a>
-                    <a  href = "{% url 'bookings'%}"><li class="active-sec" data-option="bookings"> <img src="{% static 'images/bookin.png'%}" alt=""> <h1>Holiday</h1></li></a>
-                    <a href="{%url 'duka'%}"><li class="active-sec" data-option="duka"> <img src="{% static 'images/store2.png'%}" alt=""> <h1>Duka</h1></li> </a>
-                   <a href="{% url 'profile' %}"> <li class="active-sec" data-option="profile"> <img src="{% static 'images/setting2.png'%}" alt=""> <h1>Settings</h1></li> </a>
-                   <a href="logout"><li class="active-sec"> <img src="{% static 'images/logout.png'%}" alt=""> <h1>Logout</h1></li></a>
+                   <a href = "{% url 'social:index' %}"> <li class="active-sec" >  <h1>Explore</h1></li></a>
+                   <a href="{% url 'social:chat'%}"> <li class="active-sec" ><h1>Chat</h1></li> </a>
+                    <a  href = "{% url 'social:bookings'%}"><li class="active-sec" data-option="bookings"> <h1>Holiday</h1></li></a>
+                    <a href="{%url 'social:duka'%}"><li class="active-sec" data-option="duka"> <h1>Duka</h1></li> </a>
+                   <a href="{% url 'social:profile' %}"> <li class="active-sec" data-option="profile"> <h1>Settings</h1></li> </a>
+                   <a href="{% url 'social:settings' %}"> <li class="active-sec" data-option="profile"> <h1>edit</h1></li> </a>
+                   <a href="logout"><li class="active-sec"><h1>Logout</h1></li></a>
                 </ul>
             </div> 
 
@@ -137,9 +140,11 @@
                     </div>
                 </div>
                 <div class="inbox-icon">
-                  <a href="{% url 'chat'%}" > <img src="{% static 'images/chat.png'%}" alt=""></a>
+                  <a href="{% url 'social:chat'%}" > <img src="{% static 'images/chat.png'%}" alt=""></a>
                 </div>
-                <div class="settings-mini">&#9776;</div>
+                <div class="settings-mini">
+                    <img src="{{user_profile.profileimg.url}}" alt="">
+                    </div>
             </div>
 
             
