@@ -8,10 +8,11 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from itertools import chain
+from django.db.models import Q
 import random
 
-from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing
-from .forms import NewListing
+from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing, Chat
+from .forms import NewListing, EditListing, ChatMessageForm
 
 
 @login_required(login_url='login')
@@ -63,6 +64,25 @@ def index(request):
 
     posts = Post.objects.all()
     return render(request, "landing/index.html", {'posts': posts, 'user_profile': user_profile, 'user_objects': user_objects, 'suggestion_username_profile_list': suggestion_username_profile_list[:10]})
+
+# search bar
+
+
+@login_required(login_url='login')
+def search_bar(request):
+    query = request.GET.get('query', '')
+    category_id = request.GET.get('category', 0)
+    category = Category.objects.all
+    listings = Listing.objects.filter(
+        Q(is_available=True) | Q(description__icontains=query))
+
+    if category_id:
+        listings = listings.filter(category_id=category_id)
+
+    if query:
+        listings = listings.filter(name__icontains=query)
+
+    return render(request, 'landing/search.html', {'listings': listings, 'query': query, 'category': category, 'category_id': int(category_id)})
 
 
 @login_required(login_url='login')
@@ -206,6 +226,87 @@ def follow(request):
         return redirect('/')
 
 
+# Chat functions
+
+@ login_required(login_url='login')
+def new_chat(request, listing_pk):
+    listing = get_object_or_404(Listing, pk=listing_pk)
+
+    if listing.host_name == request.user:
+        return redirect('social:dashboard')
+    chat = Chat.objects.filter(listing=listing).filter(
+        members__in=[request.user.id])
+    if chat:
+        pass
+    if request.method == 'POST':
+        form = ChatMessageForm(request.POST)
+
+        if form.is_valid():
+            chat = Chat.objects.create(listing=listing)
+            chat.members.add(request.user)
+            chat.members.add(listing.host_name)
+            chat.save()
+
+            chat_message = form.save(commit=False)
+            chat_message.chat = chat
+            chat_message.created_by = request.user
+            chat_message.save()
+
+            return redirect('social:detail', pk=listing_pk)
+    else:
+        form = ChatMessageForm()
+
+    return render(request, 'landing/book-chat.html', {'form': form})
+
+
+@ login_required(login_url='login')
+def inbox(request):
+    chat = Chat.objects.filter(
+        members__in=[request.user.id])
+
+    return render(request, 'landing/chat.html', {'chat': chat})
+
+
+@ login_required(login_url='login')
+def conversation(request, pk):
+    chat = Chat.objects.filter(
+        members__in=[request.user.id]).get(pk=pk)
+    if request.method == 'POST':
+        form = ChatMessageForm(request.POST)
+
+        if form.is_valid():
+            chat_message = form.save(commit=False)
+            chat_message.chat = chat
+            chat_message.created_by = request.user
+            chat_message.save()
+
+            chat.save()
+
+            return redirect('social:conversation', pk=pk)
+        else:
+            form = ChatMessageForm()
+    return render(request, 'landing/conversation.html', {'chat': chat, 'form': form})
+
+
+# Dashboard views
+
+@ login_required(login_url='login')
+def dashboard(request):
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
+    listings = Listing.objects.filter(host_name=request.user)
+
+    return render(request, 'landing/dashboard.html', {'listings': listings, 'user_profile': user_profile,  'user_objects': user_objects})
+
+
+@ login_required(login_url='login')
+def delete(request, pk):
+    listing = get_object_or_404(Listing, pk=pk, host_name=request.user)
+    listing.delete()
+
+    return redirect('social:dashboard')
+
+
 @ login_required(login_url='login')
 def profile(request):
     # user_object = User.objects.get(username=pk)
@@ -233,24 +334,31 @@ def profile(request):
 
 @ login_required(login_url='login')
 def bookings(request):
-    listings = Listing.objects.filter(is_available=True)[0:10]
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
+    listings = Listing.objects.filter(is_available=True)[0:12]
     categories = Category.objects.all()
 
-    context = {'categories': categories, "listings": listings}
+    context = {'categories': categories, "listings": listings,
+               'user_profile': user_profile,  'user_objects': user_objects}
     return render(request, 'landing/holiday.html', context)
 
 
 @ login_required(login_url='login')
 def detail(request, pk):
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
     listing = get_object_or_404(Listing, pk=pk)
     related_listings = Listing.objects.filter(
-        category=listing.category, is_available=True).exclude(pk=pk)[0:4]
+        category=listing.category, is_available=True).exclude(pk=pk)[0:6]
 
-    context = {'listing': listing, 'related_listings': related_listings}
+    context = {'listing': listing, 'related_listings': related_listings,
+               'user_profile': user_profile,  'user_objects': user_objects}
 
     return render(request, 'landing/listing.html', context)
 
 
+# New listings Add
 @ login_required(login_url='login')
 def new(request):
     form = NewListing()
@@ -260,6 +368,8 @@ def new(request):
 
 @ login_required(login_url='login')
 def addlisting(request):
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
     if request.method == 'POST':
         form = NewListing(request.POST, request.FILES)
 
@@ -268,12 +378,32 @@ def addlisting(request):
             listing.host_name = request.user
             listing.save()
 
-            return redirect('social:new_listing', pk=listing.id)
+            return redirect('social:detail', pk=listing.id)
 
     else:
         form = NewListing()
 
-        return render(request, 'landing/addlisting.html', {'form': form})
+    return render(request, 'landing/addlisting.html', {'form': form, 'user_profile': user_profile,  'user_objects': user_objects})
+
+
+@ login_required(login_url='login')
+def editlisting(request, pk):
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
+    listing = get_object_or_404(Listing, pk=pk, host_name=request.user)
+
+    if request.method == 'POST':
+        form = EditListing(request.POST, request.FILES, instance=listing)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('social:detail', pk=listing.id)
+
+    else:
+        form = EditListing(instance=listing)
+
+    return render(request, 'landing/edit_listing.html', {'form': form, 'user_profile': user_profile,  'user_objects': user_objects})
 
 
 @ login_required(login_url='login')

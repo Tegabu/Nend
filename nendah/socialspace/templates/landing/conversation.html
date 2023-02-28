@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Chat {% endblock %}
+{% block content %}
+{% load static %}
+    
+
+    <div class="chats">
+    {% for message in chat.messages.all %}
+    
+        <div class="message">
+            <p>{{message.host_name.username}} @ {{message.created_at}}</p>
+            <p>{{message.content}}</p>
+        </div>
+    
+    {% endfor %}
+    </div>
+    
+    <form method="post" action="." >
+        {% csrf_token%}
+        {{form.sp}}
+        <button>send</button>
+    </form>
+
+
+{% endblock %}

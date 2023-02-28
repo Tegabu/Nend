@@ -7,12 +7,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         h1{
             text-transform: capitalize;
             font-family: "Roboto", sans-serif;
             font-weight: 500;
-            color: rgb(57,204,204);
+            color: #000;
         }
     }
     .listing-card{
@@ -22,12 +22,15 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        border-radius: 5px;
+        gap: 20px;
         margin-bottom: 50px;
         .listing-img{
-            width: 550px;
-            height: 400px;
-            margin: auto;
+            width: 500px;
+            height: 450px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
             img{
                 width: 100%;
                 height: 100%;
@@ -39,9 +42,9 @@
         .listing-details{
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start;
             width: 350px;
+        
             .listing-header{
                 width: 100%;
                 text-align: center;
@@ -50,7 +53,7 @@
                 margin-bottom: 10px;
                 h4{
                     text-transform: capitalize;
-                    color: rgb(57,204,204);
+                    color: #555;
                     font-size: 1.3rem;
                     border-bottom: 1px solid #cfcece;
                 }
@@ -68,7 +71,6 @@
                     width: 100%;
                 }
                 h5{
-                    height: 250px;
                     width: 100%;
                     font-weight: 400;
                     text-transform: capitalize;
@@ -78,26 +80,26 @@
             .listing-price{
                 width: 100%;
                 display: flex;
-                justify-content: flex-end;
+                justify-content: space-between;
                 flex-direction: row;
                 align-items: flex-end;
                 gap: 20px;
                 font-family: "Roboto", sans-serif;
                 h1{
                     font-size: 1.2rem;
-                    color: #555;
+                    color: #000;
                     span{
-                        color: rgb(199, 198, 197);
+                        color: #555;
                         font-weight: 400;
                         font-size: 1rem;
                     }
                 }
                 h2{
                     font-size: 1.2rem;
-                    color: #555;
+                    color: #000;
                     margin-right: 10px;
                     span{
-                        color: rgb(199, 198, 197);
+                        color: #555;
                         font-weight: 400;
                         font-size: 1.2rem;
                     }
@@ -119,6 +121,39 @@
                 font-size: 1.2rem;
             }
         }
+
+        .creator{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: "Roboto", sans-serif;
+            margin-top: 20px;
+            gap: 10px;
+            h5{
+                color: #555;
+                font-size: 1rem;
+                box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
+                padding: 4px 10px;
+                border-radius: 5px;
+            }
+            .creator-opt{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 10px;
+            a{
+                font-size: 1rem;
+                text-decoration: none;
+                background-color: rgb(249,142,84);
+                color: #fff;
+                padding: 4px 10px;
+                border-radius: 5px;
+                box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
+            }
+            }
+        }
     }
 }
 
@@ -131,5 +166,36 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: #555;
+    }
+}
+
+.new-add {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: aqua;
+        
+        .form-item{
+            input{
+            width: 600px;
+            color: red;
+            border: none;
+            border-radius: 10px;
+            font-family: "Roboto" sans-serif;
+            font-size: 1rem;
+            padding: 10px;
+            }
+        }
+        
     }
 }

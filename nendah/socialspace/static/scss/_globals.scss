@@ -265,17 +265,27 @@ html {
                     border: none;
                 }
             }
-
-        }
-
-        .upload-btn{
             button{
                 padding: 5px 10px;
                 font-family: "Roboto", sans-serif;
                 font-size: .9rem;
                 font-weight: 400;
-                background: #fe8c00;
                 background-color: rgb(249,142,84);
+                border-radius: 5px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        .upload-btn{
+            button{
+                /*padding: 5px 10px;*/
+                font-family: "Roboto", sans-serif;
+                font-size: .9rem;
+                font-weight: 400;
+                /*background: #fe8c00;*/
+                /*background-color: rgb(249,142,84);*/
                 border-radius: 5px;
                 border: none;
                 color: #fff;

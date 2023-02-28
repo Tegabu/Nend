@@ -20,10 +20,16 @@ urlpatterns = [
     path('settings', views.settings, name="settings"),
     path('podcast', views.podcast, name="podcast"),
     path('cart', views.cart, name="cart"),
-    path('chat', views.chat, name="chat"),
+    path('chat', views.inbox, name="chat"),
     path('bookings', views.bookings, name="bookings"),
     path('feed', views.feed, name="feed"),
+    path('search', views.search_bar, name="search"),
     path('<int:pk>/', views.detail, name="detail"),
+    path('<int:pk>/delete/', views.delete, name="delete"),
+    path('<int:pk>/editlisting/', views.editlisting, name="editlisting"),
+    path('dashboard', views.dashboard, name="dashboard"),
+    path('new/<int:listing_pk>/', views.new_chat, name="new"),
+    path('<int:pk>/', views.conversation, name="conversation"),
 
 
 ]

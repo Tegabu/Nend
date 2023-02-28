@@ -1,14 +1,14 @@
-.chat_inbox{
+.chat-inbox{
     width: 100%;
-.chat_fr{
+.chat-fr{
     width: 30%;
     border-right: 1px solid rgb(212, 201, 201);
     .chats{
         border-bottom: 1px solid rgb(212, 201, 201);
         align-items: center;
         display: flex;
-        flex-direction: row;
-    .chat_img{
+        flex-direction: column;
+    .chat-img{
         margin-left: 20px;
         margin-right: 10px;
         margin-top: 10px;
@@ -23,9 +23,9 @@
             object-fit: cover;
         }
     }
-    .chat_cont{
+    .chat-cont{
         
-        .chat_name{
+        .chat-name{
             h2{
                 font-family: "Roboto", sans-serif;
                 font-size: 1rem;
@@ -33,7 +33,7 @@
                 color: rgb(143, 141, 141);
             }
         }
-        .chat_preview{
+        .chat-view{
             
             p{
                 font-family: "Roboto", sans-serif;

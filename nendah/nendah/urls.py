@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', include('socialspace.urls')),
+    path('dashboard/', include('dashboard.urls')),
 ]
 
 urlpatterns = urlpatterns+static(settings.MEDIA_URL,

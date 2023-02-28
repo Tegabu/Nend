@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %} User:{{user_profile.user.username}} {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="main-listings">
+
+    <div class="add-listing">
+        <h1>Dashboard</h1>
+        
+    </div>
+
+    <div class="categories-pick">
+        {% for category in categories %}
+        <div class="cat-list">
+        <h4>{{category.name}}</h4>
+        <h5>{{category.listing.count}} listings</h5>
+        </div>
+        {% endfor %}
+        
+    </div>
+     
+
+    <div class="listing">
+
+        <div class="feature-title">
+            
+            <h3>My listings</h3>
+            
+
+        </div>
+
+       
+
+        <div class="listing-cards">
+
+            {% for listing in listings %}
+            <a href="{% url 'social:detail' listing.id %}" >
+                <div class="listing-card" >
+                    
+                        <img src="{{listing.img.url}}" alt="">
+                    
+                    <div class="listing-info">
+                        <h4>{{listing.name}}</h4>
+                        <div class="item-det">
+                            <h5>{{listing.location}}</h5>
+                            <h5><span>$</span>{{listing.charge}}<span>/night</span></h5>
+                            </div>
+                    </div>
+                </div>
+            
+            </a>
+            {% endfor %}
+          
+
+        </div> 
+        
+        <div class="stay-booking">
+            
+            <div class="booking-detail">
+                <div class="booking-img">
+                    <img src="{{listing.img.url}}" alt="">
+                </div>
+
+                <div class="booking-title">
+                    <h1>{{Listing.name}}</h1>
+                    <h4>International Room</h4>
+                </div>
+
+                <div class="booking-stats">
+                    <div class="booking-rating">
+                        <h1>Rating</h1>
+                        <h2>&#10022;</h2>
+                    </div>
+                    <div class="booking-price">
+                        <h1>Price</h1>
+                        <h2>$199.00</h2>
+                    </div>
+                </div>
+
+
+                <div class="about-booking">
+                    <h3>Description</h3>
+
+                    <h5>{{listing.description}}</h5>
+                </div>
+
+                <div class="book-button">
+                    <button>Book Room</button>
+                </div>
+
+                
+            </div>
+            
+          </div>
+        
+    </div>
+
+
+{% endblock %}

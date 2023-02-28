@@ -35,9 +35,20 @@
             <h2><span>$</span>{{listing.charge}}</h2>
         </div>
 
-        <div class="book-button">
-            <button>Contact Host</button>
+        {% if request.user == listing.host_name %}
+        <div class="creator">
+            <h5>This Listing is owned by you {{listing.host_name}}</h5>
+            <div class="creator-opt">
+            <a href="{% url 'social:editlisting' listing.id %}">edit</a>
+            <a href="{% url 'social:delete' listing.id %}">Delete</a>
+            </div>
         </div>
+        {% else %}
+        <div class="book-button">
+            <button><a href="{% url 'social:new' listing.id %}">Contact Host</a></button>
+        </div>
+
+        {% endif %}
         </div>
 
         
@@ -49,6 +60,10 @@
    
 
 </div>
+
+{% if request.user == listing.host_name %}
+
+{% else %}
 
 <div class="related-options">
     <h1>Related Listings</h1>
@@ -64,7 +79,10 @@
             
             <div class="listing-info">
                 <h4>{{listing.name}}</h4>
-                <h5>{{listing.location}}</h5>
+                <div class="item-det">
+                    <h5>{{listing.location}}</h5>
+                    <h5><span>$</span>{{listing.charge}}<span>/night</span></h5>
+                </div>
             </div>
         </div>
     
@@ -73,7 +91,7 @@
   
 
 </div>
-
+{% endif %}
 
 
 {% endblock %}

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'socialspace',
     'accounts',
     'listing',
+    'widget_tweaks',
+    'dashboard',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Listing: {{listing.host_name}} {% endblock %}
+{% block content %}
+{% load static %}
+ 
+<div class="listing">
+
+    <div class="feature-title">
+
+
+        <div class="search-cat">
+        <h2>Chose a category : </h2>
+        
+        <ul>
+            {% for category in category %}
+            <li {% if category.id == category_id %} style="background-color:rgb(249,142,84);;" {% endif %}>
+                <a href="{% url 'social:search'%}?query={{query}}&category={{ category.id }}">{{category.name}}</a></li>
+            {% endfor %}
+        </ul>
+        </div>
+        
+
+    </div>
+
+   
+
+    <div class="listing-cards">
+
+        {% for listing in listings %}
+        <a href="{% url 'social:detail' listing.id %}" >
+            <div class="listing-card" >
+                
+                    <img src="{{listing.img.url}}" alt="">
+                
+                <div class="listing-info">
+                    <h4>{{listing.name}}</h4>
+
+                    <div class="item-det">
+                        <h5>{{listing.location}}</h5>
+                        <h5><span>$</span>{{listing.charge}}<span>/night</span></h5>
+                        </div>
+                </div>
+            </div>
+        
+        </a>
+        {% endfor %}
+      
+
+    </div> 
+</div>
+
+{% endblock %}

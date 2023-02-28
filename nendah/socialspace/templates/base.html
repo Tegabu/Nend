@@ -10,6 +10,10 @@
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"> -->
      <link rel="stylesheet" type="text/css" href="{% static 'scss/main.css' %}">
      <link rel="stylesheet" type="text/css" href="{%static 'js/bootstrap.min.css'%}">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="/dist/output.css" rel="stylesheet">
+   
+
      <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
@@ -79,7 +83,7 @@
                     <a  href = "{% url 'social:bookings'%}"><li class="active-sec" data-option="bookings"> <h1>Holiday</h1></li></a>
                     <a href="{%url 'social:duka'%}"><li class="active-sec" data-option="duka"> <h1>Duka</h1></li> </a>
                    <a href="{% url 'social:profile' %}"> <li class="active-sec" data-option="profile"> <h1>Settings</h1></li> </a>
-                   <a href="{% url 'social:settings' %}"> <li class="active-sec" data-option="profile"> <h1>edit</h1></li> </a>
+                   <a href="{% url 'social:dashboard' %}"> <li class="active-sec" data-option="profile"> <h1>dashboard</h1></li> </a>
                    <a href="logout"><li class="active-sec"><h1>Logout</h1></li></a>
                 </ul>
             </div> 
@@ -97,9 +101,13 @@
             <div class="nav-bar">
                 
                 <div class="search-bar">
-                    <input type="text" placeholder="Search...">
+                    <form method="get" action="{% url 'social:search' %}">
+                    <input name="query" type="text" value="{{query}}"placeholder="Search...">
+                    <button>search</button>
+                    </form>
+                    
                 </div>
-                <div class="upload-btn">
+                <div class="upload-btn text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-1.5 text-center ">
                     <button class="myBtn" id="uploadbtn">Upload &#10514;</button>
                 </div>
 

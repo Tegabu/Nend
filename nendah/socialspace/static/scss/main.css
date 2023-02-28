@@ -240,13 +240,24 @@ html {
 .nav-bar .search-bar input :active {
   border: none;
 }
-.nav-bar .upload-btn button {
+.nav-bar .search-bar button {
   padding: 5px 10px;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
-  background: #fe8c00;
   background-color: rgb(249, 142, 84);
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.nav-bar .upload-btn button {
+  /*padding: 5px 10px;*/
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  /*background: #fe8c00;*/
+  /*background-color: rgb(249,142,84);*/
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -1143,9 +1154,8 @@ html {
 
 .listing {
   width: 95%;
+  min-height: 100vh;
   margin: auto;
-  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
-  background: #fff;
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -1153,21 +1163,58 @@ html {
   display: none !important;
 }
 .listing .feature-title {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
   margin-right: 20px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-.listing .feature-title h3 {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-left: 20px;
   margin-top: 20px;
-  color: rgb(54, 56, 91);
+  margin-bottom: 20px;
+}
+.listing .feature-title .search-cat {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.listing .feature-title .search-cat h2 {
+  margin-bottom: 10px;
+  color: #555;
+}
+.listing .feature-title .search-cat ul {
+  list-style: none;
+  align-items: center;
+}
+.listing .feature-title .search-cat ul li {
+  float: left;
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  background-color: aqua;
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.listing .feature-title .search-cat ul a {
+  text-decoration: none;
+  color: #fff;
+}
+.listing .feature-title .search-link {
+  width: 200px;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(249, 142, 84);
+  box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  border-radius: 5px;
+  padding: 5px 0px;
+}
+.listing .feature-title .search-link a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
 }
 .listing h1 {
   font-family: "Roboto", sans-serif;
@@ -1178,22 +1225,25 @@ html {
 }
 
 .listing-cards {
-  width: 95%;
+  width: 100%;
   margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   border-radius: 10px;
+  gap: 5px;
   /* Product Description Section */
+}
+.listing-cards a {
+  text-decoration: none;
 }
 .listing-cards .listing-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   align-items: center;
-  width: 200px;
-  height: 280px;
+  width: 290px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -1202,31 +1252,45 @@ html {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .listing-cards .listing-card .listing-info {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: auto;
 }
 .listing-cards .listing-card .listing-info h4 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #555;
+  width: 95%;
   margin: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
   text-transform: capitalize;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.listing-cards .listing-card .listing-info h5 {
+.listing-cards .listing-card .listing-info .item-det {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.listing-cards .listing-card .listing-info .item-det h5 {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.8rem;
   text-transform: capitalize;
+  color: #000;
+}
+.listing-cards .listing-card .listing-info .item-det h5 span {
+  font-size: 0.8rem;
   color: #555;
 }
 .listing-cards .product-desc {
@@ -1537,13 +1601,13 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .stay-listing .listing-title h1 {
   text-transform: capitalize;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: rgb(57, 204, 204);
+  color: #000;
 }
 .stay-listing .listing-card {
   background-color: aliceblue;
@@ -1552,13 +1616,15 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  border-radius: 5px;
+  gap: 20px;
   margin-bottom: 50px;
 }
 .stay-listing .listing-card .listing-img {
-  width: 550px;
-  height: 400px;
-  margin: auto;
+  width: 500px;
+  height: 450px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .stay-listing .listing-card .listing-img img {
   width: 100%;
@@ -1570,8 +1636,7 @@ html {
 .stay-listing .listing-card .listing-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
   width: 350px;
 }
 .stay-listing .listing-card .listing-details .listing-header {
@@ -1583,7 +1648,7 @@ html {
 }
 .stay-listing .listing-card .listing-details .listing-header h4 {
   text-transform: capitalize;
-  color: rgb(57, 204, 204);
+  color: #555;
   font-size: 1.3rem;
   border-bottom: 1px solid #cfcece;
 }
@@ -1601,7 +1666,6 @@ html {
   width: 100%;
 }
 .stay-listing .listing-card .listing-details .about-listing h5 {
-  height: 250px;
   width: 100%;
   font-weight: 400;
   text-transform: capitalize;
@@ -1610,7 +1674,7 @@ html {
 .stay-listing .listing-card .listing-details .listing-price {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-direction: row;
   align-items: flex-end;
   gap: 20px;
@@ -1618,20 +1682,20 @@ html {
 }
 .stay-listing .listing-card .listing-details .listing-price h1 {
   font-size: 1.2rem;
-  color: #555;
+  color: #000;
 }
 .stay-listing .listing-card .listing-details .listing-price h1 span {
-  color: rgb(199, 198, 197);
+  color: #555;
   font-weight: 400;
   font-size: 1rem;
 }
 .stay-listing .listing-card .listing-details .listing-price h2 {
   font-size: 1.2rem;
-  color: #555;
+  color: #000;
   margin-right: 10px;
 }
 .stay-listing .listing-card .listing-details .listing-price h2 span {
-  color: rgb(199, 198, 197);
+  color: #555;
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -1650,6 +1714,38 @@ html {
   border-radius: 5px;
   font-size: 1.2rem;
 }
+.stay-listing .listing-card .creator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  gap: 10px;
+}
+.stay-listing .listing-card .creator h5 {
+  color: #555;
+  font-size: 1rem;
+  box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+.stay-listing .listing-card .creator .creator-opt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.stay-listing .listing-card .creator .creator-opt a {
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: rgb(249, 142, 84);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
+}
 
 .related-options {
   width: 100%;
@@ -1661,6 +1757,32 @@ html {
   font-size: 1.4rem;
   font-weight: 500;
   color: #555;
+}
+
+.new-add {
+  width: 75vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.new-add form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: aqua;
+}
+.new-add form .form-item input {
+  width: 600px;
+  color: red;
+  border: none;
+  border-radius: 10px;
+  font-family: "Roboto" sans-serif;
+  font-size: 1rem;
+  padding: 10px;
 }
 
 .profile-container {
@@ -1952,20 +2074,20 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-.chat_inbox {
+.chat-inbox {
   width: 100%;
 }
-.chat_inbox .chat_fr {
+.chat-inbox .chat-fr {
   width: 30%;
   border-right: 1px solid rgb(212, 201, 201);
 }
-.chat_inbox .chat_fr .chats {
+.chat-inbox .chat-fr .chats {
   border-bottom: 1px solid rgb(212, 201, 201);
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
-.chat_inbox .chat_fr .chats .chat_img {
+.chat-inbox .chat-fr .chats .chat-img {
   margin-left: 20px;
   margin-right: 10px;
   margin-top: 10px;
@@ -1974,20 +2096,20 @@ html {
   width: 40px;
   height: 40px;
 }
-.chat_inbox .chat_fr .chats .chat_img img {
+.chat-inbox .chat-fr .chats .chat-img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.chat_inbox .chat_fr .chats .chat_cont .chat_name h2 {
+.chat-inbox .chat-fr .chats .chat-cont .chat-name h2 {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: rgb(143, 141, 141);
 }
-.chat_inbox .chat_fr .chats .chat_cont .chat_preview p {
+.chat-inbox .chat-fr .chats .chat-cont .chat-view p {
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   color: #555;
