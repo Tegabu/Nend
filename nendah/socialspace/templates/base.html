@@ -12,6 +12,7 @@
      <link rel="stylesheet" type="text/css" href="{%static 'js/bootstrap.min.css'%}">
      <script src="https://cdn.tailwindcss.com"></script>
      <link href="/dist/output.css" rel="stylesheet">
+    
    
 
      <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
@@ -31,8 +32,11 @@
         <!-- Quick access menu -->
 
         <div class="cont-left">
-            <div class="logo">
-                <img src="{% static 'images/log.png'%}" alt="">
+            <div class="logo-pic">
+                <img src="{% static 'images/nendahl.png'%}" alt="">
+                <i class="fa-light fa-magnifying-glass"></i>
+
+
             </div>
             {% if user.is_authenticated %}
 
@@ -88,6 +92,8 @@
                 </ul>
             </div> 
 
+            
+
             {% endif %}
 
         </div>
@@ -98,16 +104,16 @@
 
         <div class="cont-right">
     
-            <div class="nav-bar">
+            <div class="nav-bar ">
                 
                 <div class="search-bar">
                     <form method="get" action="{% url 'social:search' %}">
                     <input name="query" type="text" value="{{query}}"placeholder="Search...">
-                    <button>search</button>
+                    <button class=" text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search &#128269;</button>
                     </form>
                     
                 </div>
-                <div class="upload-btn text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-1.5 text-center ">
+                <div class="upload-btn text-white  right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">
                     <button class="myBtn" id="uploadbtn">Upload &#10514;</button>
                 </div>
 
@@ -152,6 +158,8 @@
                 </div>
                 <div class="settings-mini">
                     <img src="{{user_profile.profileimg.url}}" alt="">
+
+                    
                     </div>
             </div>
 
@@ -174,15 +182,28 @@
                     <h1>Upload Post</h1>
                     
                     <div class="upload-content">
-                        <div class="upload-icon">
+                       <!-- <div class="upload-icon">
                             <img src="{% static 'images/upload.png'%}" alt="">
-                        </div>
+                        </div> -->
                         <form action="upload" method="post" enctype="multipart/form-data">
                         {% csrf_token%}
                         <div class="upload-caption">
-                            <input type="file" name="upload">
+                           <!-- <input type="file" name="upload"> -->
+                            <div class="flex items-center justify-center w-full">
+                                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file" type="file" class="hidden"  name="upload"/>
+                                </label>
+                            </div> 
+                            
+                            
                             <!--<a href="#">Browse to choose</a>-->
-                            <textarea name="caption" placeholder="caption" id="" cols="35" rows="5"></textarea>
+                            <textarea name="caption" placeholder="caption" id="" cols="40" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                            
                             <br>
                             <button type="submit">Upload</button>
                         </div>

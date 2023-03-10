@@ -11,7 +11,7 @@ from itertools import chain
 from django.db.models import Q
 import random
 
-from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing, Chat
+from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing, Chat, profile_pic
 from .forms import NewListing, EditListing, ChatMessageForm
 
 
@@ -63,7 +63,7 @@ def index(request):
     suggestion_username_profile_list = list(chain(*username_profile_list))
 
     posts = Post.objects.all()
-    return render(request, "landing/index.html", {'posts': posts, 'user_profile': user_profile, 'user_objects': user_objects, 'suggestion_username_profile_list': suggestion_username_profile_list[:10]})
+    return render(request, "landing/index.html", {'posts': posts,  'user_profile': user_profile, 'user_objects': user_objects, 'suggestion_username_profile_list': suggestion_username_profile_list[:10]})
 
 # search bar
 
@@ -285,7 +285,7 @@ def conversation(request, pk):
             return redirect('social:conversation', pk=pk)
         else:
             form = ChatMessageForm()
-    return render(request, 'landing/conversation.html', {'chat': chat, 'form': form})
+    return render(request, 'landing/conversation.html', {'chat': chat})
 
 
 # Dashboard views

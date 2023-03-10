@@ -10,13 +10,17 @@
     </div>
 </div>
 
+<div class="pg-title">
+    <h1>User Profile - <spam>{{user_profile.user.username}}</spam></h1>
+</div>
+
     <div class="profile-container">
         <div class="profile-cont">
 
             {% if user.is_authenticated %}
 
             <div class="profile-pic">
-                <img src="{{user_profile.profileimg.url}}" alt="">
+                <img src="{{user_profile.profileimg.url}}" alt="" class="w-10 h-10 rounded">
             </div>
             <div class="profile-info">
                 <div class="person-name">
@@ -33,7 +37,7 @@
                     <input type="hidden" value="{{user_object.username}}" name="user">
                     
                     {% if user_object.username == user.username %}
-                    <a href="#"class="edit-prof">Edit profile</a>
+                    <a href="{% url 'social:profile' %}" class="text-white right-2 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit profile</a>
                     {% else %}
                     <button class="follow" type="submit">{{button_text}} &#8734;</button>
                     {% endif %} 
@@ -147,7 +151,7 @@
                 
             </div>
             <div class="profile-posts">
-                {% for post in user_post %} 
+                {% for post in user_post  reversed%} 
                     <div class="post-item">
                             <img src="{{post.image.url}}" alt="">
                     </div>
@@ -160,7 +164,7 @@
 
         
 
-            <div class="feature-title">
+          <!--  <div class="feature-title">
                 
                 <h3>Listings</h3>
                 
@@ -263,6 +267,7 @@
 
             </div>
             </div>
+        -->
 
            
         </div>

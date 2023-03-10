@@ -29,19 +29,15 @@ html {
     position: sticky;
     top: 0;
 
-    .logo{
-        margin-top: 20px;
-        margin-left: 30px;
+    .logo-pic{
+        margin-top: 5px;
         width: 100%;
-        height: 40px;
-        
+        height: 70px;
         img{
-            
-            width: 80%;
+            width: 100%;
             height: 100%;
-            object-fit: fill;
-            
-            
+            margin: auto;
+            object-fit: cover;  
         }
     }
 .profile_dit{
@@ -115,7 +111,7 @@ html {
         padding: 0px 10px 0px 10px;
         width: 85%;
         margin: auto;
-        margin-top: 40px;
+        margin-top: 10px;
         font-family: "Roboto", sans-serif;
         box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
         border-radius: 20px;
@@ -188,14 +184,19 @@ html {
 
             a{
                 text-decoration: none;
-               
-            li{
                 display: flex;
-                align-items: center;
                 justify-content: center;
                 flex-direction: row;
+                margin: auto;
                 margin-bottom: 15px;
                 cursor: pointer;
+                width: 200px;
+                background-color: #ece9e6;
+                border-radius: 10px;
+               /* box-shadow: 10px 10px 10px -5px rgb(202, 199, 199); */
+               
+            li{
+                
                 img{
                     width: 20px;
                     height: 20px;
@@ -207,22 +208,23 @@ html {
                     font-size: 1.2rem;
                     font-weight: 500;
                     color: #000;
-                    width: 200px;
                     text-align: center;
                     border: 2px solid transparent;
-                    background-color: rgb(57,204,204);
-                    color: #fff;
-                    box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
-                    border-radius: 10px;
+                    color: #555;
+                    
+                   
                 }
             
 
-                :hover{
-                    background-color:  rgb(249,142,84);
-                    color: #fff;
-                }
+              
                 
             }
+            
+        }
+
+        :hover{
+            background-color:  rgb(249,142,84);
+            color: #fff;
         }
         }
 
@@ -266,11 +268,10 @@ html {
                 }
             }
             button{
-                padding: 5px 10px;
+                /*padding: 5px 10px;*/
                 font-family: "Roboto", sans-serif;
                 font-size: .9rem;
                 font-weight: 400;
-                background-color: rgb(249,142,84);
                 border-radius: 5px;
                 border: none;
                 color: #fff;
@@ -455,7 +456,7 @@ html {
 
 
 .feed{
-    width: 55%;
+    width: 60%;
     margin: auto;
     margin-top: 5px;
     display: flex;
@@ -470,22 +471,22 @@ html {
             font-family: "Roboto", sans-serif;
             font-weight: 600;
             font-size: 1rem;
-            color:  rgb(249,142,84);
+            color:  #F24A02;
         }
     }
     .feed-post{
         width: 100%;
+        
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        border-radius: 5px;
+        border-radius: 10px;
         box-shadow: 0px 0px 2px rgb(202, 199, 199);
         background: #fff;
         .post-profile{
-            padding: 5px 10px 5px 10px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -498,32 +499,35 @@ html {
                 img{
                     width: 100%;
                     height: 100%;
-                    border-radius: 100%;
+                    /*border-radius: 100%;*/
                     object-fit: cover;
                 }
             }
             .post-profile-name{
                 font-family: "Roboto", sans-serif;
                 margin-left: 10px;
+                z-index: 1;
                 a{
                     text-decoration: none;
                 h1{
                 font-weight: 600;
                 font-size: .8rem;
                 text-transform: capitalize;
-                color: #7d7d7d;
+                color: #fff;
                 }
             }
             }
         }
 
         .post-main-content{
+            margin-top: -30px;
             width: 100%;
-            height: 50vh;
+            height: 60vh;
             img{
                 width: 100%;
                 height: 100%;
-                object-fit: fill;
+                border-radius: 10px 10px 0px 0px;
+                object-fit: cover;
             }
         }
 
@@ -532,7 +536,7 @@ html {
             align-items: center;
             justify-content: center;
             flex-direction: row;
-            padding: 5px 10px 5px 10px;
+    
             a{
                 text-decoration: none;
             .like-btn{
@@ -540,8 +544,11 @@ html {
                 display: flex;
                 align-items: flex-start;
                 justify-content: flex-start;
-                flex-direction: column;
-                height: 40px;
+                flex-direction: row;
+                gap: 5px;
+                margin-left: 10px;
+                margin-bottom: 3px;
+                margin-top: 3px;
                 cursor: pointer;
                 img{
                     width: 20px;
@@ -558,7 +565,7 @@ html {
                     font-family: "Roboto", sans-serif;
                     font-size: .8rem;
                     span{
-                        color: rgb(245, 98, 44);
+                        color: #555;
                     }
                 }
             }
@@ -586,7 +593,7 @@ html {
             margin: auto;
             margin-top: -5px;
             margin-left: 10px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             p{
                 font-family: "Roboto", sans-serif;
                 font-size: .8rem; 
@@ -607,7 +614,7 @@ html {
     }
 }
 .side-cont{
-    width: 40%;
+    width: 35%;
     
     padding: 15px 0px 0px 0px;
     position: sticky;
@@ -621,7 +628,7 @@ html {
 
 .side-options{
     width: 100%; 
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
     margin-bottom: 20px;
     background-color: #fff;
@@ -635,8 +642,8 @@ html {
         h1{
             font-family: "Roboto", sans-serif;
             font-size: .9rem;
-            font-weight: 600;
-            color:  rgb(249,142,84);
+            font-weight: 400;
+            color:  #F24A02;
             padding: 5px 10px 5px 10px;
            
         }
@@ -659,14 +666,14 @@ html {
             .follower-img{
                 width: 30px;
                 height: 30px;
-                border-radius: 50%;
+                /*border-radius: 50%;*/
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 img{
                     width: 100%;
                     height: 100%;
-                    border-radius: 100%;
+                   /* border-radius: 100%;*/
                     object-fit: cover;
                 }
             }
@@ -691,19 +698,21 @@ html {
                 text-decoration: none;
             button{
                 padding: 3px 10px 3px 10px;
-                border-radius: 5px;
+                border-radius: 10px;
                 border: none;
-                color: #444;
+                color: #7d7d7d;
                 cursor: pointer;
                 font-weight: 600;
                 font-size: 0.8rem;
                 letter-spacing: .04rem;
-                background-color:  rgb(57,204,204);;
-                color: #fff;
+                background: rgb(244, 241, 241);
+            
                 
             }
             :hover{
-                background-color:  rgb(249,142,84);
+                background-color:  #F24A02;
+                border: 1px solid #fff;
+                color: #fff;
             }
         }
         }

@@ -51,7 +51,7 @@
            <div class="feed-all">
 
             <div class="feed" >
-                <div class="pg_title">
+                <div class="pg-title">
                     <h1> Explore</h1>
                 </div>
 
@@ -59,9 +59,9 @@
                 <div class="feed-post">
                     
                     <div class="post-profile">
-                        <div class="post-profile-img">
-                            <img src="{% static 'images/post2.jpg'%}" alt="">
-                        </div>
+                       <!-- <div class="post-profile-img">
+                            <img src="{{ post.author.profile.profileimg.url }}" alt="" class="w-10 h-10 rounded">
+                        </div>-->
                         <div class="post-profile-name">
                           <a href="/user/{{post.user}}">  <h1>{{post.user}}</h1></a>
                         </div>
@@ -112,7 +112,7 @@
                 <div class="new-followers">
                     <div class="n-follower">
                         <div class="follower-img">
-                            <img src="{{suggestion.profileimg.url}}" alt="">
+                            <img src="{{suggestion.profileimg.url}}" class="w-10 h-10 rounded" alt="">
                         </div>
                         <div class="follower-name"><h1>{{suggestion.user}}</h1></div>
                     </div>

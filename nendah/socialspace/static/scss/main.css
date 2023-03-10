@@ -26,17 +26,17 @@ html {
   position: sticky;
   top: 0;
 }
-.cont-left .logo {
-  margin-top: 20px;
-  margin-left: 30px;
+.cont-left .logo-pic {
+  margin-top: 5px;
   width: 100%;
-  height: 40px;
+  height: 70px;
 }
-.cont-left .logo img {
-  width: 80%;
+.cont-left .logo-pic img {
+  width: 100%;
   height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cont-left .profile_dit {
   margin-top: 10px;
@@ -101,7 +101,7 @@ html {
   padding: 0px 10px 0px 10px;
   width: 85%;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 10px;
   font-family: "Roboto", sans-serif;
   box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
   border-radius: 20px;
@@ -172,14 +172,16 @@ html {
 }
 .cont-left .side-nav ul a {
   text-decoration: none;
-}
-.cont-left .side-nav ul a li {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: row;
+  margin: auto;
   margin-bottom: 15px;
   cursor: pointer;
+  width: 200px;
+  background-color: #ece9e6;
+  border-radius: 10px;
+  /* box-shadow: 10px 10px 10px -5px rgb(202, 199, 199); */
 }
 .cont-left .side-nav ul a li img {
   width: 20px;
@@ -191,15 +193,11 @@ html {
   font-size: 1.2rem;
   font-weight: 500;
   color: #000;
-  width: 200px;
   text-align: center;
   border: 2px solid transparent;
-  background-color: rgb(57, 204, 204);
-  color: #fff;
-  box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
-  border-radius: 10px;
+  color: #555;
 }
-.cont-left .side-nav ul a li :hover {
+.cont-left .side-nav ul :hover {
   background-color: rgb(249, 142, 84);
   color: #fff;
 }
@@ -241,11 +239,10 @@ html {
   border: none;
 }
 .nav-bar .search-bar button {
-  padding: 5px 10px;
+  /*padding: 5px 10px;*/
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
-  background-color: rgb(249, 142, 84);
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -404,7 +401,7 @@ html {
   width: 100%;
 }
 .main-sec .feed {
-  width: 55%;
+  width: 60%;
   margin: auto;
   margin-top: 5px;
   display: flex;
@@ -421,22 +418,21 @@ html {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  color: rgb(249, 142, 84);
+  color: #F24A02;
 }
 .main-sec .feed .feed-post {
   width: 100%;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 0px 2px rgb(202, 199, 199);
   background: #fff;
 }
 .main-sec .feed .feed-post .post-profile {
-  padding: 5px 10px 5px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -451,13 +447,14 @@ html {
 .main-sec .feed .feed-post .post-profile .post-profile-img img {
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  /*border-radius: 100%;*/
   -o-object-fit: cover;
      object-fit: cover;
 }
 .main-sec .feed .feed-post .post-profile .post-profile-name {
   font-family: "Roboto", sans-serif;
   margin-left: 10px;
+  z-index: 1;
 }
 .main-sec .feed .feed-post .post-profile .post-profile-name a {
   text-decoration: none;
@@ -466,24 +463,25 @@ html {
   font-weight: 600;
   font-size: 0.8rem;
   text-transform: capitalize;
-  color: #7d7d7d;
+  color: #fff;
 }
 .main-sec .feed .feed-post .post-main-content {
+  margin-top: -30px;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
 .main-sec .feed .feed-post .post-main-content img {
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  border-radius: 10px 10px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-sec .feed .feed-post .post-interactions {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 5px 10px 5px 10px;
 }
 .main-sec .feed .feed-post .post-interactions a {
   text-decoration: none;
@@ -493,8 +491,11 @@ html {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
-  height: 40px;
+  flex-direction: row;
+  gap: 5px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  margin-top: 3px;
   cursor: pointer;
 }
 .main-sec .feed .feed-post .post-interactions a .like-btn img {
@@ -512,7 +513,7 @@ html {
   font-size: 0.8rem;
 }
 .main-sec .feed .feed-post .post-interactions a .like-btn p span {
-  color: rgb(245, 98, 44);
+  color: #555;
 }
 .main-sec .feed .feed-post .post-interactions .comment-btn {
   width: 20px;
@@ -532,7 +533,7 @@ html {
   margin: auto;
   margin-top: -5px;
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .main-sec .feed .feed-post .caption p {
   font-family: "Roboto", sans-serif;
@@ -551,7 +552,7 @@ html {
   font-weight: 400;
 }
 .main-sec .side-cont {
-  width: 40%;
+  width: 35%;
   padding: 15px 0px 0px 0px;
   position: sticky;
   top: 60px;
@@ -563,7 +564,7 @@ html {
 }
 .main-sec .side-options {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
   margin-bottom: 20px;
   background-color: #fff;
@@ -579,8 +580,8 @@ html {
 .main-sec .side-options .side-title h1 {
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: rgb(249, 142, 84);
+  font-weight: 400;
+  color: #F24A02;
   padding: 5px 10px 5px 10px;
 }
 .main-sec .side-options .new-followers {
@@ -602,7 +603,7 @@ html {
 .main-sec .side-options .new-followers .n-follower .follower-img {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,7 +611,7 @@ html {
 .main-sec .side-options .new-followers .n-follower .follower-img img {
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  /* border-radius: 100%;*/
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -635,18 +636,19 @@ html {
 }
 .main-sec .side-options .new-followers .follow-btn a button {
   padding: 3px 10px 3px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
-  color: #444;
+  color: #7d7d7d;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.04rem;
-  background-color: rgb(57, 204, 204);
-  color: #fff;
+  background: rgb(244, 241, 241);
 }
 .main-sec .side-options .new-followers .follow-btn a :hover {
-  background-color: rgb(249, 142, 84);
+  background-color: #F24A02;
+  border: 1px solid #fff;
+  color: #fff;
 }
 .main-sec .side-options .new-followers .field-icon {
   width: 20px;
@@ -957,13 +959,20 @@ html {
 }
 
 .pg-title {
-  margin: 10px;
-  margin-left: 50px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 5px 5px;
 }
 .pg-title h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  color: rgb(54, 56, 91);
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(245, 98, 44);
 }
 
 .profile-settings {
@@ -1103,6 +1112,52 @@ html {
   color: yellow;
 }
 
+.profile-features {
+  width: 100%;
+}
+.profile-features .feature-title {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.profile-features .feature-title h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #555;
+}
+.profile-features .feature-title button {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.listing .page-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.listing .page-title h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #555;
+}
+.listing .page-title button {
+  width: 120px;
+  padding: 5px 10px;
+  background-color: royalblue;
+  border-radius: 5px;
+  color: #fff;
+}
+
 .main-listings {
   width: 100%;
 }
@@ -1162,6 +1217,11 @@ html {
 .listing .stay-booking {
   display: none !important;
 }
+.listing .search-list {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
 .listing .feature-title {
   width: 100%;
   display: flex;
@@ -1169,8 +1229,6 @@ html {
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  margin-right: 20px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 .listing .feature-title .search-cat {
@@ -1179,6 +1237,7 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 }
 .listing .feature-title .search-cat h2 {
   margin-bottom: 10px;
@@ -1192,28 +1251,28 @@ html {
   float: left;
   margin-left: 10px;
   font-family: "Roboto", sans-serif;
-  background-color: aqua;
+  background-color: transparent;
+  border: 1px solid #444;
   border-radius: 5px;
   padding: 4px 10px;
   cursor: pointer;
 }
 .listing .feature-title .search-cat ul a {
   text-decoration: none;
-  color: #fff;
 }
-.listing .feature-title .search-link {
-  width: 200px;
+.listing .feature-title a {
+  text-decoration: none;
+}
+.listing .feature-title a .search-link {
+  margin: 10px auto;
   align-items: center;
   text-align: center;
-  background-color: rgb(249, 142, 84);
   box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
   border-radius: 5px;
-  padding: 5px 0px;
 }
-.listing .feature-title .search-link a {
-  text-decoration: none;
+.listing .feature-title a .search-link h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 .listing h1 {
@@ -1616,7 +1675,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
   gap: 20px;
   margin-bottom: 50px;
 }
@@ -1629,7 +1688,7 @@ html {
 .stay-listing .listing-card .listing-img img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1760,29 +1819,37 @@ html {
 }
 
 .new-add {
-  width: 75vw;
+  width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+.new-add .add-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: capitalize;
 }
 .new-add form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  background-color: aqua;
 }
 .new-add form .form-item input {
   width: 600px;
-  color: red;
   border: none;
   border-radius: 10px;
   font-family: "Roboto" sans-serif;
   font-size: 1rem;
   padding: 10px;
+}
+.new-add form button {
+  margin-top: 10px;
+  width: 100px;
+  color: #fff;
 }
 
 .profile-container {
@@ -1791,7 +1858,6 @@ html {
 .profile-container .profile-cont {
   width: 90%;
   margin: auto;
-  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1799,13 +1865,13 @@ html {
   flex-wrap: wrap;
 }
 .profile-container .profile-cont .profile-pic {
+  margin-right: 10px;
   width: 220px;
   height: 220px;
 }
 .profile-container .profile-cont .profile-pic img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1841,7 +1907,6 @@ html {
 }
 .profile-container .profile-cont .profile-info .person-name h1 {
   font-family: "Roboto", sans-serif;
-  text-transform: capitalize;
   color: #444;
   font-size: 1.5rem;
   font-weight: 500;
@@ -1869,16 +1934,15 @@ html {
 }
 .profile-container .profile-cont .profile-info .profile-btn form a {
   cursor: pointer;
-  padding: 5px 10px;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: #fff;
+  width: 150px;
+  background: linear-gradient(to right, #fe8c00, #f83600);
   box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
   border: none;
-  border-radius: 5px;
-  color: #555;
-  background: rgb(214, 212, 212);
 }
 .profile-container .profile-cont .profile-info .profile-btn form button {
   cursor: pointer;
@@ -1948,14 +2012,13 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
   font-family: "Roboto", sans-serif;
-  margin-right: 20px;
+  margin-left: 30px;
   margin-top: 20px;
 }
 .profile-container .profile-features .feature-title h3 {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: capitalize;
   color: #444;
 }
@@ -1979,24 +2042,24 @@ html {
 }
 .profile-container .profile-features .profile-posts {
   margin: auto;
-  margin-top: 20px;
   margin-bottom: 30px;
+  margin-top: -40px;
   width: 95%;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   gap: 5px;
 }
 .profile-container .profile-features .profile-posts .post-item {
-  width: 220px;
-  height: 250px;
+  width: 290px;
   cursor: pointer;
+  margin-top: 10px;
 }
 .profile-container .profile-features .profile-posts .post-item img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .profile-container .profile-features .my-cont {
   width: 95%;
@@ -2072,51 +2135,4 @@ html {
 }
 .modal-alert .form-cont form .form-group label {
   font-family: "Roboto", sans-serif;
-}
-
-.chat-inbox {
-  width: 100%;
-}
-.chat-inbox .chat-fr {
-  width: 30%;
-  border-right: 1px solid rgb(212, 201, 201);
-}
-.chat-inbox .chat-fr .chats {
-  border-bottom: 1px solid rgb(212, 201, 201);
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-.chat-inbox .chat-fr .chats .chat-img {
-  margin-left: 20px;
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-}
-.chat-inbox .chat-fr .chats .chat-img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.chat-inbox .chat-fr .chats .chat-cont .chat-name h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgb(143, 141, 141);
-}
-.chat-inbox .chat-fr .chats .chat-cont .chat-view p {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.7rem;
-  color: #555;
-  font-weight: 400;
-  max-width: 10rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

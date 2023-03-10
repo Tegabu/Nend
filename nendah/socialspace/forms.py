@@ -2,7 +2,7 @@ from django import forms
 
 from .models import Listing, ChatMessage
 
-INPUT_CLASSES = 'w-full py-4 px-6 rounded-xl border'
+INPUT_CLASSES = 'bg-gray-50 border border-gray-300 py-4 px-6 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-400 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
 
 
 class ChatMessageForm(forms.ModelForm):
@@ -27,19 +27,18 @@ class NewListing(forms.ModelForm):
                 'class': INPUT_CLASSES,
             }),
             'img': forms.FileInput(attrs={
-                'class': 'block w-full text-sm text-slate-500file: mr-4 file: py-2 file: px-4 file: rounded-full file: border-0 file: text-sm file: font-semibold file: bg-violet-50 file: text-violet-700hover: file: bg-violet-100',
+                'class': "block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400",
 
             }),
             'description': forms.Textarea(attrs={
                 'class': INPUT_CLASSES,
-
             }),
             'name': forms.Textarea(attrs={
-                'class': INPUT_CLASSES,
+                'class': INPUT_CLASSES
 
             }),
             'is_available': forms.NullBooleanSelect(attrs={
-                'class': INPUT_CLASSES,
+                'class': INPUT_CLASSES
             }),
             'location': forms.Textarea(attrs={
                 'class': INPUT_CLASSES,
@@ -61,29 +60,24 @@ class EditListing(forms.ModelForm):
         widgets = {
 
             'img': forms.FileInput(attrs={
-                'class': 'form-control',
+                'class': INPUT_CLASSES,
 
             }),
             'description': forms.Textarea(attrs={
-                'class': 'form-control',
-                'style': 'height: 70px'
+                'class': INPUT_CLASSES,
+
             }),
             'name': forms.Textarea(attrs={
-                'class': 'form-control',
-                'style': 'height: 30px'
+                'class': INPUT_CLASSES,
+
             }),
             'is_available': forms.NullBooleanSelect(attrs={
-                'class': 'form-control',
+                'class': INPUT_CLASSES,
             }),
             'location': forms.Textarea(attrs={
-                'class': 'form-control',
-                'style': 'height: 30px'
+                'class': INPUT_CLASSES,
             }),
             'charge': forms.NumberInput(attrs={
-                'class': 'form-control',
-                'style': 'height: 30px'
-                'display: flex'
-                'flex-direction: row'
-                'color: blue'
+                'class': INPUT_CLASSES,
             }),
         }

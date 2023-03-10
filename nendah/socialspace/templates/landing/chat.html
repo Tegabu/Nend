@@ -5,23 +5,26 @@
     
 <div class="chat-inbox">
     <div class="chat-fr">
-    <div class="chats">
+    <div class="space-y-6">
     {% for chat in chat %}
      <a href="{% url 'social:conversation' chat.id %}">
-        <div class="chat-img">
-         <img src="{{chat.listing.img.url}}" alt="">
-        </div>
+        <div class="p-6 flex bg-gray-100 rounded-xl">
+            <div class="pr-6">
+         <img src="{{chat.listing.img.url}}" alt="" class="w-20 rounded-xl">
+         </div>
+        
         <div class="chat-cont">
             <div class="chat-name">
                 {% for member in chat.members.all %}
                 {% if member != request.user %}
-                <h2>{{member.username}} | {{chat.modified_at}}</h2>
+                <h2 class="mb-4"><strong>{{member.username}} </strong>| {{chat.modified_at}}</h2>
                 <div class="chat-view">
                     <p>{{chat.listing.name}}</p>
                 </div>
                 {% endif %}
                 {% endfor %}
             </div>
+        </div>
         </div>
      </a>
     {% endfor %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Chat {% endblock %}
+{% block content %}
+{% load static %}
+    
+<div class="chat-inbox">
+    <div class="chat-fr">
+    <div class="space-y-6">
+    {% for message in chat.chat.all %}
+     
+        <div class="p-6 flex bg-gray-100 rounded-xl">
+         
+        <div>
+            <p class="mb-4"><strong>{{chat.created_by.username}}</strong> | {{chat.created_at}}</p>
+            <p>{{chat.content}}</p>
+        </div>
+        </div>
+     
+    {% endfor %}
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}

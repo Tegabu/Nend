@@ -5,8 +5,8 @@
 
 <div class="main-listings">
 
-    <div class="add-listing">
-        <h1>Dashboard</h1>
+    <div class="pg-title">
+        <h1>My Dashboard</h1>
         
     </div>
 
@@ -23,9 +23,11 @@
 
     <div class="listing">
 
-        <div class="feature-title">
-            
-            <h3>My listings</h3>
+        <div class="page-title">
+
+            <div class="add-link">
+                <a href="{% url 'social:addlisting' %}" ><button >Add Listing <span>&#43;</span></button> </a>
+             </div>
             
 
         </div>

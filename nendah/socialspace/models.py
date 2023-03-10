@@ -4,6 +4,7 @@ import unicodedata
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from datetime import datetime
 import uuid
 
@@ -24,6 +25,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class profile_pic(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_owner_pp(self):
+        return self.author.profile.image.url
 
 
 class Post(models.Model):

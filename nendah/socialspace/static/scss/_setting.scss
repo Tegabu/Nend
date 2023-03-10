@@ -1,11 +1,21 @@
 
 .pg-title{
-    margin: 10px;
-    margin-left: 50px;
+    width: 95%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    
+
     h1{
-     font-family: "Roboto", sans-serif;
-     font-size: 15px;
-     color: rgb(54, 56, 91);
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: rgb(245, 98, 44);
+       
     }
 }
 
@@ -152,6 +162,56 @@
      display: none;
     h1{
         color: yellow;
+    }
+}
+
+.profile-features{
+    width: 100%;
+    .feature-title{
+       
+        width: 100%;
+        margin: auto;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        h3{
+            font-family: "Roboto", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        button{
+            width: 100%;
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+.listing{
+    .page-title{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+        margin-bottom: 20px;
+        h3{
+            font-family: "Roboto", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        button{
+            width: 120px;
+            padding: 5px 10px;
+            background-color: royalblue;
+            border-radius: 5px;
+            color: #fff;
+        }
     }
 }
 
