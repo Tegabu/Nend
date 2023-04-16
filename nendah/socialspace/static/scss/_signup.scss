@@ -60,15 +60,18 @@
     width: 100%;
     height: 250px;
     padding: 20px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     p {
-        margin-top: 10px;
+        margin: auto;
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     input {
         font-family: "Montserrat", sans-serif;
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 500;
         color: #555;
         background: transparent;
@@ -107,57 +110,121 @@
 }
 
 .sign-all {
+    height: 100%;
     background: #fff;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    background: url('/static/images/tree1.jpg');
+   // background: url('/static/images/tree1.jpg');
+    background-size: cover;
+    z-index: -1;
+    opacity: .8;
+    
 
 }
 
 .sign-left {
-    width: 20%;
-    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/images/sb.jpg') ;
+    background-size: cover;
+    z-index: -1;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    .s-info{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        flex-direction: column; 
+        padding: 0px 50px;
+        text-align: center;
+        color: #fff;
+        h2{
+            font-family: "Montserrat", sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        h1{
+            font-family: "Montserrat", sans-serif;
+            font-size: 7rem;
+            font-weight: 500;
+            img{
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin-left: -30px;
+                margin-top: -15px;
+            }
+        }
+        h4{
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: -20px;
+            margin-right: -430px;
+            
+        }
+        h5{
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: -50px;
+            margin-top: 10px;
+        }
+        
+    }
 }
 
 .all-signup {
-    width: 80%;
-    background: #fff;
+    width: 30%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: row;
+    z-index: 1;
+    background: #fff;
+
 
 }
 
 .b-drop {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
    /* background: url('/static/images/tree1.jpg') center center no-repeat; */
-    background-position: center;
-    background-size: cover;
-    margin: auto;
-    button{
-        width: 200px;
-        padding: 5px;
-        border: none;
-        border-radius: 10px;
-        color: #fff;
-        background: rgb(129, 1, 1);
-        font-family: "Roboto", sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-        cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+
+   h4{
+    font-family: "Montserrat", sans-serif;
+        font-size: .7rem;
+        font-weight: 500;
+        color: #000;
+        text-align: center;
+        
+   }
+    
+    a{
+        font-family: "Montserrat", sans-serif;
+        font-size: .7rem;
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 6px;
+        margin-left: 2px;
+        color: #ff4500;
+        
     }
 }
 
 .create-account {
-    width: 50vw;
+    width: 100%;
     background: transparent;
-    height: 100vh;
+    height: 100%;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -166,29 +233,41 @@
     color: #000;
     border-radius: 10px;
 
-    h1 {
-        font-family: "Roboto", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 300;
+    h1{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 3rem;
+        color: #555;
+    }
+
+    img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin-top: -40px;
     }
 }
 
 .account-form {
-    padding: 10px;
+    width: 100%;
+    padding: 0px 25px;
     font-family: "Roboto", sans-serif;
+    margin-top: 20px;
 
     p {
         margin: auto;
+        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
+        font-weight: 500;
     }
 
     input {
-        font-family: "Roboto", sans-serif;
-        font-size: .7rem;
-        font-weight: 300;
+        font-family: "Montserrat", sans-serif;
+        font-size: .9rem;
+        font-weight: 500;
         color: #444;
         background: transparent;
-        border: 3px solid #000;
+        border: 1px solid #000;
         border-radius: 10px;
         padding: 5px;
         width: 100%;
@@ -196,17 +275,17 @@
     }
 
     button {
-        width: 300px;
+        width: 100%;
         margin: auto;
-        margin-top: 5px;
+        margin-top: 10px;
         padding: 5px;
         border: none;
         border-radius: 10px;
-        background: rgb(129, 1, 1);
-        font-family: "Roboto", sans-serif;
+        background: #ff4500;
+        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         color: #ffffff;
-        font-weight: 400;
+        font-weight: 500;
         cursor: pointer;
     }
 }

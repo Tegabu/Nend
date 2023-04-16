@@ -1,5 +1,6 @@
 .profile-container{
     width: 100%;
+    min-height: 100vh;
 
     .profile-cont{
         width: 90%;
@@ -157,23 +158,25 @@
         }
     }
     .profile-features{
+        width: 100%;
         display: flex;
         flex-direction: column;
         border-top: 1px solid #555;
         margin-top: 20px;
         .feature-title{
+            padding: 0px 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             font-family: "Roboto", sans-serif;
-            margin-left: 30px;
             margin-top: 20px;
             h3{
+              font-family: "Roboto", sans-serif;
               font-size: 1.5rem;
-              font-weight: 600;
+              font-weight: 400;
               text-transform: capitalize;
-              color: #444;
+              color: #888787;
             }
             button{
                 cursor: pointer;
@@ -198,7 +201,7 @@
             
                         
         }
-        .profile-posts{
+        .profile-posts{ 
             margin: auto;
             margin-bottom: 30px;
             margin-top: -40px;
@@ -216,6 +219,22 @@
                     object-fit: cover;
                     border-radius: 10px;
                 }
+            }
+
+            
+        }
+
+        .zero-messo{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 3rem;
+                color: #dbdada;
             }
         }
 

@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('socialspace.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('inbox/', include('conversation.urls'))
 ]
 
 urlpatterns = urlpatterns+static(settings.MEDIA_URL,

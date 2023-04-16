@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} User:{{user_profile.user.username}} {% endblock %}
+{% block content %}
+{% load static %}
+
+
+<div class="pg-title">
+    <h1>Search</h1>
+    <img src="{% static 'images/favicon.png'%}" alt="">
+</div>
+
+<div class="find-cont">
+<div class="search-results">
+
+{% for users in username_profile_list %}
+<div class="search-result">
+    <a href="/user/{{users.user}}">
+    <div class="search-img">
+    <img src="{{users.profileimg.url}}" alt="">
+    </div>
+    
+    <div class="search-info">
+    <h1>{{users.user}}</h1>
+    </div>
+    
+    </a>
+</div>
+
+
+
+{% endfor %}
+
+
+</div>
+<div class="find-side">
+    <h1>Nendah <img src="{% static 'images/favicon.png'%}" alt=""></h1>
+    <h2>"Traveling is more than just seeing new places. It's about meeting new people, sharing stories, and creating lifelong memories together."</h2>
+</div>
+</div>
+
+{% endblock %}

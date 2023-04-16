@@ -3,94 +3,247 @@
 {% block content %}
 {% load static %}
 
-<div class="modal-alert">
-    <div class="modal_content">
-      <div class="top-bar"></div>
-      <div class="modal_inner_content"></div>
+<div class="dash-head">
+
+    <div class="pg-title">
+        <h1>My Dashboard</h1>
+        <img src="{% static 'images/favicon.png'%}" alt="">
     </div>
-  </div>
 
-    <div class="main-listings">
+    <div class="add-link">
+        <a href="{% url 'social:addlisting' %}" ><button >Add Listing <span>&#43;</span></button> </a>
+    </div>
+ </div>
 
-        <div class="add-listing">
-            <h1>Shop Duka</h1>
+ <div class="profile-container">
+    <div class="profile-cont">
+
+        {% if user.is_authenticated %}
+
+        <div class="profile-pic">
+            <img src="{{user_profile.profileimg.url}}" alt="" class="w-10 h-10 rounded">
+        </div>
+        <div class="profile-info">
+            <div class="person-name">
+                <h1>{{user_profile.user.username}}</h1>
+            </div>
+            <div class="profile-bio">
+                <h4>{{user_profile.bio}}</h4>
+            </div>
             
-        </div>
-
-        <div class="categories-pick">
-            <button>Restaurants</button>
-            <button>Bnbs</button>
-            <button>Activities</button>
-            <button>Hotels</button>
-            <button>Rafikis</button>
-            <button>Leisure</button>
-
-            <button class="showpop">Show Mod</button>
-        </div>
-         
-
-        <div class="listing">
-
-            <div class="feature-title">
+            <div class="profile-btn">
+                <form action="/follow" method="POST">
+                    {% csrf_token %}
+                <input type="hidden" value="{{user.username}}" name="follower">
+                <input type="hidden" value="{{user_object.username}}" name="user">
                 
-                <h3>Bnbs</h3>
+                {% if user_object.username == user.username %}
+                <a href="{% url 'social:profile' %}" class="text-white right-2 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit profile</a>
+                {% else %}
+                <button class="follow" type="submit">{{button_text}} &#8734;</button>
+                {% endif %} 
+                </form> 
                 
-    
+                <!--<button  class="pop-action" button-option="Show Message" >Message</button>--> 
+                
+                
+                <div class="edit-page">
+                    
+                    <div class="profile-settings">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+            
+                        <div class="profile-det">
+                          <img src="{{user_profile.profileimg.url}}" alt=""/>
+                          <div class="det-info">
+                            <h1> Hello <span>{{user.username}}</span></h1>
+                            <input type="file" name="image" value="{{user_profile.profileimg}}">
+                          </div>
+                        </div>
+                        
+            
+                        <div class="basic-info">
+                            <div class="title">
+                                <h1>Basic Info</h1>
+                            </div>
+                             
+                            <div class="info-opt">
+                                <div class="left-info">
+                                    <p>User Name :</p>
+                                    <input type="text" name="user" placeholder="{{user.username}}" class="name">
+            
+                                    <p>Phone :</p>
+                                    <input type="text" name="phone" value="{{user_profile.phone}}" class="name">
+                                </div>
+            
+                                <div class="right-info">
+                                    <p>Bio :</p>
+                                    <textarea id="bio" name="bio" class="bio" cols="33">{{user_profile.bio}}</textarea>
+            
+                                    <p>E-mail :</p>
+                                    <input type="text" name="email" value="{{user_profile.email}}" class="name">
+                                    
+                                </div>
+                                <br>
+                            </div>
+                                <div class="ctrl-button">
+                                <button  type="submit">Save Changes</button>
+                                </div>
+                            
+            
+                        </div>
+                    </form>
+                    </div>
+                                         
+
+                </div>
             </div>
 
-            <div class="listing-cards">
 
-                
+            
 
-                <div class="listing-card" >
-                   <a href="#" class="showprod"> 
-                        <img src="{% static 'images/r.jpg'%}" alt="">
-                    
-                        <div class="listing-info">
-                            <h4>nairobi</h4>
-                            <h5>westlands</h5>
-                        </div>
 
-                   </a>  
+            <!--Profile edit popup  section -->
+
+           
+
+            <!-- End of section -->
+
+
+            <div class="profile-stats">
+                <div class="stat">
+                    {% if user_post_length == 0 %}
+                    <h3>0</h3>
+                    <h3><span>posts</span></h3>
+                    {% elif user_post_length == 1 %}
+                    <h3>{{user_post_length}}</h3>
+                    <h3><span>Post</span></h3>
+                    {% else %}
+                    <h3>{{user_post_length}}</h3>
+                    <h3><span>Posts</span></h3>
+                    {% endif %}
                 </div>
 
-                <div class="product-desc">
+                <div class="stat">
+                    {% if user_followers == 1%}
+                    <h3>{{user_followers}}</h3>
+                    <h3><span>Follower</span></h3>
+                    {% else %}
+                    <h3>{{user_followers}}</h3>
+                    <h3><span>Followers</span></h3>
+                    {% endif %}
+                </div>
+
+                <div class="stat">
+                    <h3>{{user_following}}</h3>
+                    <h3><span>Following</span></h3>
+                </div>
+                
+                {% endif %}
+              
+            </div>
         
-                  <div class="pro-info">
-                    <div class="pro-img">
-                        <img src="{% static 'images/r.jpg'%}" alt="">
-                    </div>
-                    
-                    <div class="pro-title">
-                        <h1>crochet bag</h1>
-                    </div>
+        </div>
+    </div>
 
-                    <div class="pro-stats">
-                        <div class="pro-rating">
-                            <h1>Rating</h1>
-                            <h2>&#10022;</h2>
-                        </div>
-                        <div class="pro-price">
-                            <h1>Price</h1>
-                            <h2>$199.00</h2>
-                        </div>
-                    </div>
-
-                    <div class="product-about">
-                        <h3>Description</h3>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum a culpa asperiores fugiat sit fuga voluptatibus vel. Minus, magnam et!</h4>
-                    </div>
-
-                    <div class="interact-btns">
-                        <button>Add to Cart</button>
-                        <button>Contact Seller</button>
-                    </div>
-                  </div>
-                    
-                </div>
-                
+    <div class="profile-features">
+        <div class="feature-title">
+            <h3>Posts</h3>
             
         </div>
+        <div class="profile-posts">
+            {% for post in post  reversed%} 
+                <div class="post-item">
+                        <img src="{{post.image.url}}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+ </div>
+ 
+<div class="main-listings">
+
+ 
+
+    <div class="categories-pick">
+        {% for category in categories %}
+        <div class="cat-list">
+        <h4>{{category.name}}</h4>
+        <h5>{{category.listing.count}} listings</h5>
+        </div>
+        {% endfor %}
+        
+    </div>
+     
+
+    <div class="listing">
+
+      
+
+       
+
+        <div class="listing-cards">
+
+            {% for listing in listings %}
+            <a href="{% url 'social:detail' listing.id %}" >
+                <div class="listing-card" >
+                    
+                        <img src="{{listing.img.url}}" alt="">
+                    
+                    <div class="listing-info">
+                        <h4>{{listing.name}}</h4>
+                        <div class="item-det">
+                            <h5>{{listing.location}}</h5>
+                            <h5>${{listing.charge}} <span>/night</span></h5>
+                            </div>
+                    </div>
+                </div>
+            
+            </a>
+            {% endfor %}
+          
+
+        </div> 
+        
+        <div class="stay-booking">
+            
+            <div class="booking-detail">
+                <div class="booking-img">
+                    <img src="{{listing.img.url}}" alt="">
+                </div>
+
+                <div class="booking-title">
+                    <h1>{{Listing.name}}</h1>
+                    <h4>International Room</h4>
+                </div>
+
+                <div class="booking-stats">
+                    <div class="booking-rating">
+                        <h1>Rating</h1>
+                        <h2>&#10022;</h2>
+                    </div>
+                    <div class="booking-price">
+                        <h1>Price</h1>
+                        <h2>$199.00</h2>
+                    </div>
+                </div>
+
+
+                <div class="about-booking">
+                    <h3>Description</h3>
+
+                    <h5>{{listing.description}}</h5>
+                </div>
+
+                <div class="book-button">
+                    <button>Book Room</button>
+                </div>
+
+                
+            </div>
+            
+          </div>
+        
     </div>
 
 {% endblock %}

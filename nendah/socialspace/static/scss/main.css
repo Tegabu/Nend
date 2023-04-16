@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cabin:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Roboto:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
@@ -12,7 +13,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.container {
+.all-cont {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -22,21 +23,23 @@ html {
 }
 
 .cont-left {
-  width: 25vw;
+  width: 25%;
   position: sticky;
   top: 0;
 }
 .cont-left .logo-pic {
-  margin-top: 5px;
-  width: 100%;
-  height: 70px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 30%;
+  height: 60px;
 }
 .cont-left .logo-pic img {
   width: 100%;
   height: 100%;
   margin: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .cont-left .profile_dit {
   margin-top: 10px;
@@ -83,9 +86,9 @@ html {
   color: rgb(54, 56, 91);
 }
 .cont-left .profile_dit .profile_info .profile_bio p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #444;
   max-width: 6rem;
   display: -webkit-box;
@@ -102,14 +105,14 @@ html {
   width: 85%;
   margin: auto;
   margin-top: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
   border-radius: 20px;
   padding: 0px 0px 0px 0px;
 }
 .cont-left .profile-details h1 {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: capitalize;
   color: rgb(54, 56, 91);
 }
@@ -167,7 +170,7 @@ html {
 .cont-left .side-nav ul {
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px 0px 5px 15px;
 }
 .cont-left .side-nav ul a {
@@ -178,10 +181,9 @@ html {
   margin: auto;
   margin-bottom: 15px;
   cursor: pointer;
-  width: 200px;
-  background-color: #ece9e6;
+  max-width: 200px;
+  background-color: #e9e8e7;
   border-radius: 10px;
-  /* box-shadow: 10px 10px 10px -5px rgb(202, 199, 199); */
 }
 .cont-left .side-nav ul a li img {
   width: 20px;
@@ -189,29 +191,26 @@ html {
   margin-right: 10px;
 }
 .cont-left .side-nav ul a li h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #000;
   text-align: center;
   border: 2px solid transparent;
   color: #555;
 }
 .cont-left .side-nav ul :hover {
-  background-color: rgb(249, 142, 84);
-  color: #fff;
+  background-color: #d6d3d0;
+  color: #000;
 }
 
 .cont-right {
-  width: 75vw;
-  background: #ece9e6;
-  background: linear-gradient(to right, #ece9e6, #ffffff);
+  width: 100%;
 }
 
 .nav-bar {
-  width: 90%;
+  width: 100%;
   position: sticky;
-  top: 10px;
+  top: 0px;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -220,17 +219,18 @@ html {
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
-  padding: 10px 0px 10px 0px;
+  padding: 20px 30px 20px 30px;
   border-radius: 10px;
 }
 .nav-bar .search-bar {
   margin-left: 20px;
+  width: 75%;
 }
 .nav-bar .search-bar input {
-  width: 30vw;
-  padding: 5px;
-  border: none;
+  width: 80%;
+  padding: 5px 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
   letter-spacing: 0.1rem;
   font-weight: 100;
   background: transparent;
@@ -239,22 +239,44 @@ html {
   border: none;
 }
 .nav-bar .search-bar button {
-  /*padding: 5px 10px;*/
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   border-radius: 5px;
+  background-color: #E8772E;
+  width: 100px;
+  height: 35px;
   border: none;
   color: #fff;
   cursor: pointer;
 }
-.nav-bar .upload-btn button {
-  /*padding: 5px 10px;*/
+.nav-bar .upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8772E;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+}
+.nav-bar .upload-btn a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  /*background: #fe8c00;*/
-  /*background-color: rgb(249,142,84);*/
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+}
+.nav-bar .upload-btn button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -264,7 +286,6 @@ html {
   height: 20px;
   width: 20px;
   cursor: pointer;
-  /* cart section */
 }
 .nav-bar .notification-alert img {
   width: 100%;
@@ -298,24 +319,23 @@ html {
 .main-sec {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 75vw;
-  /* Modal Content */
-  /* The Close Button */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 10px;
 }
 .main-sec .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .main-sec .upload-popup {
   font-family: "Roboto", sans-serif;
@@ -401,24 +421,33 @@ html {
   width: 100%;
 }
 .main-sec .feed {
-  width: 60%;
+  width: 65%;
   margin: auto;
-  margin-top: 5px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
-.main-sec .feed .pg_title {
-  margin-left: 5px;
-  margin-top: 30px;
+.main-sec .feed .mpg-title {
+  padding: 0px 0px;
   margin-bottom: 20px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.main-sec .feed .pg_title h1 {
+.main-sec .feed .mpg-title h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #F24A02;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #888787;
+}
+.main-sec .feed .mpg-title img {
+  margin-top: 8px;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-sec .feed .feed-post {
   width: 100%;
@@ -447,7 +476,6 @@ html {
 .main-sec .feed .feed-post .post-profile .post-profile-img img {
   width: 100%;
   height: 100%;
-  /*border-radius: 100%;*/
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -483,37 +511,38 @@ html {
   justify-content: center;
   flex-direction: row;
 }
-.main-sec .feed .feed-post .post-interactions a {
-  text-decoration: none;
-}
-.main-sec .feed .feed-post .post-interactions a .like-btn {
-  width: 80px;
+.main-sec .feed .feed-post .post-interactions .like-btn {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5px;
   margin-left: 10px;
   margin-bottom: 3px;
   margin-top: 3px;
   cursor: pointer;
 }
-.main-sec .feed .feed-post .post-interactions a .like-btn img {
+.main-sec .feed .feed-post .post-interactions .like-btn img {
   width: 20px;
   height: 20px;
+  transition: transform 500ms ease-in-out;
 }
-.main-sec .feed .feed-post .post-interactions a .like-btn h1 {
+.main-sec .feed .feed-post .post-interactions .like-btn h1 {
   margin-left: 40px;
   font-family: "Roboto", sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
+  border: 1px solid #f00;
 }
-.main-sec .feed .feed-post .post-interactions a .like-btn p {
+.main-sec .feed .feed-post .post-interactions .like-btn p {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
 }
-.main-sec .feed .feed-post .post-interactions a .like-btn p span {
+.main-sec .feed .feed-post .post-interactions .like-btn p span {
   color: #555;
+}
+.main-sec .feed .feed-post .post-interactions .like-btn img:hover {
+  transform: scale(1.5);
 }
 .main-sec .feed .feed-post .post-interactions .comment-btn {
   width: 20px;
@@ -531,7 +560,7 @@ html {
 }
 .main-sec .feed .feed-post .caption {
   margin: auto;
-  margin-top: -5px;
+  margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 3px;
 }
@@ -552,11 +581,12 @@ html {
   font-weight: 400;
 }
 .main-sec .side-cont {
-  width: 35%;
-  padding: 15px 0px 0px 0px;
+  width: 30%;
   position: sticky;
-  top: 60px;
-  margin-right: 10px;
+  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
+  border-radius: 5px;
+  margin-top: -10px;
+  top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -565,9 +595,7 @@ html {
 .main-sec .side-options {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
-  margin-bottom: 20px;
-  background-color: #fff;
+  padding: 10px 0px;
 }
 .main-sec .side-options .side-title {
   background-color: rgb(244, 241, 241);
@@ -576,55 +604,61 @@ html {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .main-sec .side-options .side-title h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.9rem;
-  font-weight: 400;
-  color: #F24A02;
+  font-weight: 500;
+  color: #E8772E;
   padding: 5px 10px 5px 10px;
 }
 .main-sec .side-options .new-followers {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
+  margin: auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
 }
-.main-sec .side-options .new-followers .n-follower {
-  margin-left: 10px;
+.main-sec .side-options .new-followers a {
+  width: 100%;
+  background: #e9e8e7;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin: auto;
+}
+.main-sec .side-options .new-followers a .n-follower {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
 }
-.main-sec .side-options .new-followers .n-follower .follower-img {
+.main-sec .side-options .new-followers a .n-follower .follower-img {
   width: 30px;
   height: 30px;
-  /*border-radius: 50%;*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-sec .side-options .new-followers .n-follower .follower-img img {
+.main-sec .side-options .new-followers a .n-follower .follower-img img {
   width: 100%;
   height: 100%;
-  /* border-radius: 100%;*/
   -o-object-fit: cover;
      object-fit: cover;
 }
-.main-sec .side-options .new-followers .n-follower .follower-name {
+.main-sec .side-options .new-followers a .n-follower .follower-name {
   margin-left: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-sec .side-options .new-followers .n-follower .follower-name h1 {
-  color: #7d7d7d;
-  font-weight: 600;
+.main-sec .side-options .new-followers a .n-follower .follower-name h1 {
+  color: #444;
+  font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.04rem;
 }
@@ -632,21 +666,22 @@ html {
   margin-right: 10px;
 }
 .main-sec .side-options .new-followers .follow-btn a {
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
 }
 .main-sec .side-options .new-followers .follow-btn a button {
   padding: 3px 10px 3px 10px;
   border-radius: 10px;
   border: none;
-  color: #7d7d7d;
+  color: #a4a3a3;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.04rem;
   background: rgb(244, 241, 241);
 }
 .main-sec .side-options .new-followers .follow-btn a :hover {
-  background-color: #F24A02;
+  background-color: #E8772E;
   border: 1px solid #fff;
   color: #fff;
 }
@@ -658,6 +693,62 @@ html {
 .main-sec .side-options .new-followers .field-icon img {
   width: 100%;
   height: 100%;
+}
+.main-sec .quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px -5px rgb(202, 199, 199);
+  margin-bottom: 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+.main-sec .quote .s-name {
+  width: 80%;
+  height: 100px;
+  margin-top: -150px;
+  background-color: #E8772E;
+}
+.main-sec .quote .s-name img {
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-sec .quote h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+}
+.main-sec .quote .signup-btn {
+  width: 150px;
+  height: 35px;
+  margin-top: 20px;
+  background-color: #E8772E;
+  border-radius: 5px;
+}
+.main-sec .quote .signup-btn a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.main-sec .quote .signup-btn a h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
 }
 
 .modal-alert .cart-info .cart-h1 h1 {
@@ -764,6 +855,94 @@ html {
   margin-right: 10px;
 }
 
+.find-cont {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 20px;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.find-cont .search-results {
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 20px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.find-cont .search-results .search-result {
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2px;
+  background: #efeeee;
+  border-radius: 5px;
+}
+.find-cont .search-results .search-result a {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.find-cont .search-results .search-result a h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #888787;
+}
+.find-cont .search-results .search-result a .search-img {
+  width: 40px;
+  height: 40px;
+}
+.find-cont .search-results .search-result a .search-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.find-cont .search-results .search-result a .search-info {
+  margin-left: 10px;
+}
+.find-cont .search-results .search-result a .search-info h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.find-cont .find-side {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+.find-cont .find-side h1 {
+  font-family: "Montserrt", sans-serif;
+  font-weight: 500;
+  font-size: 4rem;
+  color: #d6d3d0;
+}
+.find-cont .find-side h1 img {
+  width: 15px;
+  height: 15px;
+  margin-left: 210px;
+  margin-top: -20px;
+}
+.find-cont .find-side h2 {
+  font-family: "Montserrt", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #b1b0b0;
+  margin-top: 20px;
+}
+
 .login-h1 {
   width: 100%;
   background: rgb(135, 206, 235);
@@ -818,14 +997,17 @@ html {
   width: 100%;
   height: 250px;
   padding: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .login-form p {
-  margin-top: 10px;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
 }
 .login-form input {
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 500;
   color: #555;
   background: transparent;
@@ -860,55 +1042,110 @@ html {
 }
 
 .sign-all {
+  height: 100%;
   background: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  background: url("/static/images/tree1.jpg");
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .sign-left {
-  width: 20%;
-  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  background: url("/static/images/sb.jpg");
+  background-size: cover;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+.sign-left .s-info {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 50px;
+  text-align: center;
+  color: #fff;
+}
+.sign-left .s-info h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.sign-left .s-info h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 7rem;
+  font-weight: 500;
+}
+.sign-left .s-info h1 img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: -30px;
+  margin-top: -15px;
+}
+.sign-left .s-info h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: -20px;
+  margin-right: -430px;
+}
+.sign-left .s-info h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: -50px;
+  margin-top: 10px;
 }
 
 .all-signup {
-  width: 80%;
-  background: #fff;
+  width: 30%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: row;
+  z-index: 1;
+  background: #fff;
 }
 
 .b-drop {
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* background: url('/static/images/tree1.jpg') center center no-repeat; */
-  background-position: center;
-  background-size: cover;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.b-drop button {
-  width: 200px;
-  padding: 5px;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  background: rgb(129, 1, 1);
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  cursor: pointer;
+.b-drop h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+}
+.b-drop a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 6px;
+  margin-left: 2px;
+  color: #ff4500;
 }
 
 .create-account {
-  width: 50vw;
+  width: 100%;
   background: transparent;
-  height: 100vh;
+  height: 100%;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -918,61 +1155,77 @@ html {
   border-radius: 10px;
 }
 .create-account h1 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #555;
+}
+.create-account img {
+  width: 200px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -40px;
 }
 
 .account-form {
-  padding: 10px;
+  width: 100%;
+  padding: 0px 25px;
   font-family: "Roboto", sans-serif;
+  margin-top: 20px;
 }
 .account-form p {
   margin: auto;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
+  font-weight: 500;
 }
 .account-form input {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #444;
   background: transparent;
-  border: 3px solid #000;
+  border: 1px solid #000;
   border-radius: 10px;
   padding: 5px;
   width: 100%;
   text-align: center;
 }
 .account-form button {
-  width: 300px;
+  width: 100%;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 5px;
   border: none;
   border-radius: 10px;
-  background: rgb(129, 1, 1);
-  font-family: "Roboto", sans-serif;
+  background: #ff4500;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
 }
 
 .pg-title {
-  width: 95%;
-  margin: auto;
+  padding: 10px 0px;
+  margin-left: 30px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 5px 5px;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .pg-title h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgb(245, 98, 44);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #888787;
+}
+.pg-title img {
+  margin-top: 8px;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .profile-settings {
@@ -1008,7 +1261,7 @@ html {
   margin-left: 10px;
 }
 .profile-settings form .profile-det .det-info h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 10px;
   font-weight: 400;
   font-size: 1.1rem;
@@ -1018,7 +1271,7 @@ html {
   color: #555;
 }
 .profile-settings form .profile-det .det-info input {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: rgb(245, 98, 44);
   color: #fff;
   border: none;
@@ -1038,11 +1291,11 @@ html {
   background-color: #fff;
 }
 .profile-settings form .basic-info .title h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-left: 10px;
   margin-bottom: 10px;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #444;
 }
 .profile-settings form .basic-info .info-opt {
@@ -1059,12 +1312,13 @@ html {
   width: 45%;
 }
 .profile-settings form .basic-info .info-opt .left-info p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 5px;
 }
 .profile-settings form .basic-info .info-opt .left-info input {
-  border: none;
-  border-bottom: 1px solid rgb(204, 201, 201);
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0px 10px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -1072,12 +1326,20 @@ html {
   width: 45%;
 }
 .profile-settings form .basic-info .info-opt .right-info p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 5px;
 }
 .profile-settings form .basic-info .info-opt .right-info input {
-  border: none;
-  border-bottom: 1px solid rgb(204, 201, 201);
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0px 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.profile-settings form .basic-info .info-opt .right-info textarea {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0px 10px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -1089,14 +1351,14 @@ html {
   margin-top: 10px;
 }
 .profile-settings form .basic-info .ctrl-button button {
-  background-color: rgb(117, 110, 108);
+  background-color: #E8772E;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   width: 150px;
   height: 30px;
   border: none;
@@ -1110,6 +1372,22 @@ html {
 }
 .upload h1 {
   color: yellow;
+}
+
+.upd-list {
+  background: #E8772E;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.upd-list a {
+  width: 100%;
+  padding: 5px 10px;
+}
+.upd-list a button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 .profile-features {
@@ -1163,20 +1441,26 @@ html {
 }
 
 .add-listing {
-  width: 95%;
-  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 30px;
   margin-bottom: 20px;
   padding: 5px 5px;
+  margin-left: 20px;
 }
 .add-listing h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgb(245, 98, 44);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #888787;
+}
+.add-listing img {
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .categories-pick {
@@ -1200,7 +1484,7 @@ html {
 }
 .categories-pick .cat-list h4, .categories-pick .cat-list h5 {
   color: #555;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   margin-right: 5px;
@@ -1222,13 +1506,16 @@ html {
   margin: auto;
   margin-top: 40px;
 }
+.listing .search-list form .search-btn {
+  background: #E8772E;
+}
 .listing .feature-title {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 20px;
 }
 .listing .feature-title .search-cat {
@@ -1250,7 +1537,7 @@ html {
 .listing .feature-title .search-cat ul li {
   float: left;
   margin-left: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: transparent;
   border: 1px solid #444;
   border-radius: 5px;
@@ -1268,15 +1555,17 @@ html {
   align-items: center;
   text-align: center;
   box-shadow: 0 2px 2px -2px rgb(202, 199, 199);
+  background: #E8772E;
   border-radius: 5px;
 }
 .listing .feature-title a .search-link h1 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
   color: #fff;
 }
 .listing h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.7rem;
   font-weight: 500;
   margin: 20px 20px;
@@ -1324,7 +1613,7 @@ html {
 .listing-cards .listing-card .listing-info h4 {
   width: 95%;
   margin: auto;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   color: #000;
@@ -1342,7 +1631,7 @@ html {
   margin-bottom: 5px;
 }
 .listing-cards .listing-card .listing-info .item-det h5 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 0.8rem;
   text-transform: capitalize;
@@ -1664,7 +1953,8 @@ html {
 }
 .stay-listing .listing-title h1 {
   text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #000;
 }
@@ -1702,13 +1992,15 @@ html {
   width: 100%;
   text-align: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 .stay-listing .listing-card .listing-details .listing-header h4 {
   text-transform: capitalize;
   color: #555;
   font-size: 1.3rem;
+  font-weight: 500;
   border-bottom: 1px solid #cfcece;
 }
 .stay-listing .listing-card .listing-details .about-listing {
@@ -1717,18 +2009,20 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 10px;
 }
 .stay-listing .listing-card .listing-details .about-listing h3 {
   margin-bottom: 10px;
   width: 100%;
+  font-weight: 500;
 }
 .stay-listing .listing-card .listing-details .about-listing h5 {
   width: 100%;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 500;
   text-transform: capitalize;
-  color: #555;
+  color: #848383;
 }
 .stay-listing .listing-card .listing-details .listing-price {
   width: 100%;
@@ -1737,7 +2031,7 @@ html {
   flex-direction: row;
   align-items: flex-end;
   gap: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .stay-listing .listing-card .listing-details .listing-price h1 {
   font-size: 1.2rem;
@@ -1778,28 +2072,33 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-top: 20px;
   gap: 10px;
 }
 .stay-listing .listing-card .creator h5 {
   color: #555;
-  font-size: 1rem;
   box-shadow: 10px 10px 10px -5px rgb(202, 199, 199);
   padding: 4px 10px;
   border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 .stay-listing .listing-card .creator .creator-opt {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 10px;
+  margin-top: 10px;
+  gap: 20px;
 }
 .stay-listing .listing-card .creator .creator-opt a {
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
-  background-color: rgb(249, 142, 84);
+  background-color: #E8772E;
   color: #fff;
   padding: 4px 10px;
   border-radius: 5px;
@@ -1810,7 +2109,7 @@ html {
   width: 100%;
   margin-bottom: 40px;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .related-options h1 {
   font-size: 1.4rem;
@@ -1827,7 +2126,7 @@ html {
   align-items: center;
 }
 .new-add .add-title {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   text-transform: capitalize;
@@ -1852,8 +2151,59 @@ html {
   color: #fff;
 }
 
+.new-add .add-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.new-add .add-title img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.new-add .add-title h1 {
+  font-family: "Montserrat" sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #555;
+  margin-top: 40px;
+}
+
+.dash-head {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+  align-items: center;
+}
+.dash-head .pg-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #888787;
+}
+.dash-head .add-link {
+  margin-right: 40px;
+  background: #E8772E;
+  border-radius: 5px;
+}
+.dash-head .add-link a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  color: #fff;
+}
+
 .profile-container {
   width: 100%;
+  min-height: 100vh;
 }
 .profile-container .profile-cont {
   width: 90%;
@@ -2002,25 +2352,27 @@ html {
   font-weight: 500;
 }
 .profile-container .profile-features {
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-top: 1px solid #555;
   margin-top: 20px;
 }
 .profile-container .profile-features .feature-title {
+  padding: 0px 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  margin-left: 30px;
   margin-top: 20px;
 }
 .profile-container .profile-features .feature-title h3 {
+  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: capitalize;
-  color: #444;
+  color: #888787;
 }
 .profile-container .profile-features .feature-title button {
   cursor: pointer;
@@ -2060,6 +2412,19 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+.profile-container .profile-features .zero-messo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile-container .profile-features .zero-messo h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #dbdada;
 }
 .profile-container .profile-features .my-cont {
   width: 95%;
@@ -2135,4 +2500,196 @@ html {
 }
 .modal-alert .form-cont form .form-group label {
   font-family: "Roboto", sans-serif;
+}
+
+.new-chat {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.new-chat h1 {
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.new-chat form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.messo-page {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 40px;
+}
+.messo-page .sender-name {
+  margin-left: 15px;
+}
+.messo-page .person-info {
+  width: 60%;
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+  float: right;
+}
+.messo-page .person-info .user-name {
+  margin-left: 15px;
+  float: right;
+}
+.messo-page .person-info .user-messo {
+  width: 100%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.messo-page .person-info .user-messo p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 10px 10px;
+  width: 70%;
+}
+.messo-page .person-info .user-messo h4 {
+  font-size: 0.7rem;
+  margin: 3px 5px 0px 1px;
+  justify-content: baseline;
+}
+.messo-page .received-messo {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.messo-page .received-messo p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 10px 10px;
+  width: 70%;
+}
+.messo-page .received-messo .sender-det h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin: 3px 0px 0px 1px;
+}
+.messo-page .received-messo .sender-det h4 {
+  font-size: 0.6rem;
+  margin: 0px 5px 0px 1px;
+  justify-content: flex-end;
+}
+
+.chat-m {
+  width: 95%;
+  margin: auto;
+  margin-top: 50px;
+}
+.chat-m form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.chat-m form .reply-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  width: 70px;
+  margin-top: 30px;
+}
+.chat-m form .reply-btn button {
+  background: #F24A02;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.in-title {
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.in-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #555;
+}
+.in-title img {
+  margin-top: 20px;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.inbox-pg {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.inbox-pg .inbox-cont {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgb(234, 234, 234);
+  margin-bottom: 10px;
+}
+.inbox-pg .inbox-cont .l-img {
+  width: 100px;
+  height: 100px;
+}
+.inbox-pg .inbox-cont .l-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inbox-pg .inbox-cont .chat-cont {
+  width: 80%;
+}
+.inbox-pg .inbox-cont .chat-cont .chat-name .chat-view {
+  padding: 10px 0px;
+  margin-top: 5px;
+}
+.inbox-pg .inbox-cont .chat-cont .chat-name .chat-view p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+}
+.inbox-pg .inbox-cont .chat-cont .chat-name h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.inbox-pg .inbox-cont .chat-cont .chat-name h2 span {
+  font-size: 0.6rem;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %} New Conversation {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="in-title">
+
+    <h1>Chat</h1>
+    <img src="{% static 'images/favicon.png'%}" alt="">
+</div>
+
+<div class="messo-page">
+    <div class="">
+        
+        
+        {% for message in conversation.messages.all %}
+       
+        {% if message.created_by == request.user %}
+         <div class=" ">
+            <div class="person-info">
+              <!--  <p class="user-name ">{{message.created_by.username}}</p> -->
+                <div class="user-messo bg-blue-300">
+                <p >{{message.content}}</p>
+                <h4><span>{{message.created_at}}</span></h4>
+                </div>
+            </div>
+            </div>
+
+            {% else %} 
+
+            <div class="   ">
+                <div class="">
+                  <!--  <p class=" sender-name"><strong>{{message.created_by.username}} </strong></p> -->
+                    <div class="received-messo bg-gray-300">
+                    <p>{{message.content}}</p>
+                    <div class="sender-det">
+                    <h3>{{message.created_by.username}}</h3> 
+                    <h4>{{message.created_at}}</h4>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        
+        {% endfor %}
+        </div>
+        
+        <div class="chat-m">
+        <form method="post" action="./"  >
+            {% csrf_token %}
+            <div class="" style="color: transparent;">
+            {{form.as_p}}
+            </div>
+            <div class="reply-btn">
+            <button>send</button>
+            </div>
+        </form>
+        </div>
+    
+</div>
+{% endblock %}

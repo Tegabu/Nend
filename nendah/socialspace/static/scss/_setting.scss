@@ -1,21 +1,21 @@
 
 .pg-title{
-    width: 95%;
-    margin:auto;
+    padding: 10px 0px;
+    margin-left: 30px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 5px 5px;
-    
-
+    flex-direction: row;
+    justify-content: flex-start;
     h1{
         font-family: "Roboto", sans-serif;
-        font-size: 1rem;
-        font-weight: 500;
-        color: rgb(245, 98, 44);
-       
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #888787;
+    }
+    img{
+        margin-top: 8px;
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
     }
 }
 
@@ -50,14 +50,14 @@
                     span{
                         color: #555;
                     }
-                    font-family: "Roboto", sans-serif;
+                    font-family: "Montserrat", sans-serif;
                     margin-bottom: 10px;
                     font-weight: 400;
                     font-size: 1.1rem;
                     color: rgb(54, 56, 91);
                 }
                 input{
-                    font-family: "Roboto", sans-serif;
+                    font-family: "Montserrat", sans-serif;
                     background-color: rgb(245, 98, 44);
                     color: #fff;
                     border: none;
@@ -82,11 +82,11 @@
         background-color: #fff;
         .title{
             h1{
-            font-family: "Roboto", sans-serif;
+            font-family: "Montserrat", sans-serif;
             margin-left: 10px;
             margin-bottom: 10px;
             font-size: 1.5rem;
-            font-weight: 400;
+            font-weight: 500;
             color: #444;
             }
            
@@ -104,12 +104,13 @@
             .left-info{
                 width: 45%;
                     p{
-                        font-family: "Roboto", sans-serif;
+                        font-family: "Montserrat", sans-serif;
                         margin-bottom: 5px;
                     }
                     input{
-                        border: none;
-                        border-bottom: 1px solid rgb(204, 201, 201);
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding: 0px 10px;
                         width: 100%;
                         margin-bottom: 10px;
                         
@@ -118,15 +119,23 @@
             .right-info{
                 width: 45%;
                 p{
-                    font-family: "Roboto", sans-serif;
+                    font-family: "Montserrat", sans-serif;
                     margin-bottom: 5px;
                 }
                     input{
-                        border: none;
-                        border-bottom: 1px solid rgb(204, 201, 201);
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding: 0px 10px;
                         width: 100%;
                         margin-bottom: 10px;
                         
+                    }
+                    textarea{
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding: 0px 10px;
+                        width: 100%;
+                        margin-bottom: 10px;
                     }
             }
 
@@ -139,14 +148,14 @@
             justify-content: center;
             margin-top: 10px;
         button{
-            background-color: rgb(117, 110, 108);
+            background-color: #E8772E;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: "Roboto", sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 500;
             width: 150px;
             height: 30px;
             border: none;
@@ -164,6 +173,22 @@
         color: yellow;
     }
 }
+.upd-list{
+    background: #E8772E;
+    border-radius: 5px;
+    margin-left: 20px;
+    a{
+        width: 100%;
+        padding: 5px 10px;
+        button{
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+}
+
 
 .profile-features{
     width: 100%;

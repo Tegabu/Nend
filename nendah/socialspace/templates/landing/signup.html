@@ -18,8 +18,15 @@
     <main class="sign-all">
 
         <div class="sign-left">
-
-        </div>
+        
+            <div class="s-info">
+                <h2>Find & Tell Your Story</h2>
+                <h1>Explore <img src="{% static 'images/favicon.png'%}" alt=""></h1>
+                <h4>Nendah</h4>
+                <h5>"Life is a journey, and the world is your playground. Don't just exist, live. Explore new horizons, meet new people, and create memories that will last a lifetime. Your adventure starts now."</h5>
+                
+            </div>
+        
 
         <div class="all-signup">
 
@@ -28,7 +35,8 @@
 
                 
 
-                <h1>Create account</h1>
+                <!--<img src="{% static 'images/lname.png'%}" alt="">-->
+                <h1>Nendah</h1>
 
                 <div>
                     <style>
@@ -43,8 +51,8 @@
 
                 <form action="" method="post" class="account-form">
                     {% csrf_token %}
-                    <p>User :</p>
-                    <input type="text" name="username" placeholder="user" class="user">
+                    <p>User Name:</p>
+                    <input type="text" name="username" placeholder="User Name" class="user">
                     <p>Email :</p>
                     <input type="email" name="email" placeholder="Email" class="name">
                     <p>Password :</p>
@@ -54,12 +62,15 @@
                     <button type="submit" name="submit">Create account &#9787;</button>
                 </form>
 
-            </div>
-
-          <div class="b-drop">
-               <a href="login"><button>login</button></a>
+                <div class="b-drop">
+                  <h4>already have an account?</h4>  <a href="{% url 'social:login' %}">Login</a>
+                 </div>
             </div>
         </div>
+
+         
+        </div>
+        
     </main>
 
 </body>

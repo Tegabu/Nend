@@ -3,9 +3,10 @@
 {% block content %}
 {% load static %}
 
-    <div class="pg-title">
-        <h1>Profile Setting</h1>
-    </div>
+<div class="pg-title">
+    <h1>Profile</h1>
+    <img src="{% static 'images/favicon.png'%}" alt="">
+</div> 
 
     <div class="profile-settings">
         
@@ -23,7 +24,7 @@
 
             <div class="basic-info">
                 <div class="title">
-                    <h1>Basic Info</h1>
+                    <h1>Edit Info</h1>
                 </div>
                  
                 <div class="info-opt">
@@ -54,15 +55,15 @@
         </form>
         
     </div>
+    
+    <div class="upd-list">
+        <a href="{% url 'social:addlisting' %}" ><button >Creat a Property Listing <span>&#43;</span></button> </a>
+     </div>
+
     <div class="profile-features">
     <div class="feature-title">
                 
-        <h3>Listings</h3>
-
         
-        <div class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-           <a href="{% url 'social:addlisting' %}" ><button >Creat a Property Listing <span>&#43;</span></button> </a>
-        </div>
 
         
 

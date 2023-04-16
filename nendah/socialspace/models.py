@@ -16,9 +16,9 @@ User = get_user_model()
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # id_user = models.IntegerField()
-    bio = models.TextField(blank=True)
+    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+    id_user = models.IntegerField(null=True)
+    bio = models.TextField(blank=False)
     profileimg = models.ImageField(
         upload_to='profile_images', default='person.png')
     phone = models.IntegerField(default='0')
@@ -112,23 +112,3 @@ class FollowersCount(models.Model):
 
     def __str__(self):
         return self.user
-
-
-class Chat(models.Model):
-    listing = models.ForeignKey(
-        Listing, related_name='chat', on_delete=models.CASCADE)
-    members = models.ManyToManyField(User, related_name='chat')
-    created_at = models.DateTimeField(auto_now_add=True)
-    modified_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ('-modified_at',)
-
-
-class ChatMessage(models.Model):
-    chat = models.ForeignKey(
-        Chat, related_name='messages', on_delete=models.CASCADE)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(
-        User, related_name='created_messages', on_delete=models.CASCADE)

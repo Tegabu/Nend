@@ -7,13 +7,28 @@ $(document).ready(function(){
 
   $(`my`)
 
+  $('.like-bi').off()
+  $('.like-bi').on('click',(eve)=>{
+    likePost(eve.target);
+  })
+
 });
 function loadPage(endpoint_url,div){
   $.ajax({url: endpoint_url,success: (data)=>{
     $(div).html(data);
   }});
 }
-
+async function likePost(btn){
+   let response = await fetch($(btn).attr('path-details'));
+   let state=JSON.parse(await response.text());
+   if(state.likedStatus==1){
+   $(btn).prop('src','/static/images/redheart.png')
+   $($(btn).parent().children()[1]).html(`${state.likes>0 ? state.likes : '+'} like`)
+   }else{
+    $(btn).prop('src','/static/images/like.png')
+    $($(btn).parent().children()[1]).html(state.likes>0 ? `${state.likes} <span>like</span>` : '+<span>like</span>')
+   }
+}
 
 // Chat
 

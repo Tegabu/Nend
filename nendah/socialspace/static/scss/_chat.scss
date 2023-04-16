@@ -1,0 +1,219 @@
+.new-chat{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        margin-top: 50px;
+        font-family: "Roboto", sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 50px;
+    }
+}
+
+
+.messo-page{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 40px;
+
+
+
+
+.sender-name{
+    margin-left: 15px;
+}
+
+.person-info{
+    width: 60%;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    float: right;
+.user-name{
+    margin-left: 15px;
+    float: right;
+}
+.user-messo{
+    width: 100%;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    p{
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 10px 10px;
+        width: 70%;
+        
+    }
+    h4{
+        font-size: .7rem;
+        margin: 3px 5px 0px 1px;
+        justify-content: baseline;
+        
+    }
+    
+}
+}
+
+
+.received-messo{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    p{
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 10px 10px;
+        width: 70%;
+    
+        
+    }
+    .sender-det{
+    h3{
+        font-family: "Roboto", sans-serif;
+        font-size: .7rem;
+        font-weight: 500;
+        margin: 3px 0px 0px 1px;
+    
+    }    
+    h4{
+        font-size: .6rem;
+        margin: 0px 5px 0px 1px;
+        justify-content: flex-end;
+        
+    }
+}
+    
+}
+
+
+}
+
+.chat-m{
+    width: 95%;
+    margin: auto;
+    margin-top: 50px;
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+        .reply-btn{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 50px;
+            width: 70px;
+            margin-top: 30px;
+        
+        button{
+            background: #F24A02;
+            font-family: "Roboto", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            
+        }
+    }
+    }
+
+}
+
+
+.in-title{
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    h1{
+        font-family: "Roboto", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: #555;
+    }
+    img{
+        margin-top: 20px;
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+    }
+}
+
+.inbox-pg{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    .inbox-cont{
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background: rgb(234, 234, 234);
+        margin-bottom: 10px;
+        .l-img{
+            width: 100px;
+            height: 100px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .chat-cont{
+            width: 80%;
+           .chat-name{
+            .chat-view{
+                padding: 10px 0px;
+                margin-top: 5px;
+            
+                p{
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #555;
+                }
+            }
+            h2{
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                span{
+                    font-size: .6rem;
+                }
+            }
+           }
+        }
+    }
+
+}
+

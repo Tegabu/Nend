@@ -51,9 +51,12 @@
            <div class="feed-all">
 
             <div class="feed" >
-                <div class="pg-title">
-                    <h1> Explore</h1>
-                </div>
+                <div class="mpg-title">
+                    <h1>Explore</h1>
+                    <img src="{% static 'images/favicon.png'%}" alt="">
+                </div> 
+
+                
 
                 {% for post in posts reversed %}
                 <div class="feed-post">
@@ -64,16 +67,20 @@
                         </div>-->
                         <div class="post-profile-name">
                           <a href="/user/{{post.user}}">  <h1>{{post.user}}</h1></a>
-                        </div>
+                        </div> 
                     </div>
                     
                     <div class="post-main-content">
                         <img src="{{post.image.url}}" alt="">
                     </div> 
-                    <div class="post-interactions">
-                        <a href="/like-post?post_id={{post.id}}">
+                    <!--<div class="post-interactions">
+                      
                             <div class="like-btn">
-                                <img src="{% static 'images/like.png'%}" alt="">
+                                {% if username not in post.like_filter.all %}
+                                <img src="{% static 'images/redheart.png'%}" path-details="/like-post?post_id={{post.id}}" class="like-bi" alt="" style="width:25px;margin:5px;">
+                                {% else %}
+                                <img src="{% static 'images/like.png'%}" path-details="/like-post?post_id={{post.id}}" class="like-bi" alt="" style="width:25px;margin:5px;">
+                                {% endif %}
 
                                 {% if post.num_likes == 0 %}
                                 <p><span>&#43; like</span></p>
@@ -83,11 +90,11 @@
                                 <p>{{post.num_likes}} <span>likes</span></p>
                                 {% endif %}
                             </div>
-                        </a>
-                      <!--  <div class="comment-btn">
+                        
+                        <div class="comment-btn">
                             <img src="{% static 'images/comment.png'%}" alt="">
-                        </div> -->
-                    </div>
+                        </div> 
+                    </div>-->
                     <div class="caption">
                         <p>
                             <a>{{post.user}}: </a><span> {{post.caption}} </span>
@@ -102,7 +109,9 @@
             
           
             <div class="side-cont">
+                {% if user.is_authenticated %}
               <div class="side-options">
+                
                 <div class="side-title">
                   <h1>Also on nendah</h1>
                 </div>
@@ -110,23 +119,45 @@
 
                 {% for suggestion in suggestion_username_profile_list %}
                 <div class="new-followers">
+                    <a href="/user/{{suggestion.user}}">
                     <div class="n-follower">
                         <div class="follower-img">
                             <img src="{{suggestion.profileimg.url}}" class="w-10 h-10 rounded" alt="">
                         </div>
                         <div class="follower-name"><h1>{{suggestion.user}}</h1></div>
                     </div>
-                    <div class="follow-btn">
+                    </a>
+                  <!--  <div class="follow-btn">
                        <a href="/user/{{suggestion.user}}"><button>View Profile</button></a>
-                    </div>
+                    </div> -->
                 </div>
                 {% endfor %}
 
                
-
+                
                
 
               </div> 
+
+              {% else %}
+
+            
+
+                <div class="quote">
+                    <div class="s-name">
+                        <img src="{%static 'images/lname.png'%}" alt="">
+                    </div>
+
+                    <h3>
+                        Life is short and the world is wide. Embrace the unknown, seek adventure, and let your travels become the memories that will last a lifetime
+                    </h3>
+
+                    <div class="signup-btn">
+                        <a href="{% url 'social:register' %}"><h3>Sign Up</h3></a>
+                    </div>
+                </div>
+
+                {% endif %}
 
 
             <!--Articles and Podcast suggestions-->

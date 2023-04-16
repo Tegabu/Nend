@@ -7,10 +7,10 @@ from django.contrib.auth.models import User, auth
 
 def register(request):
     if request.method == 'POST':
-        user = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['pword']
-        password2 = request.POST['re_pword']
+        user = request.POST.get['username']
+        email = request.POST.get['email']
+        password = request.POST.get['pword']
+        password2 = request.POST.get['re_pword']
 
         user = User.objects.creat_user(
             user=user, password=password, email=email)
@@ -19,4 +19,4 @@ def register(request):
         return redirect('/')
 
     else:
-        return render(request, 'socialspace/signup.html')
+        return render(request, 'landing/signup.html')

@@ -14,8 +14,8 @@
     <div class="main-listings">
 
         <div class="add-listing">
-            <h1>Holiday</h1>
-            
+            <h1>Discover</h1>
+            <img src="{% static 'images/favicon.png'%}" alt="">
         </div>
 
         <div class="categories-pick">
@@ -34,9 +34,9 @@
             <div class="feature-title">
 
                 <a href="{% url 'social:search'%}">
-                <div class="search-link bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
+                <div class="search-link ">
                 
-               <h1>&#128269; Browse Categories</h1>
+                    <h1>Click to Browse by Categories</h1>
 
                 </div>
                 </a>
@@ -58,7 +58,7 @@
 
                             <div class="item-det">
                             <h5>{{listing.location}}</h5>
-                            <h5><span>$</span>{{listing.charge}}<span>/night</span></h5>
+                            <h5>${{listing.charge}} <span>/night</span></h5>
                             </div>
                         </div>
                     </div>

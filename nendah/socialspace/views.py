@@ -2,7 +2,7 @@ from email.mime import image
 from urllib import request
 from xml.etree.ElementTree import Comment
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import View
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
@@ -11,14 +11,17 @@ from itertools import chain
 from django.db.models import Q
 import random
 
-from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing, Chat, profile_pic
-from .forms import NewListing, EditListing, ChatMessageForm
+from socialspace.models import Profile, Post, likepost, product, Category, Host, FollowersCount, Listing,  profile_pic
+from .forms import NewListing, EditListing
 
 
-@login_required(login_url='login')
 def index(request):
-    user_objects = User.objects.get(username=request.user.username)
-    user_profile = Profile.objects.get(user=user_objects)
+    try:
+        user_objects = User.objects.get(username=request.user.username)
+        user_profile = Profile.objects.get(user=user_objects)
+    except:
+        user_objects = 'anonymous'
+        user_profile = 'anonymous'
 
     user_following_list = []
     feed = []
@@ -40,7 +43,10 @@ def index(request):
     user_following_all = []
 
     for user in user_following:
-        user_list = User.objects.get(username=user.user)
+        try:
+            user_list = User.objects.get(username=user.user)
+        except:
+            user_list = None
         user_following_all.append(user_list)
 
     new_suggestions_list = [x for x in list(all_users) if (
@@ -62,7 +68,8 @@ def index(request):
 
     suggestion_username_profile_list = list(chain(*username_profile_list))
 
-    posts = Post.objects.all()
+    posts = [x for x in list(Post.objects.all())]
+    random.shuffle(posts)
     return render(request, "landing/index.html", {'posts': posts,  'user_profile': user_profile, 'user_objects': user_objects, 'suggestion_username_profile_list': suggestion_username_profile_list[:10]})
 
 # search bar
@@ -70,6 +77,8 @@ def index(request):
 
 @login_required(login_url='login')
 def search_bar(request):
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
     query = request.GET.get('query', '')
     category_id = request.GET.get('category', 0)
     category = Category.objects.all
@@ -82,7 +91,30 @@ def search_bar(request):
     if query:
         listings = listings.filter(name__icontains=query)
 
-    return render(request, 'landing/search.html', {'listings': listings, 'query': query, 'category': category, 'category_id': int(category_id)})
+    return render(request, 'landing/search.html', {'user_objects': user_objects, 'user_profile': user_profile, 'listings': listings, 'query': query, 'category': category, 'category_id': int(category_id)})
+
+
+def find(request):
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        username_object = User.objects.filter(username__icontains=username)
+
+        username_profile = []
+        username_profile_list = []
+
+        for users in username_object:
+            username_profile.append(users.id)
+
+        for ids in username_profile:
+            profile_lists = Profile.objects.filter(user_id=ids)
+            username_profile_list.append(profile_lists)
+
+        username_profile_list = list(chain(*username_profile_list))
+
+    return render(request, 'landing/find.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
 
 
 @login_required(login_url='login')
@@ -158,12 +190,12 @@ def like_post(request):
         new_like.save()
         post.num_likes += 1
         post.save()
-        return redirect('/')
+        return JsonResponse({'likedStatus': 1, 'likes': post.num_likes})
     else:
         like_filter.delete()
         post.num_likes -= 1
         post.save()
-        return redirect('/')
+        return JsonResponse({'likedStatus': 0, 'likes': post.num_likes})
 
 
 @ login_required(login_url='login')
@@ -172,6 +204,9 @@ def user(request, pk):
     user_profile = Profile.objects.get(user=user_object)
     user_post = Post.objects.filter(user=pk)
     user_post_length = len(user_post)
+    listings = Listing.objects.filter(host_name=user_object)
+
+    listing_len = len(listings)
 
     posts = Post.objects.all()
     hosts = Host.objects.all()
@@ -187,7 +222,7 @@ def user(request, pk):
     user_followers = len(FollowersCount.objects.filter(user=pk))
     user_following = len(FollowersCount.objects.filter(follower=pk))
 
-    context = {'posts': posts, 'hosts': hosts,
+    context = {'posts': posts, 'hosts': hosts, 'listing_len': listing_len, 'listings': listings,
                'user_object': user_object, 'user_profile': user_profile, 'user_post': user_post,
                'user_post_length': user_post_length, 'button_text': button_text, 'user_followers': user_followers, 'user_following': user_following}
 
@@ -228,65 +263,6 @@ def follow(request):
 
 # Chat functions
 
-@ login_required(login_url='login')
-def new_chat(request, listing_pk):
-    listing = get_object_or_404(Listing, pk=listing_pk)
-
-    if listing.host_name == request.user:
-        return redirect('social:dashboard')
-    chat = Chat.objects.filter(listing=listing).filter(
-        members__in=[request.user.id])
-    if chat:
-        pass
-    if request.method == 'POST':
-        form = ChatMessageForm(request.POST)
-
-        if form.is_valid():
-            chat = Chat.objects.create(listing=listing)
-            chat.members.add(request.user)
-            chat.members.add(listing.host_name)
-            chat.save()
-
-            chat_message = form.save(commit=False)
-            chat_message.chat = chat
-            chat_message.created_by = request.user
-            chat_message.save()
-
-            return redirect('social:detail', pk=listing_pk)
-    else:
-        form = ChatMessageForm()
-
-    return render(request, 'landing/book-chat.html', {'form': form})
-
-
-@ login_required(login_url='login')
-def inbox(request):
-    chat = Chat.objects.filter(
-        members__in=[request.user.id])
-
-    return render(request, 'landing/chat.html', {'chat': chat})
-
-
-@ login_required(login_url='login')
-def conversation(request, pk):
-    chat = Chat.objects.filter(
-        members__in=[request.user.id]).get(pk=pk)
-    if request.method == 'POST':
-        form = ChatMessageForm(request.POST)
-
-        if form.is_valid():
-            chat_message = form.save(commit=False)
-            chat_message.chat = chat
-            chat_message.created_by = request.user
-            chat_message.save()
-
-            chat.save()
-
-            return redirect('social:conversation', pk=pk)
-        else:
-            form = ChatMessageForm()
-    return render(request, 'landing/conversation.html', {'chat': chat})
-
 
 # Dashboard views
 
@@ -295,8 +271,9 @@ def dashboard(request):
     user_objects = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=request.user)
     listings = Listing.objects.filter(host_name=request.user)
+    posts = Post.objects.all()
 
-    return render(request, 'landing/dashboard.html', {'listings': listings, 'user_profile': user_profile,  'user_objects': user_objects})
+    return render(request, 'landing/dashboard.html', {'posts': posts, 'listings': listings, 'user_profile': user_profile,  'user_objects': user_objects})
 
 
 @ login_required(login_url='login')
@@ -336,8 +313,11 @@ def profile(request):
 def bookings(request):
     user_objects = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=request.user)
-    listings = Listing.objects.filter(is_available=True)[0:12]
+    listings = [x for x in list(
+        Listing.objects.filter(is_available=True)[0:12])]
     categories = Category.objects.all()
+
+    random.shuffle(listings)
 
     context = {'categories': categories, "listings": listings,
                'user_profile': user_profile,  'user_objects': user_objects}
@@ -416,8 +396,14 @@ def chat(request):
 
 @ login_required(login_url='login')
 def duka(request):
-    context = {}
-    return render(request, 'landing/duka.html', context)
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
+    listings = Listing.objects.filter(host_name=request.user)
+    post = Post.objects.filter(user=user_profile)
+    post_len = len(post)
+    listing_len = len(listings)
+
+    return render(request, 'landing/dashboard.html', {'listing_len': listing_len, 'post_len': post_len, 'post': post, 'listings': listings, 'user_profile': user_profile,  'user_objects': user_objects})
 
 
 @ login_required(login_url='login')
@@ -501,7 +487,7 @@ def register(request):
                 user_model = User.objects.get(username=username)
                 new_profile = Profile.objects.create(user=user_model)
                 new_profile.save()
-                return redirect('profile')
+                return redirect('social:profile')
         else:
             messages.info(request, 'password not matching')
             return redirect('register')
@@ -514,4 +500,4 @@ def register(request):
 @ login_required(login_url='login')
 def logout(request):
     auth.logout(request)
-    return redirect('login')
+    return redirect('social:login')

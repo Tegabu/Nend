@@ -6,7 +6,8 @@
 
 <div class="new-add">
     <div class="add-title">
-        <h1>edit your listng</h1>
+        <img src="{% static 'images/favicon.png'%}" alt="">
+        <h1>Update your listng</h1>
     </div>
 <form action="." method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -14,7 +15,7 @@
     <div class="space-y-4">
     {{ form.as_p }}
     </div>
-    <button class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send</button>
+    <button style="font-family: 'Montserrat',sans-serif; padding: 0px 10px; background: #E8772E; font-weight: 500; font-size: 1.3rem; border-radius: 5px; margin-bottom: 50px;">Send</button>
 </form>
 </div>
 

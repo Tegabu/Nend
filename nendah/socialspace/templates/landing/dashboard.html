@@ -3,12 +3,140 @@
 {% block content %}
 {% load static %}
 
-<div class="main-listings">
+<div class="dash-head">
 
     <div class="pg-title">
-        <h1>My Dashboard</h1>
-        
+        <h1>My Profile</h1>
+        <img src="{% static 'images/favicon.png'%}" alt="">
     </div>
+
+    
+ </div>
+
+
+<div class="profile-container">
+    <div class="profile-cont">
+
+        {% if user.is_authenticated %}
+
+        <div class="profile-pic">
+            <img src="{{user_profile.profileimg.url}}" alt="" class="w-10 h-10 rounded">
+        </div>
+        <div class="profile-info">
+            <div class="person-name">
+                <h1>{{user_profile.user.username}}</h1>
+            </div>
+            <div class="profile-bio">
+                <h4>{{user_profile.bio}}</h4>
+            </div>
+            
+            <div class="profile-btn">
+                <form action="/follow" method="POST">
+                    {% csrf_token %}
+                <input type="hidden" value="{{user.username}}" name="follower">
+                <input type="hidden" value="{{user_object.username}}" name="user">
+                
+                
+                <a href="{% url 'social:profile' %}" class="text-white right-2 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Edit profile</a>
+                 
+                </form> 
+                
+                <!--<button  class="pop-action" button-option="Show Message" >Message</button>--> 
+                
+                
+                
+            </div>
+
+
+            
+
+
+            <!--Profile edit popup  section -->
+
+           
+
+            <!-- End of section -->
+
+
+           <!-- <div class="profile-stats">
+                <div class="stat">
+                    {% if user_post_length == 0 %}
+                    <h3>0</h3>
+                    <h3><span>posts</span></h3>
+                    {% elif user_post_length == 1 %}
+                    <h3>{{user_post_length}}</h3>
+                    <h3><span>Post</span></h3>
+                    {% else %}
+                    <h3>{{user_post_length}}</h3>
+                    <h3><span>Posts</span></h3>
+                    {% endif %}
+                </div>
+
+                <div class="stat">
+                    {% if user_followers == 1%}
+                    <h3>{{user_followers}}</h3>
+                    <h3><span>Follower</span></h3>
+                    {% else %}
+                    <h3>{{user_followers}}</h3>
+                    <h3><span>Followers</span></h3>
+                    {% endif %}
+                </div>
+
+                <div class="stat">
+                    <h3>{{user_following}}</h3>
+                    <h3><span>Following</span></h3>
+                </div>
+                
+                {% endif %}
+              
+            </div>-->
+        
+        </div>
+    </div>
+
+    <div class="profile-features">
+        <div class="feature-title">
+            <h3>Posts</h3>
+            
+        </div>
+        {% if post_len > 0 %}
+        <div class="profile-posts">
+           
+            {% for post in post  reversed%} 
+            
+                <div class="post-item">
+                        <img src="{{post.image.url}}" alt="">
+                </div>      
+            {% endfor %}
+            
+        </div>
+        {% else %}
+        <div class="zero-messo">
+           <h1>No Posts Yet :)</h1>
+        </div>
+            
+         {% endif %}
+    </div>
+ 
+
+
+{% if listing_len > 0 %}
+ <div class="dash-head">
+
+    <div class="pg-title">
+        <h1>My Listings</h1>
+        <img src="{% static 'images/favicon.png'%}" alt="">
+    </div>
+
+    <div class="add-link">
+        <a href="{% url 'social:addlisting' %}" ><button >Add Listing <span>&#43;</span></button> </a>
+    </div>
+ </div>
+
+ 
+<div class="main-listings">
+
+ 
 
     <div class="categories-pick">
         {% for category in categories %}
@@ -23,14 +151,7 @@
 
     <div class="listing">
 
-        <div class="page-title">
-
-            <div class="add-link">
-                <a href="{% url 'social:addlisting' %}" ><button >Add Listing <span>&#43;</span></button> </a>
-             </div>
-            
-
-        </div>
+      
 
        
 
@@ -46,7 +167,7 @@
                         <h4>{{listing.name}}</h4>
                         <div class="item-det">
                             <h5>{{listing.location}}</h5>
-                            <h5><span>$</span>{{listing.charge}}<span>/night</span></h5>
+                            <h5>${{listing.charge}} <span>/night</span></h5>
                             </div>
                     </div>
                 </div>
@@ -97,6 +218,8 @@
           </div>
         
     </div>
+ {% else %}
 
-
+ {% endif %}
+</div>
 {% endblock %}
