@@ -6,7 +6,14 @@ from django.http import HttpResponse, JsonResponse
 from django.views.generic import View
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.contrib.auth import password_validation
+from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
 from itertools import chain
 from django.db.models import Q
 import random
@@ -309,7 +316,6 @@ def profile(request):
     return render(request, 'landing/profile.html', context)
 
 
-@ login_required(login_url='login')
 def bookings(request):
     user_objects = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=request.user)
@@ -440,10 +446,16 @@ def settings(request):
 
 @ login_required(login_url='login')
 def podcast(request):
-    return render(request, 'landing/podcast.html')
+    user_objects = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=request.user)
+
+    post = Post.objects.filter(user=user_profile)
+    post_len = len(post)
+    return render(request, 'landing/podcast.html', {'post': post, 'post_len': post_len, 'user_profile': user_profile,  'user_objects': user_objects})
 
 
 def login(request):
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -455,12 +467,12 @@ def login(request):
             return redirect("/")
         else:
             messages.info(request, "invalid credentials")
-            return redirect('login')
+            return redirect('social:login')
     else:
         return render(request, "landing/login.html")
 
 
-def register(request):
+"""def register(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
@@ -471,7 +483,7 @@ def register(request):
                 messages.info(request, 'username taken')
                 return redirect('register')
             elif User.objects.filter(email=email).exists():
-                messages.info(request, 'username taken')
+                messages.info(request, 'Eamil already registered')
                 return redirect('register')
             else:
                 user = User.objects.create_user(
@@ -490,8 +502,82 @@ def register(request):
                 return redirect('social:profile')
         else:
             messages.info(request, 'password not matching')
-            return redirect('register')
+            return redirect('social:register')
         return redirect('/')
+
+    else:
+        return render(request, 'landing/signup.html')"""
+
+# Register a user
+
+
+def validate_password(password):
+    password_validators = [
+        password_validation.MinimumLengthValidator(8),
+        password_validation.CommonPasswordValidator(),
+        password_validation.NumericPasswordValidator(),
+
+    ]
+
+    try:
+        password_validation.validate_password(password, password_validators)
+    except ValidationError as e:
+        return str(e)
+    return ''
+
+
+def validate_username(username):
+    if User.objects.filter(username=username).exists():
+        return 'Username is already taken'
+    return ''
+
+
+def validate_email(email):
+    if User.objects.filter(email=email).exists():
+        return 'Email is already registered'
+    return ''
+
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+
+        # Validate fields
+        username_error = validate_username(username)
+        email_error = validate_email(email)
+        password_error = validate_password(password)
+
+        if password != password2:
+            messages.error(request, 'Passwords do not match')
+            return redirect('social:register')
+
+        if username_error:
+            messages.error(request, username_error)
+            return redirect('social:register')
+
+        if email_error:
+            messages.error(request, email_error)
+            return redirect('social:register')
+
+        if password_error:
+            messages.error(request, password_error)
+            return redirect('social:register')
+
+        # Create user
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password
+        )
+
+        # Create profile
+        Profile.objects.create(user=user)
+
+        messages.success(request, 'Registration successful')
+        return redirect('social:login')
 
     else:
         return render(request, 'landing/signup.html')

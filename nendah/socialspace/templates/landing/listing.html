@@ -7,11 +7,12 @@
 <div class="stay-listing">
 
     <div class="listing-title">
+        <a href="{% url 'social:bookings'%}"><span>&#8592;</span> </a>
         <h1>{{listing.host_name}}</h1>
-    </div>
+    </div> 
                 
     <div class="listing-card">
-    
+        
         <div class="listing-img">
             <img src="{{listing.img.url}}" alt="">
         </div>
@@ -67,7 +68,7 @@
 
 <div class="related-options">
     <h1>Related Listings</h1>
-</div>
+
 
 <div class="listing-cards">
 
@@ -92,6 +93,6 @@
 
 </div>
 {% endif %}
-
+</div>
 
 {% endblock %}

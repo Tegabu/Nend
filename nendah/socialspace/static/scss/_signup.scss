@@ -135,7 +135,8 @@
     flex-direction: row;
     align-items: center;
     .s-info{
-        width: 70%;
+    
+        width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column; 
@@ -179,7 +180,7 @@
 }
 
 .all-signup {
-    width: 30%;
+    width: 35%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -198,6 +199,7 @@
    justify-content: center;
    align-items: center;
    text-align: center;
+   margin-top: 10px;
 
 
    h4{
@@ -239,8 +241,9 @@
         font-size: 3rem;
         color: #555;
     }
-
+ 
     img {
+        display: none;
         width: 200px;
         height: 150px;
         object-fit: cover;
@@ -287,5 +290,22 @@
         color: #ffffff;
         font-weight: 500;
         cursor: pointer;
+    }
+}
+
+@media all and (max-width:700px){
+    .sign-all{
+        .sign-left{
+           display: none;
+        }
+        .all-signup{
+            margin-top: 80px;
+            width: 100%;
+            img{
+                display: flex;
+                width: 70px;
+                height: 70px;
+            }
+        }
     }
 }

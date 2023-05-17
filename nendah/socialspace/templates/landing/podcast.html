@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Holiday Booking {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="product-desc">
+    <h1>product</h1>
+    {% for post in post %}
+    <div class="showprod">
+        
+        <div class="post-main-content">
+            
+            <img src="{{post.image.url}}" alt="" style="width:200px; height: 100px;">
+            
+        </div> 
+
+       
+        hello
+        
+    </div>
+    {% endfor %}
+
+    
+
+</div>
+
+{% endblock %} 

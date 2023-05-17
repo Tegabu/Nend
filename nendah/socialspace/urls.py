@@ -19,6 +19,7 @@ urlpatterns = [
     path('duka', views.duka, name="duka"),
     path('settings', views.settings, name="settings"),
     path('podcast', views.podcast, name="podcast"),
+
     path('cart', views.cart, name="cart"),
     path('find', views.find, name="find"),
     path('bookings', views.bookings, name="bookings"),

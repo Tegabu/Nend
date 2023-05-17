@@ -173,6 +173,55 @@ function showPopUpWindow(title, content, callback=()=>{}, width = "60%") {
 }
 
 
+function openPopup(event) {
+  event.preventDefault();
+  var url = event.target.href;
+  window.open(url, 'popup', 'width=600,height=400');
+}
 
 
+// Signup form validation
 
+$(document).ready(function() {
+  $('#registration-form').submit(function(event) {
+    event.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+    this.submit();
+  });
+
+  function validateForm() {
+    let isValid = true;
+
+    // Validate username
+    const username = $('#username-input').val();
+    if (!username) {
+      alert('Username is required');
+      isValid = false;
+    }
+
+    // Validate email
+    const email = $('#email-input').val();
+    if (!email) {
+      alert('Email is required');
+      isValid = false;
+    }
+
+    // Validate password
+    const password = $('#password-input').val();
+    if (!password) {
+      alert('Password is required');
+      isValid = false;
+    }
+
+    // Validate password match
+    const confirmPassword = $('#confirm-password-input').val();
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+});
